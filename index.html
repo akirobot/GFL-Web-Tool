@@ -3,78 +3,52 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css\main.css">
         <title>
             Test       
         </title>
     </head>
 
     <body>
-        <noscript class="error">
-            This browser does not support javascript
-        </noscript>
-        <h2>
-            CSS Layout Flexbox
-        </h2>
-        <p>
-            In this example, we have created a header, two columns/boxes and a footer. On smaller screens, the columns will stack on top of each other.
-        </p>
-        <p>
-            Resize the browser window to see the responsive effect.
-        </p>
-        <p>
-            <strong>
-                Note:
-            </strong> 
-            Flexbox is not supported in Internet Explorer 10 and earlier versions.
-        </p>
-        <header>
-            <h2>
-                Cities
-            </h2>
-        </header>
-
-        <section>
-            <nav>
-                <ul>
-                <li><a href="#">London</a></li>
-                <li><a href="#">Paris</a></li>
-                <li><a href="#">Tokyo</a></li>
-                </ul>
-            </nav>
-            
-            <article>
-                <h1>London</h1>
-                <p>London is the capital city of England. It is the most populous city in the  United Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
-                <p>Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium.</p>
-            </article>
-        </section>
-        <div class="flex-container" id="dollselect">
-            <div>
-                <select id="selID" onchange="">
-                    <option value="">Type</option>
-                    <option value="HG">HG</option>
-                    <option value="SMG">SMG</option>
-                    <option value="AR">AR</option>
-                    <option value="RF">RF</option>
-                    <option value="MG">MG</option>
-                    <option value="SG">SG</option>
-                </select>
-                <select id="selRare" onchange="">
-                    <option value="">Rarity</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select>
-                <div id="dolls"></div>
-                <script src="js\mod.js"></script>
-            </div>
+        <div>
+            <label for="dolls">Select type:</label>
+            <select name="dolls" id="dollSearch" onclick="myFunction()">
+                <option value="HG">HG</option>
+                <option value="SMG">SMG</option>
+                <option value="AR">AR</option>
+                <option value="RF">RF</option>
+                <option value="MG">MG</option>
+                <option value="SG">SG</option>
+            </select>
         </div>
-        <script src="js\dupe.js"></script>
-        <footer>
-            <p>Footer</p>
-        </footer>
+        <div>
+            <label for="rarity">Select rarity:</label>
+            <select name="rarity" id="raritySearch" onclick="myFunction()">
+                <option value=1>1</option>
+                <option value=2>2</option>
+                <option value=3>3</option>
+                <option value=4>4</option>
+                <option value=5>5</option>
+            </select>
+        </div>
+        <div>
+            <label for="selectDoll">Select doll:</label>
+            <select name="selectDoll" id="dollPick" onclick="displayStat()"></select>
+        </div>
+
+        <div id="displayStats"></div>
+
+        <script src="data/dolls.js"></script>
+        <script src="js/populateSelect.js"></script>
+        <script src="js/displayStat.js"></script>
+
+        <script>function myFunction(){
+                searchDolls();
+                populateSelect();
+            }</script>
+        <script>function displayStat(){
+                console.log("doll changed");
+                findDoll();
+            }</script>
+
     </body>
 </html>

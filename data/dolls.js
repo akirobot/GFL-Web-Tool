@@ -388,19 +388,25 @@ var _DOLLS = [
 ];
 
 var _FOUNDDOLLS;
+var _FOUNDDOLLS2;
+
+window.onload = function(){
+    searchDoll();    
+}
 
 function searchDolls(){
+    //Re-init
     _FOUNDDOLLS = new Array();
+    //Get selection from drop-downs
     var typeSearch = document.getElementById('dollSearch');
     var rareSearch = document.getElementById('raritySearch');
+    //Loop array to find matching dolls
     for(var i = 0; i < _DOLLS.length; i++){
         if (_DOLLS[i].Type == typeSearch.value && _DOLLS[i].Star == rareSearch.value){
             _FOUNDDOLLS.push(_DOLLS[i]);
         }
     }  
-    
-    console.log(_FOUNDDOLLS);
-    return _FOUNDDOLLS 
+    //console.log(_FOUNDDOLLS);
 }
 
     

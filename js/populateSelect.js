@@ -1,5 +1,4 @@
-var selectedDoll;
-var deleteID;
+
 
 function populateSelect(){
     clearSelect("dollPick");

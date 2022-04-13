@@ -389,18 +389,27 @@ var _DOLLS = [
 
 var _FOUNDDOLLS;
 
-function searchDolls(){
+window.onload = function(){
+    searchDoll1();    
+    searchDoll2();  
+    searchDoll3();  
+    searchDoll4();  
+    searchDoll5();  
+}
+
+function searchDolls(elmDollSearch, elmRareSearch){
+    //Re-init
     _FOUNDDOLLS = new Array();
-    var typeSearch = document.getElementById('dollSearch');
-    var rareSearch = document.getElementById('raritySearch');
+    //Get selection from drop-downs
+    var typeSearch = document.getElementById(elmDollSearch);
+    var rareSearch = document.getElementById(elmRareSearch);
+    //Loop array to find matching dolls
     for(var i = 0; i < _DOLLS.length; i++){
         if (_DOLLS[i].Type == typeSearch.value && _DOLLS[i].Star == rareSearch.value){
             _FOUNDDOLLS.push(_DOLLS[i]);
         }
     }  
-    
-    console.log(_FOUNDDOLLS);
-    return _FOUNDDOLLS 
+    //console.log(_FOUNDDOLLS);
 }
 
     

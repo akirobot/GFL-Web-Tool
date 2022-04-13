@@ -41,152 +41,160 @@
     </script>
 
     <body>
-        <div class="grid-container">
-            <div id="doll1">
-                <div id="dS">
-                    <label for="dolls">Select type:</label>
-                    <select name="dolls" id="dollSearch1" onchange="searchDoll1()">
-                        <option value="HG">HG</option>
-                        <option value="SMG">SMG</option>
-                        <option value="AR">AR</option>
-                        <option value="RF">RF</option>
-                        <option value="MG">MG</option>
-                        <option value="SG">SG</option>
-                    </select>
+        <div class="col-container">
+            <div class="grid-container">
+                <div id="doll1">
+                    <div id="dS">
+                        <label for="dolls">Select type:</label>
+                        <select name="dolls" id="dollSearch1" onchange="searchDoll1()">
+                            <option value="HG">HG</option>
+                            <option value="SMG">SMG</option>
+                            <option value="AR">AR</option>
+                            <option value="RF">RF</option>
+                            <option value="MG">MG</option>
+                            <option value="SG">SG</option>
+                        </select>
+                    </div>
+                    <div id="rS">
+                        <label for="rarity">Select rarity:</label>
+                        <select name="rarity" id="raritySearch1" onchange="searchDoll1()">
+                            <option value=1>1</option>
+                            <option value=2>2</option>
+                            <option value=3>3</option>
+                            <option value=4>4</option>
+                            <option value=5>5</option>
+                        </select>
+                    </div>
+                    <div id="sD">
+                        <label for="selectDoll">Select doll:</label>
+                        <select name="selectDoll" id="dollPick1" onclick="findDoll('displayStats1', 'dollPick1')"></select>
+                    </div>
+                    <br>
+                    <div id="displayStats1"></div>
                 </div>
-                <div id="rS">
-                    <label for="rarity">Select rarity:</label>
-                    <select name="rarity" id="raritySearch1" onchange="searchDoll1()">
-                        <option value=1>1</option>
-                        <option value=2>2</option>
-                        <option value=3>3</option>
-                        <option value=4>4</option>
-                        <option value=5>5</option>
-                    </select>
+                <div id="doll2">
+                    <div id="dS">
+                        <label for="dolls">Select type:</label>
+                        <select name="dolls" id="dollSearch2" onchange="searchDoll2()">
+                            <option value="HG">HG</option>
+                            <option value="SMG">SMG</option>
+                            <option value="AR">AR</option>
+                            <option value="RF">RF</option>
+                            <option value="MG">MG</option>
+                            <option value="SG">SG</option>
+                        </select>
+                    </div>
+                    <div id="rS">
+                        <label for="rarity">Select rarity:</label>
+                        <select name="rarity" id="raritySearch2" onchange="searchDoll2()">
+                            <option value=1>1</option>
+                            <option value=2>2</option>
+                            <option value=3>3</option>
+                            <option value=4>4</option>
+                            <option value=5>5</option>
+                        </select>
+                    </div>
+                    <div id="sD">
+                        <label for="selectDoll">Select doll:</label>
+                        <select name="selectDoll" id="dollPick2" onclick="findDoll('displayStats2', 'dollPick2')"></select>
+                    </div>
+                    <br>
+                    <div id="displayStats2"></div>
                 </div>
-                <div id="sD">
-                    <label for="selectDoll">Select doll:</label>
-                    <select name="selectDoll" id="dollPick1" onclick="findDoll('displayStats1', 'dollPick1')"></select>
+                <div id="doll3">
+                    <div id="dS">
+                        <label for="dolls">Select type:</label>
+                        <select name="dolls" id="dollSearch3" onchange="searchDoll3()">
+                            <option value="HG">HG</option>
+                            <option value="SMG">SMG</option>
+                            <option value="AR">AR</option>
+                            <option value="RF">RF</option>
+                            <option value="MG">MG</option>
+                            <option value="SG">SG</option>
+                        </select>
+                    </div>
+                    <div id="rS">
+                        <label for="rarity">Select rarity:</label>
+                        <select name="rarity" id="raritySearch3" onchange="searchDoll3()">
+                            <option value=1>1</option>
+                            <option value=2>2</option>
+                            <option value=3>3</option>
+                            <option value=4>4</option>
+                            <option value=5>5</option>
+                        </select>
+                    </div>
+                    <div id="sD">
+                        <label for="selectDoll">Select doll:</label>
+                        <select name="selectDoll" id="dollPick3" onclick="findDoll('displayStats3', 'dollPick3')"></select>
+                    </div>
+                    <br>
+                    <div id="displayStats3"></div>
                 </div>
-                <br>
-                <div id="displayStats1"></div>
+                <div id="doll4">
+                    <div id="dS">
+                        <label for="dolls">Select type:</label>
+                        <select name="dolls" id="dollSearch4" onchange="searchDoll4()">
+                            <option value="HG">HG</option>
+                            <option value="SMG">SMG</option>
+                            <option value="AR">AR</option>
+                            <option value="RF">RF</option>
+                            <option value="MG">MG</option>
+                            <option value="SG">SG</option>
+                        </select>
+                    </div>
+                    <div id="rS">
+                        <label for="rarity">Select rarity:</label>
+                        <select name="rarity" id="raritySearch4" onchange="searchDoll4()">
+                            <option value=1>1</option>
+                            <option value=2>2</option>
+                            <option value=3>3</option>
+                            <option value=4>4</option>
+                            <option value=5>5</option>
+                        </select>
+                    </div>
+                    <div id="sD">
+                        <label for="selectDoll">Select doll:</label>
+                        <select name="selectDoll" id="dollPick4" onclick="findDoll('displayStats4', 'dollPick4')"></select>
+                    </div>
+                    <br>
+                    <div id="displayStats4"></div>
+                </div>
+                <div id="doll5">
+                    <div id="dS">
+                        <label for="dolls">Select type:</label>
+                        <select name="dolls" id="dollSearch5" onchange="searchDoll5()">
+                            <option value="HG">HG</option>
+                            <option value="SMG">SMG</option>
+                            <option value="AR">AR</option>
+                            <option value="RF">RF</option>
+                            <option value="MG">MG</option>
+                            <option value="SG">SG</option>
+                        </select>
+                    </div>
+                    <div id="rS">
+                        <label for="rarity">Select rarity:</label>
+                        <select name="rarity" id="raritySearch5" onchange="searchDoll5()">
+                            <option value=1>1</option>
+                            <option value=2>2</option>
+                            <option value=3>3</option>
+                            <option value=4>4</option>
+                            <option value=5>5</option>
+                        </select>
+                    </div>
+                    <div id="sD">
+                        <label for="selectDoll">Select doll:</label>
+                        <select name="selectDoll" id="dollPick5" onclick="findDoll('displayStats5', 'dollPick5')"></select>
+                    </div>
+                    <br>
+                    <div id="displayStats5"></div>
+                </div>
             </div>
-            <div id="doll2">
-                <div id="dS">
-                    <label for="dolls">Select type:</label>
-                    <select name="dolls" id="dollSearch2" onchange="searchDoll2()">
-                        <option value="HG">HG</option>
-                        <option value="SMG">SMG</option>
-                        <option value="AR">AR</option>
-                        <option value="RF">RF</option>
-                        <option value="MG">MG</option>
-                        <option value="SG">SG</option>
-                    </select>
+            <div class="grid-container">
+                <div>
+                    test
                 </div>
-                <div id="rS">
-                    <label for="rarity">Select rarity:</label>
-                    <select name="rarity" id="raritySearch2" onchange="searchDoll2()">
-                        <option value=1>1</option>
-                        <option value=2>2</option>
-                        <option value=3>3</option>
-                        <option value=4>4</option>
-                        <option value=5>5</option>
-                    </select>
-                </div>
-                <div id="sD">
-                    <label for="selectDoll">Select doll:</label>
-                    <select name="selectDoll" id="dollPick2" onclick="findDoll('displayStats2', 'dollPick2')"></select>
-                </div>
-                <br>
-                <div id="displayStats2"></div>
-            </div>
-            <div id="doll3">
-                <div id="dS">
-                    <label for="dolls">Select type:</label>
-                    <select name="dolls" id="dollSearch3" onchange="searchDoll3()">
-                        <option value="HG">HG</option>
-                        <option value="SMG">SMG</option>
-                        <option value="AR">AR</option>
-                        <option value="RF">RF</option>
-                        <option value="MG">MG</option>
-                        <option value="SG">SG</option>
-                    </select>
-                </div>
-                <div id="rS">
-                    <label for="rarity">Select rarity:</label>
-                    <select name="rarity" id="raritySearch3" onchange="searchDoll3()">
-                        <option value=1>1</option>
-                        <option value=2>2</option>
-                        <option value=3>3</option>
-                        <option value=4>4</option>
-                        <option value=5>5</option>
-                    </select>
-                </div>
-                <div id="sD">
-                    <label for="selectDoll">Select doll:</label>
-                    <select name="selectDoll" id="dollPick3" onclick="findDoll('displayStats3', 'dollPick3')"></select>
-                </div>
-                <br>
-                <div id="displayStats3"></div>
-            </div>
-            <div id="doll4">
-                <div id="dS">
-                    <label for="dolls">Select type:</label>
-                    <select name="dolls" id="dollSearch4" onchange="searchDoll4()">
-                        <option value="HG">HG</option>
-                        <option value="SMG">SMG</option>
-                        <option value="AR">AR</option>
-                        <option value="RF">RF</option>
-                        <option value="MG">MG</option>
-                        <option value="SG">SG</option>
-                    </select>
-                </div>
-                <div id="rS">
-                    <label for="rarity">Select rarity:</label>
-                    <select name="rarity" id="raritySearch4" onchange="searchDoll4()">
-                        <option value=1>1</option>
-                        <option value=2>2</option>
-                        <option value=3>3</option>
-                        <option value=4>4</option>
-                        <option value=5>5</option>
-                    </select>
-                </div>
-                <div id="sD">
-                    <label for="selectDoll">Select doll:</label>
-                    <select name="selectDoll" id="dollPick4" onclick="findDoll('displayStats4', 'dollPick4')"></select>
-                </div>
-                <br>
-                <div id="displayStats4"></div>
-            </div>
-            <div id="doll5">
-                <div id="dS">
-                    <label for="dolls">Select type:</label>
-                    <select name="dolls" id="dollSearch5" onchange="searchDoll5()">
-                        <option value="HG">HG</option>
-                        <option value="SMG">SMG</option>
-                        <option value="AR">AR</option>
-                        <option value="RF">RF</option>
-                        <option value="MG">MG</option>
-                        <option value="SG">SG</option>
-                    </select>
-                </div>
-                <div id="rS">
-                    <label for="rarity">Select rarity:</label>
-                    <select name="rarity" id="raritySearch5" onchange="searchDoll5()">
-                        <option value=1>1</option>
-                        <option value=2>2</option>
-                        <option value=3>3</option>
-                        <option value=4>4</option>
-                        <option value=5>5</option>
-                    </select>
-                </div>
-                <div id="sD">
-                    <label for="selectDoll">Select doll:</label>
-                    <select name="selectDoll" id="dollPick5" onclick="findDoll('displayStats5', 'dollPick5')"></select>
-                </div>
-                <br>
-                <div id="displayStats5"></div>
             </div>
         </div>
+        
     </body>
 </html>

@@ -388,18 +388,21 @@ var _DOLLS = [
 ];
 
 var _FOUNDDOLLS;
-var _FOUNDDOLLS2;
 
 window.onload = function(){
-    searchDoll();    
+    searchDoll1();    
+    searchDoll2();  
+    searchDoll3();  
+    searchDoll4();  
+    searchDoll5();  
 }
 
-function searchDolls(){
+function searchDolls(elmDollSearch, elmRareSearch){
     //Re-init
     _FOUNDDOLLS = new Array();
     //Get selection from drop-downs
-    var typeSearch = document.getElementById('dollSearch');
-    var rareSearch = document.getElementById('raritySearch');
+    var typeSearch = document.getElementById(elmDollSearch);
+    var rareSearch = document.getElementById(elmRareSearch);
     //Loop array to find matching dolls
     for(var i = 0; i < _DOLLS.length; i++){
         if (_DOLLS[i].Type == typeSearch.value && _DOLLS[i].Star == rareSearch.value){

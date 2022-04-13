@@ -1,8 +1,8 @@
 
 
-function populateSelect(){
-    clearSelect("dollPick");
-    var select = document.getElementById("dollPick");
+function populateSelect(getElement){
+    clearSelect(getElement);
+    var select = document.getElementById(getElement);
     var options = _FOUNDDOLLS;
     for (var i = 0; i < options.length; i++){
         var opt = options[i];

@@ -32,10 +32,10 @@
         </div>
         <div>
             <label for="selectDoll">Select doll:</label>
-            <select name="selectDoll" id="dollPick" onclick="displayStat()"></select>
+            <select name="selectDoll" id="dollPick" onclick="displayStat1()"></select>
         </div>
 
-        <div id="displayStats"></div>
+        <div id="displayStats1"></div>
 
         <script src="data/dolls.js"></script>
         <script src="js/populateSelect.js"></script>
@@ -45,9 +45,9 @@
                 searchDolls();
                 populateSelect();
             }</script>
-        <script>function displayStat(){
+        <script>function displayStat1(){
                 console.log("doll changed");
-                findDoll();
+                findDoll1();
             }</script>
 
     </body>

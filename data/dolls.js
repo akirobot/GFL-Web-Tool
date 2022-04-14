@@ -394,7 +394,8 @@ window.onload = function(){
     searchDoll2();  
     searchDoll3();  
     searchDoll4();  
-    searchDoll5();  
+    searchDoll5();
+    populateFairy();
 }
 
 function searchDolls(elmDollSearch, elmRareSearch){

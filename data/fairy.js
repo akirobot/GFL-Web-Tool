@@ -54,7 +54,7 @@ function populateFairy(){
     findFairy();
 }
 
-var _FOUNDFAIRY
+var _FOUNDFAIRY;
 
 function findFairy(){
     clearSelect("displayFairy");
@@ -124,4 +124,14 @@ function findFairy(){
     descNode.id = "displayFairy";
     descNode.innerHTML = "Description: " +_FOUNDFAIRY.Description +"<br>";
     document.getElementById("displayFairy").append(descNode);
+
+    console.log("Updated fairy: "+_FOUNDFAIRY.Name);
+    if (_FOUNDDOLL1 != null && _FOUNDDOLL2 != null && _FOUNDDOLL3 != null && _FOUNDDOLL4 != null && _FOUNDDOLL5 != null){
+        console.log("Doll 1: " +_FOUNDDOLL1.Name);
+        console.log("Doll 2: " +_FOUNDDOLL2.Name);
+        console.log("Doll 3: " +_FOUNDDOLL3.Name);
+        console.log("Doll 4: " +_FOUNDDOLL4.Name);
+        console.log("Doll 5: " +_FOUNDDOLL5.Name);
+        console.log("Fairy: "+_FOUNDFAIRY.Name);
+    }
 }

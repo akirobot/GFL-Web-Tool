@@ -148,5 +148,8 @@ function findDoll(editID, appendID, caseID){
         console.log("Doll 3: " +_FOUNDDOLL3.Name);
         console.log("Doll 4: " +_FOUNDDOLL4.Name);
         console.log("Doll 5: " +_FOUNDDOLL5.Name);
+        if (_FOUNDFAIRY != null){
+            console.log("Fairy: "+_FOUNDFAIRY.Name);
+        }
     }
 }

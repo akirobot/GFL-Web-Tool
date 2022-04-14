@@ -71,11 +71,11 @@ function findFairy(){
     idNode.innerHTML = "ID: " +_FOUNDFAIRY.ID +"<br>";
     document.getElementById("displayFairy").append(idNode);
 
-    let naNode = document.createElement('div');
+    /*let naNode = document.createElement('div');
     naNode.className = "Name";
     naNode.id = "displayFairy";
     naNode.innerHTML = "Name: " +_FOUNDFAIRY.Name +"<br>";
-    document.getElementById("displayFairy").append(naNode);
+    document.getElementById("displayFairy").append(naNode);*/
 
     let critdNode = document.createElement('div');
     critdNode.className = "CritDmg";

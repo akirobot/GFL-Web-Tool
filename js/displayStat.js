@@ -21,23 +21,23 @@ function findDoll(editID, appendID, caseID){
     idNode.innerHTML = "ID: " +dollToFill.ID +"<br>" ;
     document.getElementById(editID).append(idNode);
 
-    let naNode = document.createElement('div');
+    /*let naNode = document.createElement('div');
     naNode.className = "Name";
     naNode.id = editID;
     naNode.innerHTML = "Name: " +dollToFill.Name +"<br>" ;
-    document.getElementById(editID).append(naNode);
+    document.getElementById(editID).append(naNode);*/
     
-    let tyNode = document.createElement('div');
+    /*let tyNode = document.createElement('div');
     tyNode.className = "Type";
     tyNode.id = editID;
     tyNode.innerHTML = "Type: " +dollToFill.Type +"<br>" ;
-    document.getElementById(editID).append(tyNode);
+    document.getElementById(editID).append(tyNode);*/
     
-    let stNode = document.createElement('div');
+    /*let stNode = document.createElement('div');
     stNode.className = "Star";
     stNode.id = editID;
     stNode.innerHTML = "Star: " +dollToFill.Star +"<br>" ;
-    document.getElementById(editID).append(stNode);
+    document.getElementById(editID).append(stNode);*/
 
     let heNode = document.createElement('div');
     heNode.className = "Health";

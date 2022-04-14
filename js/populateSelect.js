@@ -1,5 +1,3 @@
-
-
 function populateSelect(getElement){
     clearSelect(getElement);
     var select = document.getElementById(getElement);
@@ -15,6 +13,7 @@ function populateSelect(getElement){
 }
 
 function clearSelect(deleteID){
+    console.clear();
     let element = document.getElementById(deleteID);
     while (element.firstChild) {
       element.removeChild(element.firstChild);

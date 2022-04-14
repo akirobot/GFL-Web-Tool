@@ -13,31 +13,32 @@
     <script src="data/fairy.js"></script>
     <script src="js/populateSelect.js"></script>
     <script src="js/displayStat.js"></script>
+    <script src="js/warning.js"></script> 
     <script>
         function searchDoll1(){
             searchDolls('dollSearch1', 'raritySearch1');
             populateSelect('dollPick1');
-            findDoll('displayStats1', 'dollPick1');
+            findDoll('displayStats1', 'dollPick1', '1');
         }
         function searchDoll2(){
             searchDolls('dollSearch2', 'raritySearch2');
             populateSelect('dollPick2');
-            findDoll('displayStats2', 'dollPick2');
+            findDoll('displayStats2', 'dollPick2', '2');
         }
         function searchDoll3(){
             searchDolls('dollSearch3', 'raritySearch3');
             populateSelect('dollPick3');
-            findDoll('displayStats3', 'dollPick3');
+            findDoll('displayStats3', 'dollPick3', '3');
         }
         function searchDoll4(){
             searchDolls('dollSearch4', 'raritySearch4');
             populateSelect('dollPick4');
-            findDoll('displayStats4', 'dollPick4');
+            findDoll('displayStats4', 'dollPick4', '4');
         }
         function searchDoll5(){
             searchDolls('dollSearch5', 'raritySearch5');
             populateSelect('dollPick5');
-            findDoll('displayStats5', 'dollPick5');
+            findDoll('displayStats5', 'dollPick5', '5');
         }
     </script>
 
@@ -68,7 +69,7 @@
                     </div>
                     <div id="sD">
                         <label for="selectDoll">Select doll:</label>
-                        <select name="selectDoll" id="dollPick1" onclick="findDoll('displayStats1', 'dollPick1')"></select>
+                        <select name="selectDoll" id="dollPick1" onclick="findDoll('displayStats1', 'dollPick1', '1')"></select>
                     </div>
                     <br>
                     <div id="displayStats1"></div>
@@ -97,7 +98,7 @@
                     </div>
                     <div id="sD">
                         <label for="selectDoll">Select doll:</label>
-                        <select name="selectDoll" id="dollPick2" onclick="findDoll('displayStats2', 'dollPick2')"></select>
+                        <select name="selectDoll" id="dollPick2" onclick="findDoll('displayStats2', 'dollPick2', '2')"></select>
                     </div>
                     <br>
                     <div id="displayStats2"></div>
@@ -126,7 +127,7 @@
                     </div>
                     <div id="sD">
                         <label for="selectDoll">Select doll:</label>
-                        <select name="selectDoll" id="dollPick3" onclick="findDoll('displayStats3', 'dollPick3')"></select>
+                        <select name="selectDoll" id="dollPick3" onclick="findDoll('displayStats3', 'dollPick3', '3')"></select>
                     </div>
                     <br>
                     <div id="displayStats3"></div>
@@ -155,7 +156,7 @@
                     </div>
                     <div id="sD">
                         <label for="selectDoll">Select doll:</label>
-                        <select name="selectDoll" id="dollPick4" onclick="findDoll('displayStats4', 'dollPick4')"></select>
+                        <select name="selectDoll" id="dollPick4" onclick="findDoll('displayStats4', 'dollPick4', '4')"></select>
                     </div>
                     <br>
                     <div id="displayStats4"></div>
@@ -184,7 +185,7 @@
                     </div>
                     <div id="sD">
                         <label for="selectDoll">Select doll:</label>
-                        <select name="selectDoll" id="dollPick5" onclick="findDoll('displayStats5', 'dollPick5')"></select>
+                        <select name="selectDoll" id="dollPick5" onclick="findDoll('displayStats5', 'dollPick5', '5')"></select>
                     </div>
                     <br>
                     <div id="displayStats5"></div>

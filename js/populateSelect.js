@@ -1,9 +1,12 @@
+//Fill populate array with data
 function populateSelect(getElement){
+    //Clear current dropdown
     clearSelect(getElement);
+    //Find dropdown
     var select = document.getElementById(getElement);
-    var options = _FOUNDDOLLS;
-    for (var i = 0; i < options.length; i++){
-        var opt = options[i];
+    //
+    for (var i = 0; i < _FOUNDDOLLS.length; i++){
+        var opt = _FOUNDDOLLS[i];
         var el = document.createElement("option");
         el.textContent = opt.Name;
         el.value = opt.ID;

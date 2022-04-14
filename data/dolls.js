@@ -389,6 +389,7 @@ var _DOLLS = [
 
 var _FOUNDDOLLS;
 
+//Initial load for displaying stats, uses default values
 window.onload = function(){
     searchDoll1();    
     searchDoll2();  
@@ -398,6 +399,7 @@ window.onload = function(){
     populateFairy();
 }
 
+//Function to find doll based on currently selected parameters
 function searchDolls(elmDollSearch, elmRareSearch){
     //Re-init
     _FOUNDDOLLS = new Array();
@@ -406,6 +408,7 @@ function searchDolls(elmDollSearch, elmRareSearch){
     var rareSearch = document.getElementById(elmRareSearch);
     //Loop array to find matching dolls
     for(var i = 0; i < _DOLLS.length; i++){
+        //If doll matches values, put into array for display
         if (_DOLLS[i].Type == typeSearch.value && _DOLLS[i].Star == rareSearch.value){
             _FOUNDDOLLS.push(_DOLLS[i]);
         }

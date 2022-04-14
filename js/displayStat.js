@@ -4,17 +4,33 @@ var _FOUNDDOLL3;
 var _FOUNDDOLL4;
 var _FOUNDDOLL5;
 
+//Find specified doll from selection with given variables
+//EditID - Where to display final doll data
+//AppendID - Where to attach doll data to
+//CaseID - Condition for determining where loaded data will be stored
 function findDoll(editID, appendID, caseID){
+    //Clear current data from display
     clearSelect(editID);
+
+    //Get the currently selected doll from select dropdown
     var idSearch = document.getElementById(appendID);
+
+    //Temp variable
     var dollToFill;
+
     //console.log(idSearch.value);
+
+    //Iterate through list of T-Dolls, if ID of selection matches, store, break loop
+    //  Note: I couldn't get .find() to work for some reason, otherwise I would have used that
     for(var i = 0; i < _DOLLS.length; i++){
         if (_DOLLS[i].ID == idSearch.value){
             dollToFill = _DOLLS[i];
+            break;
         }
     }
 
+    //Create element div for data display
+    //  Note: I think this could be shortened to a separate function with conditions, will test later
     let idNode = document.createElement('div');
     idNode.className = "ID";
     idNode.id = editID;
@@ -111,6 +127,7 @@ function findDoll(editID, appendID, caseID){
     apNode.innerHTML = "AP: " +dollToFill.AP +"<br>";
     document.getElementById(editID).append(apNode);
 
+    //Check if doll has clip field, if not skip
     if (dollToFill.Clip != null){
         let clipNode = document.createElement('div');
         clipNode.className = "Clip";
@@ -119,6 +136,7 @@ function findDoll(editID, appendID, caseID){
         document.getElementById(editID).append(clipNode);
     }
 
+    //Switch case to attach data to global variable for use later
     switch (caseID){
         case '1':
             _FOUNDDOLL1 = dollToFill;
@@ -142,12 +160,14 @@ function findDoll(editID, appendID, caseID){
             break;
     }
     
+    //Check added because of error on first load, waits until all dolls have been added
     if (_FOUNDDOLL1 != null && _FOUNDDOLL2 != null && _FOUNDDOLL3 != null && _FOUNDDOLL4 != null && _FOUNDDOLL5 != null){
         console.log("Doll 1: " +_FOUNDDOLL1.Name);
         console.log("Doll 2: " +_FOUNDDOLL2.Name);
         console.log("Doll 3: " +_FOUNDDOLL3.Name);
         console.log("Doll 4: " +_FOUNDDOLL4.Name);
         console.log("Doll 5: " +_FOUNDDOLL5.Name);
+        //Check added because of error on first load, waits until fairy has been added
         if (_FOUNDFAIRY != null){
             console.log("Fairy: "+_FOUNDFAIRY.Name);
         }

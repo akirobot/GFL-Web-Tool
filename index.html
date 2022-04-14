@@ -7,6 +7,9 @@
             Test       
         </title>
         <link rel="stylesheet" href="css/main.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Yantramanav:wght@400&display=swap" rel="stylesheet">
     </head>
 
     <script src="data/dolls.js"></script>
@@ -45,7 +48,8 @@
     <body>
         <div class="col-container">
             <div class="grid-container">
-                <div id="doll1">
+                <div class="col-container" id="doll1">
+                    <h1>Leader</h1>
                     <div class="dropdown-container">
                         <div id="rS">
                             <select name="rarity" id="raritySearch1" onchange="searchDoll1()">
@@ -71,9 +75,10 @@
                         </div>
                     </div>
                     <br>
-                    <div id="displayStats1"></div>
+                    <div class="displayStats" id="displayStats1"></div>
                 </div>
                 <div id="doll2">
+                    <h1>1st Member</h1>
                     <div class="dropdown-container">
                         <div id="rS">
                             <select name="rarity" id="raritySearch2" onchange="searchDoll2()">
@@ -99,9 +104,10 @@
                         </div>
                     </div>
                     <br>
-                    <div id="displayStats2"></div>
+                    <div class="displayStats" id="displayStats2"></div>
                 </div>
                 <div id="doll3">
+                    <h1>2nd Member</h1>
                     <div class="dropdown-container">
                         <div id="rS">
                             <select name="rarity" id="raritySearch3" onchange="searchDoll3()">
@@ -127,9 +133,10 @@
                         </div>
                     </div>
                     <br>
-                    <div id="displayStats3"></div>
+                    <div class="displayStats" id="displayStats3"></div>
                 </div>
                 <div id="doll4">
+                    <h1>3rd Member</h1>
                     <div class="dropdown-container">
                         <div id="rS">
                             <select name="rarity" id="raritySearch4" onchange="searchDoll4()">
@@ -155,9 +162,10 @@
                         </div>
                     </div>
                     <br>
-                    <div id="displayStats4"></div>
+                    <div class="displayStats" id="displayStats4"></div>
                 </div>
                 <div id="doll5">
+                    <h1>4th Member</h1>
                     <div class="dropdown-container">
                         <div id="rS">
                             <select name="rarity" id="raritySearch5" onchange="searchDoll5()">
@@ -183,17 +191,16 @@
                         </div>
                     </div>
                     <br>
-                    <div id="displayStats5"></div>
+                    <div class="displayStats" id="displayStats5"></div>
                 </div>
             </div>
             <div class="grid-container">
                 <div id="fairies">
-                    <label for="fairySelect">Select Fairy:</label>
                     <select name="fairySelect" id="fairySearch" onchange="findFairy()">
                     </select>
                     <br>
                     <br>
-                    <div id="displayFairy"></div>
+                    <div class="displayStats" id="displayFairy"></div>
                 </div>
             </div>
         </div>

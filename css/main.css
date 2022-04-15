@@ -5,8 +5,11 @@ body {
     width: 97%;
 }
 
-h1 {
+.name-container {
     font-family: 'Shippori Mincho B1', serif;
+    font-size: 30px;
+    margin-bottom: 10px;
+    padding: 5px;
 }
 
 select {  
@@ -35,6 +38,7 @@ select {
     display:grid;
     grid-auto-flow: column;
     min-width: 270px;
+    padding-bottom: 5px;
 }
 
 .col-container {
@@ -53,6 +57,10 @@ select {
     margin: 10px;
     padding: 10px;
     font-size: 20px;
+}
+
+#fairySearch{
+    margin-bottom: 5px;
 }
 
 .error {

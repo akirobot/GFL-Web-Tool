@@ -30,102 +30,19 @@ function findDoll(editID, appendID, caseID){
     }
 
     //Create element div for data display
-    //  Note: I think this could be shortened to a separate function with conditions, will test later
-    let idNode = document.createElement('div');
-    idNode.className = "ID";
-    idNode.id = editID;
-    idNode.innerHTML = "ID: " +dollToFill.ID +"<br>" ;
-    document.getElementById(editID).append(idNode);
-
-    /*let naNode = document.createElement('div');
-    naNode.className = "Name";
-    naNode.id = editID;
-    naNode.innerHTML = "Name: " +dollToFill.Name +"<br>" ;
-    document.getElementById(editID).append(naNode);*/
-    
-    /*let tyNode = document.createElement('div');
-    tyNode.className = "Type";
-    tyNode.id = editID;
-    tyNode.innerHTML = "Type: " +dollToFill.Type +"<br>" ;
-    document.getElementById(editID).append(tyNode);*/
-    
-    /*let stNode = document.createElement('div');
-    stNode.className = "Star";
-    stNode.id = editID;
-    stNode.innerHTML = "Star: " +dollToFill.Star +"<br>" ;
-    document.getElementById(editID).append(stNode);*/
-
-    let heNode = document.createElement('div');
-    heNode.className = "Health";
-    heNode.id = editID;
-    heNode.innerHTML = "Health: " +dollToFill.Health +"<br>" ;
-    document.getElementById(editID).append(heNode);
-
-    let amNode = document.createElement('div');
-    amNode.className = "Ammo";
-    amNode.id = editID;
-    amNode.innerHTML = "Ammo: " +dollToFill.Ammo +"<br>" ;
-    document.getElementById(editID).append(amNode);
-
-    let raNode = document.createElement('div');
-    raNode.className = "Ration";
-    raNode.id = editID;
-    raNode.innerHTML = "Ration: " +dollToFill.Ration +"<br>" ;
-    document.getElementById(editID).append(raNode);
-
-    let dmgNode = document.createElement('div');
-    dmgNode.className = "DMG";
-    dmgNode.id = editID;
-    dmgNode.innerHTML = "DMG: " +dollToFill.DMG +"<br>" ;
-    document.getElementById(editID).append(dmgNode);
-
-    let evaNode = document.createElement('div');
-    evaNode.className = "EVA";
-    evaNode.id = editID;
-    evaNode.innerHTML = "EVA: " +dollToFill.EVA +"<br>" ;
-    document.getElementById(editID).append(evaNode);
-
-    let accNode = document.createElement('div');
-    accNode.className = "ACC";
-    accNode.id = editID;
-    accNode.innerHTML = "ACC: " +dollToFill.ACC +"<br>" ;
-    document.getElementById(editID).append(accNode);
-
-    let rofNode = document.createElement('div');
-    rofNode.className = "ROF";
-    rofNode.id = editID;
-    rofNode.innerHTML = "ROF: " +dollToFill.ROF +"<br>" ;
-    document.getElementById(editID).append(rofNode);
-
-    let moveNode = document.createElement('div');
-    moveNode.className = "Move";
-    moveNode.id = editID;
-    moveNode.innerHTML = "Move: " +dollToFill.Move +"<br>" ;
-    document.getElementById(editID).append(moveNode);
-
-    let armorNode = document.createElement('div');
-    armorNode.className = "Armor";
-    armorNode.id = editID;
-    armorNode.innerHTML = "Armor: " +dollToFill.Armor +"<br>" ;
-    document.getElementById(editID).append(armorNode);
-
-    let critrateNode = document.createElement('div');
-    critrateNode.className = "CritRate";
-    critrateNode.id = editID;
-    critrateNode.innerHTML = "CritRate: " +dollToFill.CritRate +"<br>";
-    document.getElementById(editID).append(critrateNode);
-
-    let critdmgNode = document.createElement('div');
-    critdmgNode.className = "CritDmg";
-    critdmgNode.id = editID;
-    critdmgNode.innerHTML = "CritDmg: " +dollToFill.CritDamage +"<br>";
-    document.getElementById(editID).append(critdmgNode);
-    
-    let apNode = document.createElement('div');
-    apNode.className = "AP";
-    apNode.id = editID;
-    apNode.innerHTML = "AP: " +dollToFill.AP +"<br>";
-    document.getElementById(editID).append(apNode);
+    appendNode("ID", editID, dollToFill.ID);
+    appendNode("Health", editID, dollToFill.Health);
+    appendNode("Ammo", editID, dollToFill.Ammo);
+    appendNode("Ration", editID, dollToFill.Ration);
+    appendNode("DMG", editID, dollToFill.DMG);
+    appendNode("EVA", editID, dollToFill.EVA);
+    appendNode("ACC", editID, dollToFill.ACC);
+    appendNode("ROF", editID, dollToFill.ROF);
+    appendNode("Move", editID, dollToFill.Move);
+    appendNode("Armor", editID, dollToFill.Armor);
+    appendNode("CritRate", editID, dollToFill.CritRate);
+    appendNode("CritDmg", editID, dollToFill.CritDamage);
+    appendNode("AP", editID, dollToFill.AP);
 
     //Check if doll has clip field, if not skip
     if (dollToFill.Clip != null){
@@ -172,4 +89,18 @@ function findDoll(editID, appendID, caseID){
             console.log("Fairy: "+_FOUNDFAIRY.Name);
         }
     }
+}
+
+function appendNode(className, editId, infoToFill){
+    /*console.log("className:" +className);
+    console.log("editId:" +editId);
+    console.log("infoToFill:" +infoToFill.Name);*/
+    let Node = document.createElement('div');
+    Node.className = className;
+    Node.id = editId;
+    Node.innerHTML = className +": " +infoToFill +"<br>";
+    /*console.log("Node.className: " +Node.className);
+    console.log("Node.id: " +Node.id);
+    console.log("Node.innerHTML: " +Node.innerHTML);*/
+    document.getElementById(editId).append(Node);
 }

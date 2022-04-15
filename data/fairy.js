@@ -62,68 +62,19 @@ function findFairy(){
     for (var i = 0; i < _FAIRY.length; i++){
         if (_FAIRY[i].ID == idSearch.value){
             _FOUNDFAIRY = _FAIRY[i];
+            break;
         }
     }
 
-    let idNode = document.createElement('div');
-    idNode.className = "ID";
-    idNode.id = "displayFairy";
-    idNode.innerHTML = "ID: " +_FOUNDFAIRY.ID +"<br>";
-    document.getElementById("displayFairy").append(idNode);
-
-    /*let naNode = document.createElement('div');
-    naNode.className = "Name";
-    naNode.id = "displayFairy";
-    naNode.innerHTML = "Name: " +_FOUNDFAIRY.Name +"<br>";
-    document.getElementById("displayFairy").append(naNode);*/
-
-    let critdNode = document.createElement('div');
-    critdNode.className = "CritDmg";
-    critdNode.id = "displayFairy";
-    critdNode.innerHTML = "CritDmg: " +_FOUNDFAIRY.CritDamage +"<br>";
-    document.getElementById("displayFairy").append(critdNode);
-
-    let dmgNode = document.createElement('div');
-    dmgNode.className = "DMG";
-    dmgNode.id = "displayFairy";
-    dmgNode.innerHTML = "DMG: " +_FOUNDFAIRY.DMG +"<br>";
-    document.getElementById("displayFairy").append(dmgNode);
-
-    let accNode = document.createElement('div');
-    accNode.className = "ACC";
-    accNode.id = "displayFairy";
-    accNode.innerHTML = "ACC: " +_FOUNDFAIRY.ACC +"<br>";
-    document.getElementById("displayFairy").append(accNode);
-
-    let evaNode = document.createElement('div');
-    evaNode.className = "EVA";
-    evaNode.id = "displayFairy";
-    evaNode.innerHTML = "EVA: " +_FOUNDFAIRY.EVA +"<br>";
-    document.getElementById("displayFairy").append(evaNode);
-
-    let armNode = document.createElement('div');
-    armNode.className = "Armor";
-    armNode.id = "displayFairy";
-    armNode.innerHTML = "Armor: " +_FOUNDFAIRY.Armor +"<br>";
-    document.getElementById("displayFairy").append(armNode);
-
-    let cdNode = document.createElement('div');
-    cdNode.className = "Cooldown";
-    cdNode.id = "displayFairy";
-    cdNode.innerHTML = "Cooldown: " +_FOUNDFAIRY.CD +"<br>";
-    document.getElementById("displayFairy").append(cdNode);
-
-    let skillNode = document.createElement('div');
-    skillNode.className = "Skill";
-    skillNode.id = "displayFairy";
-    skillNode.innerHTML = "Skill: " +_FOUNDFAIRY.Skill +"<br>";
-    document.getElementById("displayFairy").append(skillNode);
-
-    let descNode = document.createElement('div');
-    descNode.className = "Description";
-    descNode.id = "displayFairy";
-    descNode.innerHTML = "Description: " +_FOUNDFAIRY.Description +"<br>";
-    document.getElementById("displayFairy").append(descNode);
+    appendNode("ID", "displayFairy", _FOUNDFAIRY.ID);
+    appendNode("CritDmg", "displayFairy", _FOUNDFAIRY.CritDamage);
+    appendNode("DMG", "displayFairy", _FOUNDFAIRY.DMG);
+    appendNode("ACC", "displayFairy", _FOUNDFAIRY.ACC);
+    appendNode("EVA", "displayFairy", _FOUNDFAIRY.EVA);
+    appendNode("Armor", "displayFairy", _FOUNDFAIRY.Armor);
+    appendNode("Cooldown", "displayFairy", _FOUNDFAIRY.CD);
+    appendNode("Skill", "displayFairy", _FOUNDFAIRY.Skill);
+    appendNode("Description", "displayFairy", _FOUNDFAIRY.Description);
 
     console.log("Updated fairy: "+_FOUNDFAIRY.Name);
     if (_FOUNDDOLL1 != null && _FOUNDDOLL2 != null && _FOUNDDOLL3 != null && _FOUNDDOLL4 != null && _FOUNDDOLL5 != null){

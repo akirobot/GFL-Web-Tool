@@ -5,6 +5,10 @@ body {
     width: 97%;
 }
 
+h1 {
+    font-family: 'Shippori Mincho B1', serif;
+}
+
 select {  
     background-color:#1F99CD;
     background-position: right 10px center;

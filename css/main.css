@@ -34,6 +34,7 @@ select {
 .dropdown-container{
     display:grid;
     grid-auto-flow: column;
+    min-width: 270px;
 }
 
 .col-container {

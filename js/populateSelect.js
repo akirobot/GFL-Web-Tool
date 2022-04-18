@@ -4,7 +4,6 @@ function populateSelect(getElement){
     clearSelect(getElement);
     //Find dropdown
     var select = document.getElementById(getElement);
-    //
     for (var i = 0; i < _FOUNDDOLLS.length; i++){
         var opt = _FOUNDDOLLS[i];
         var el = document.createElement("option");

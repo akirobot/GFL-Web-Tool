@@ -28,7 +28,7 @@ function findDoll(editID, appendID, caseID){
             break;
         }
     }
-
+    
     //Create element div for data display
     appendNode("ID", editID, dollToFill.ID);
     appendNode("Health", editID, dollToFill.Health);

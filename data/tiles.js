@@ -385,3 +385,4 @@ var _TILES = [
     {ID:1032, Tiles:523689, Type:'AR, SMG', Buff1:'DMG', B1:10, Buff2:'ACC', B2:20},
     {ID:1033, Tiles:469, Type:'SG', Buff1:'DMG', B1:15, Buff2:'Armor', B2:15},
     {ID:1034, Tiles:6137, Type:'MG', Buff1:'DMG', B1:15, Buff2:'ACC', B2:15}
+]

@@ -9,8 +9,7 @@ body {
 .name-container {
     font-family: 'Shippori Mincho B1', serif;
     font-size: 30px;
-    margin-bottom: 10px;
-    padding: 5px;
+    margin: 5px;
 }
 
 select {  
@@ -41,12 +40,13 @@ select {
     display:grid;
     grid-auto-flow: column;
     min-width: 270px;
-    padding-bottom: 5px;
 }
 
 .col-container {
     display:grid;
     background-color: gray;
+    margin: 2px;
+    padding: 2px;
 }
 
 .grid-container {
@@ -56,8 +56,8 @@ select {
   
 .grid-container > div {
     background-color: #404040;
-    margin: 10px;
-    padding: 10px;
+    margin: 5px;
+    padding: 5px;
     font-size: 20px;
 }
 

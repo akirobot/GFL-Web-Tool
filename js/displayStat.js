@@ -28,7 +28,7 @@ function findDoll(editID, appendID, caseID){
             break;
         }
     }
-    
+
     //Create element div for data display
     appendNode("ID", editID, dollToFill.ID);
     appendNode("Health", editID, dollToFill.Health);
@@ -46,39 +46,41 @@ function findDoll(editID, appendID, caseID){
 
     //Check if doll has clip field, if not skip
     if (dollToFill.Clip != null){
-        let clipNode = document.createElement('div');
-        clipNode.className = "Clip";
-        clipNode.id = editID;
-        clipNode.innerHTML = "Clip: " +dollToFill.Clip +"<br>";
-        document.getElementById(editID).append(clipNode);
+        appendNode('Clip', editID, dollToFill.Clip);
     }
 
     //Switch case to attach data to global variable for use later
     switch (caseID){
         case '1':
             _FOUNDDOLL1 = dollToFill;
+            editName("Leader", dollToFill.Name);
             console.log("Updated doll 1: "+_FOUNDDOLL1.Name);
             break;
         case '2':
             _FOUNDDOLL2 = dollToFill;
+            editName("1stMember", dollToFill.Name);
             console.log("Updated doll 2: "+_FOUNDDOLL2.Name);
             break;
         case '3':
             _FOUNDDOLL3 = dollToFill;
+            editName("2ndMember", dollToFill.Name);
             console.log("Updated doll 3: "+_FOUNDDOLL3.Name);
             break;
         case '4':
             _FOUNDDOLL4 = dollToFill;
+            editName("3rdMember", dollToFill.Name);
             console.log("Updated doll 4: "+_FOUNDDOLL4.Name);
             break;
         case '5':
             _FOUNDDOLL5 = dollToFill;
+            editName("4thMember", dollToFill.Name);
             console.log("Updated doll 5: "+_FOUNDDOLL5.Name);
             break;
     }
     
     //Check added because of error on first load, waits until all dolls have been added
     if (_FOUNDDOLL1 != null && _FOUNDDOLL2 != null && _FOUNDDOLL3 != null && _FOUNDDOLL4 != null && _FOUNDDOLL5 != null){
+        console.log(dollToFill.name);
         console.log("Doll 1: " +_FOUNDDOLL1.Name);
         console.log("Doll 2: " +_FOUNDDOLL2.Name);
         console.log("Doll 3: " +_FOUNDDOLL3.Name);
@@ -103,4 +105,8 @@ function appendNode(className, editId, infoToFill){
     console.log("Node.id: " +Node.id);
     console.log("Node.innerHTML: " +Node.innerHTML);*/
     document.getElementById(editId).append(Node);
+}
+
+function editName(editId, nameToFill){
+    document.getElementById(editId).innerHTML = nameToFill;
 }

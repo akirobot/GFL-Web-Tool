@@ -60,32 +60,38 @@
             </div>
             <div class="grid-container">
                 <div class="col-container" id="doll1">
-                    <div class="name-container" id="Leader">Leader</div>
-                    <div class="dropdown-container">
-                        <div id="rS">
-                            <select name="rarity" id="raritySearch1" onchange="searchDoll1()">
-                                <option value=1>☆</option>
-                                <option value=2>☆☆</option>
-                                <option value=3>☆☆☆</option>
-                                <option value=4>☆☆☆☆</option>
-                                <option value=5>☆☆☆☆☆</option>
-                            </select>
-                        </div>
-                        <div id="dS">
-                            <select name="dolls" id="dollSearch1" onchange="searchDoll1()">
-                                <option value="HG">HG</option>
-                                <option value="SMG">SMG</option>
-                                <option value="AR">AR</option>
-                                <option value="RF">RF</option>
-                                <option value="MG">MG</option>
-                                <option value="SG">SG</option>
-                            </select>
-                        </div>
-                        <div id="sD">
-                            <select name="selectDoll" id="dollPick1" onclick="findDoll('displayStats1', 'dollPick1', '1')"></select>
+                    <div class="col-container">
+                        <div class="name-container" id="Leader"></div>
+                    </div>
+                    <div class="col-container">
+                        <div class="dropdown-container">
+                            <div id="rS">
+                                <select name="rarity" id="raritySearch1" onchange="searchDoll1()">
+                                    <option value=1>☆</option>
+                                    <option value=2>☆☆</option>
+                                    <option value=3>☆☆☆</option>
+                                    <option value=4>☆☆☆☆</option>
+                                    <option value=5>☆☆☆☆☆</option>
+                                </select>
+                            </div>
+                            <div id="dS">
+                                <select name="dolls" id="dollSearch1" onchange="searchDoll1()">
+                                    <option value="HG">HG</option>
+                                    <option value="SMG">SMG</option>
+                                    <option value="AR">AR</option>
+                                    <option value="RF">RF</option>
+                                    <option value="MG">MG</option>
+                                    <option value="SG">SG</option>
+                                </select>
+                            </div>
+                            <div id="sD">
+                                <select name="selectDoll" id="dollPick1" onclick="findDoll('displayStats1', 'dollPick1', '1')"></select>
+                            </div>
                         </div>
                     </div>
-                    <div class="displayStats" id="displayStats1"></div>
+                    <div class="col-container">
+                        <div class="displayStats" id="displayStats1"></div>
+                    </div>
                 </div>
                 <div id="doll2">
                     <div class="name-container" id="1stMember">1st Member</div>

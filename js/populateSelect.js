@@ -1,16 +1,60 @@
 //Fill populate array with data
-function populateSelect(getElement){
+function populateSelect(getElement, dollCase){
     //Clear current dropdown
     clearSelect(getElement);
     //Find dropdown
     var select = document.getElementById(getElement);
-    for (var i = 0; i < _FOUNDDOLLS.length; i++){
-        var opt = _FOUNDDOLLS[i];
-        var el = document.createElement("option");
-        el.textContent = opt.Name;
-        el.value = opt.ID;
-        el.id = 'temp';
-        select.appendChild(el);
+    switch (dollCase){
+        case '1':
+            for (var i = 0; i < _FOUNDDOLLS1.length; i++){
+                var opt = _FOUNDDOLLS1[i];
+                var el = document.createElement("option");
+                el.textContent = opt.Name;
+                el.value = opt.ID;
+                el.id = 'temp';
+                select.appendChild(el);
+            }
+            break;
+        case '2':
+            for (var i = 0; i < _FOUNDDOLLS2.length; i++){
+                var opt = _FOUNDDOLLS2[i];
+                var el = document.createElement("option");
+                el.textContent = opt.Name;
+                el.value = opt.ID;
+                el.id = 'temp';
+                select.appendChild(el);
+            }
+            break;
+        case '3':
+            for (var i = 0; i < _FOUNDDOLLS3.length; i++){
+                var opt = _FOUNDDOLLS3[i];
+                var el = document.createElement("option");
+                el.textContent = opt.Name;
+                el.value = opt.ID;
+                el.id = 'temp';
+                select.appendChild(el);
+            }
+            break;
+        case '4':
+            for (var i = 0; i < _FOUNDDOLLS4.length; i++){
+                var opt = _FOUNDDOLLS4[i];
+                var el = document.createElement("option");
+                el.textContent = opt.Name;
+                el.value = opt.ID;
+                el.id = 'temp';
+                select.appendChild(el);
+            }
+            break;
+        case '5':
+            for (var i = 0; i < _FOUNDDOLLS5.length; i++){
+                var opt = _FOUNDDOLLS5[i];
+                var el = document.createElement("option");
+                el.textContent = opt.Name;
+                el.value = opt.ID;
+                el.id = 'temp';
+                select.appendChild(el);
+            }
+            break;
     }
 }
 

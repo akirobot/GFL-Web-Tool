@@ -387,7 +387,12 @@ var _DOLLS = [
     {ID:1034, Name:'Minos', Type:'SG', Star:1, Health:1430, Ammo:90, Ration:140, DMG:39, EVA:11, ACC:12, ROF:24, Move:6, Armor:22, CritRate:40, CritDamage:50, AP:15, Clip:4}
 ];
 
-var _FOUNDDOLLS;
+var _FOUNDDOLLS1;
+var _FOUNDDOLLS2;
+var _FOUNDDOLLS3;
+var _FOUNDDOLLS4;
+var _FOUNDDOLLS5;
+
 
 //Initial load for displaying stats, uses default values
 window.onload = function(){
@@ -400,20 +405,57 @@ window.onload = function(){
 }
 
 //Function to find doll based on currently selected parameters
-function searchDolls(elmDollSearch, elmRareSearch){
+function searchDolls(elmDollSearch, elmRareSearch, dollCase){
     //Re-init
-    _FOUNDDOLLS = new Array();
     //Get selection from drop-downs
     var typeSearch = document.getElementById(elmDollSearch);
     var rareSearch = document.getElementById(elmRareSearch);
-    //Loop array to find matching dolls
-    for(var i = 0; i < _DOLLS.length; i++){
-        //If doll matches values, put into array for display
-        if (_DOLLS[i].Type == typeSearch.value && _DOLLS[i].Star == rareSearch.value){
-            _FOUNDDOLLS.push(_DOLLS[i]);
-        }
-    }  
-    //console.log(_FOUNDDOLLS);
-}
 
-    
+    switch (dollCase){
+        case '1':
+            _FOUNDDOLLS1 = new Array();
+            for(var i = 0; i < _DOLLS.length; i++){
+                //If doll matches values, put into array for display
+                if (_DOLLS[i].Type == typeSearch.value && _DOLLS[i].Star == rareSearch.value){
+                    _FOUNDDOLLS1.push(_DOLLS[i]);
+                }
+            }
+            break;
+        case '2':
+            _FOUNDDOLLS2 = new Array();
+            for(var i = 0; i < _DOLLS.length; i++){
+                //If doll matches values, put into array for display
+                if (_DOLLS[i].Type == typeSearch.value && _DOLLS[i].Star == rareSearch.value){
+                    _FOUNDDOLLS2.push(_DOLLS[i]);
+                }
+            }
+            break;
+        case '3':
+            _FOUNDDOLLS3 = new Array();
+            for(var i = 0; i < _DOLLS.length; i++){
+                //If doll matches values, put into array for display
+                if (_DOLLS[i].Type == typeSearch.value && _DOLLS[i].Star == rareSearch.value){
+                    _FOUNDDOLLS3.push(_DOLLS[i]);
+                }
+            }
+            break;
+        case '4':
+            _FOUNDDOLLS4 = new Array();
+            for(var i = 0; i < _DOLLS.length; i++){
+                //If doll matches values, put into array for display
+                if (_DOLLS[i].Type == typeSearch.value && _DOLLS[i].Star == rareSearch.value){
+                    _FOUNDDOLLS4.push(_DOLLS[i]);
+                }
+            }
+            break;
+        case '5':
+            _FOUNDDOLLS5 = new Array();
+            for(var i = 0; i < _DOLLS.length; i++){
+                //If doll matches values, put into array for display
+                if (_DOLLS[i].Type == typeSearch.value && _DOLLS[i].Star == rareSearch.value){
+                    _FOUNDDOLLS5.push(_DOLLS[i]);
+                }
+            }
+            break;
+    }
+}

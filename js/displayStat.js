@@ -8,9 +8,9 @@ var _FOUNDDOLL5;
 //EditID - Where to display final doll data
 //AppendID - Where to attach doll data to
 //CaseID - Condition for determining where loaded data will be stored
-function findDoll(editID, appendID, caseID){
-    //Clear current data from display
-    clearSelect(editID);
+function findDoll(appendID, caseID){
+    //Sanity clear
+    console.clear();
 
     //Get the currently selected doll from select dropdown
     var idSearch = document.getElementById(appendID);
@@ -29,58 +29,122 @@ function findDoll(editID, appendID, caseID){
         }
     }
 
-    //Create element div for data display
-    appendNode("ID", editID, dollToFill.ID);
-    appendNode("Health", editID, dollToFill.Health);
-    appendNode("Ammo", editID, dollToFill.Ammo);
-    appendNode("Ration", editID, dollToFill.Ration);
-    appendNode("DMG", editID, dollToFill.DMG);
-    appendNode("EVA", editID, dollToFill.EVA);
-    appendNode("ACC", editID, dollToFill.ACC);
-    appendNode("ROF", editID, dollToFill.ROF);
-    appendNode("Move", editID, dollToFill.Move);
-    appendNode("Armor", editID, dollToFill.Armor);
-    appendNode("CritRate", editID, dollToFill.CritRate);
-    appendNode("CritDmg", editID, dollToFill.CritDamage);
-    appendNode("AP", editID, dollToFill.AP);
-
-    //Check if doll has clip field, if not skip
-    if (dollToFill.Clip != null){
-        appendNode('Clip', editID, dollToFill.Clip);
-    }
-
     //Switch case to attach data to global variable for use later
     switch (caseID){
         case '1':
             _FOUNDDOLL1 = dollToFill;
-            editName("Leader", dollToFill.Name);
+            editHTML("Health1", _FOUNDDOLL1.Health);
+            editHTML("ID1", _FOUNDDOLL1.ID);
+            editHTML("Cost1", "Ammo: " +_FOUNDDOLL1.Ammo +"<br> Ration: " +_FOUNDDOLL1.Ration);
+            editHTML("DMG1", _FOUNDDOLL1.DMG);
+            editHTML("EVA1", _FOUNDDOLL1.EVA);
+            editHTML("ACC1", _FOUNDDOLL1.ACC);
+            editHTML("ROF1", _FOUNDDOLL1.ROF);
+            editHTML("Move1", _FOUNDDOLL1.Move);
+            editHTML("Armor1", _FOUNDDOLL1.Armor);
+            editHTML("critRate1", _FOUNDDOLL1.CritRate);
+            editHTML("critDMG1", _FOUNDDOLL1.CritDamage);
+            editHTML("AP1", _FOUNDDOLL1.AP);
+            if (_FOUNDDOLL1.Clip != null){
+                editHTML("Clip1", _FOUNDDOLL1.Clip);
+            }
+            else{
+                editHTML("Clip1", "∞");
+            }
             console.log("Updated doll 1: "+_FOUNDDOLL1.Name);
             break;
         case '2':
             _FOUNDDOLL2 = dollToFill;
-            editName("1stMember", dollToFill.Name);
-            console.log("Updated doll 2: "+_FOUNDDOLL2.Name);
+            editHTML("Health2", _FOUNDDOLL2.Health);
+            editHTML("Cost2", "Ammo: " +_FOUNDDOLL2.Ammo +"<br> Ration: " +_FOUNDDOLL2.Ration);
+            editHTML("ID2", _FOUNDDOLL2.ID);
+            editHTML("DMG2", _FOUNDDOLL2.DMG);
+            editHTML("EVA2", _FOUNDDOLL2.EVA);
+            editHTML("ACC2", _FOUNDDOLL2.ACC);
+            editHTML("ROF2", _FOUNDDOLL2.ROF);
+            editHTML("Move2", _FOUNDDOLL2.Move);
+            editHTML("Armor2", _FOUNDDOLL2.Armor);
+            editHTML("critRate2", _FOUNDDOLL2.CritRate);
+            editHTML("critDMG2", _FOUNDDOLL2.CritDamage);
+            editHTML("AP2", _FOUNDDOLL2.AP);
+            if (_FOUNDDOLL2.Clip != null){
+                editHTML("Clip2", _FOUNDDOLL2.Clip);
+            }
+            else{
+                editHTML("Clip2", "∞");
+            }
+            console.log("Updated doll 1: "+_FOUNDDOLL2.Name);
             break;
         case '3':
             _FOUNDDOLL3 = dollToFill;
-            editName("2ndMember", dollToFill.Name);
+            editHTML("Health3", _FOUNDDOLL3.Health);
+            editHTML("Cost3", "Ammo: " +_FOUNDDOLL3.Ammo +"<br> Ration: " +_FOUNDDOLL3.Ration);
+            editHTML("ID3", _FOUNDDOLL3.ID);
+            editHTML("DMG3", _FOUNDDOLL3.DMG);
+            editHTML("EVA3", _FOUNDDOLL3.EVA);
+            editHTML("ACC3", _FOUNDDOLL3.ACC);
+            editHTML("ROF3", _FOUNDDOLL3.ROF);
+            editHTML("Move3", _FOUNDDOLL3.Move);
+            editHTML("Armor3", _FOUNDDOLL3.Armor);
+            editHTML("critRate3", _FOUNDDOLL3.CritRate);
+            editHTML("critDMG3", _FOUNDDOLL3.CritDamage);
+            editHTML("AP3", _FOUNDDOLL3.AP);
+            if (_FOUNDDOLL3.Clip != null){
+                editHTML("Clip3", _FOUNDDOLL3.Clip);
+            }
+            else{
+                editHTML("Clip3", "∞");
+            }
             console.log("Updated doll 3: "+_FOUNDDOLL3.Name);
             break;
         case '4':
             _FOUNDDOLL4 = dollToFill;
-            editName("3rdMember", dollToFill.Name);
+            editHTML("Health4", _FOUNDDOLL4.Health);
+            editHTML("Cost4", "Ammo: " +_FOUNDDOLL4.Ammo +"<br> Ration: " +_FOUNDDOLL4.Ration);
+            editHTML("ID4", _FOUNDDOLL4.ID);
+            editHTML("DMG4", _FOUNDDOLL4.DMG);
+            editHTML("EVA4", _FOUNDDOLL4.EVA);
+            editHTML("ACC4", _FOUNDDOLL4.ACC);
+            editHTML("ROF4", _FOUNDDOLL4.ROF);
+            editHTML("Move4", _FOUNDDOLL4.Move);
+            editHTML("Armor4", _FOUNDDOLL4.Armor);
+            editHTML("critRate4", _FOUNDDOLL4.CritRate);
+            editHTML("critDMG4", _FOUNDDOLL4.CritDamage);
+            editHTML("AP4", _FOUNDDOLL4.AP);
+            if (_FOUNDDOLL4.Clip != null){
+                editHTML("Clip4", _FOUNDDOLL4.Clip);
+            }
+            else{
+                editHTML("Clip4", "∞");
+            }
             console.log("Updated doll 4: "+_FOUNDDOLL4.Name);
             break;
         case '5':
             _FOUNDDOLL5 = dollToFill;
-            editName("4thMember", dollToFill.Name);
+            editHTML("Health5", _FOUNDDOLL5.Health);
+            editHTML("Cost5", "Ammo: " +_FOUNDDOLL5.Ammo +"<br> Ration: " +_FOUNDDOLL5.Ration);
+            editHTML("ID5", _FOUNDDOLL5.ID);
+            editHTML("DMG5", _FOUNDDOLL5.DMG);
+            editHTML("EVA5", _FOUNDDOLL5.EVA);
+            editHTML("ACC5", _FOUNDDOLL5.ACC);
+            editHTML("ROF5", _FOUNDDOLL5.ROF);
+            editHTML("Move5", _FOUNDDOLL5.Move);
+            editHTML("Armor5", _FOUNDDOLL5.Armor);
+            editHTML("critRate5", _FOUNDDOLL5.CritRate);
+            editHTML("critDMG5", _FOUNDDOLL5.CritDamage);
+            editHTML("AP5", _FOUNDDOLL5.AP);
+            if (_FOUNDDOLL5.Clip != null){
+                editHTML("Clip5", _FOUNDDOLL5.Clip);
+            }
+            else{
+                editHTML("Clip5", "∞");
+            }
             console.log("Updated doll 5: "+_FOUNDDOLL5.Name);
             break;
     }
     
     //Check added because of error on first load, waits until all dolls have been added
     if (_FOUNDDOLL1 != null && _FOUNDDOLL2 != null && _FOUNDDOLL3 != null && _FOUNDDOLL4 != null && _FOUNDDOLL5 != null){
-        console.log(dollToFill.name);
         console.log("Doll 1: " +_FOUNDDOLL1.Name);
         console.log("Doll 2: " +_FOUNDDOLL2.Name);
         console.log("Doll 3: " +_FOUNDDOLL3.Name);
@@ -94,19 +158,13 @@ function findDoll(editID, appendID, caseID){
 }
 
 function appendNode(className, editId, infoToFill){
-    /*console.log("className:" +className);
-    console.log("editId:" +editId);
-    console.log("infoToFill:" +infoToFill.Name);*/
     let Node = document.createElement('div');
     Node.className = className;
     Node.id = editId;
     Node.innerHTML = className +": " +infoToFill +"<br>";
-    /*console.log("Node.className: " +Node.className);
-    console.log("Node.id: " +Node.id);
-    console.log("Node.innerHTML: " +Node.innerHTML);*/
     document.getElementById(editId).append(Node);
 }
 
-function editName(editId, nameToFill){
-    document.getElementById(editId).innerHTML = nameToFill;
+function editHTML(editId, infoToFill){
+    document.getElementById(editId).innerHTML = infoToFill;
 }

@@ -167,7 +167,7 @@ var _DOLLS = [
     {ID:171, Name:'Ribeyrolles', Type:'AR', Star:4, Health:550, Ammo:60, Ration:60, DMG:64, EVA:40, ACC:44, ROF:63, Move:10, Armor:0, CritRate:20, CritDamage:50, AP:15},
     {ID:172, Name:'AmRFB', Type:'AR', Star:5, Health:525, Ammo:60, Ration:60, DMG:69, EVA:49, ACC:68, ROF:54, Move:10, Armor:0, CritRate:30, CritDamage:50, AP:15},
     {ID:173, Name:'PKP', Type:'MG', Star:5, Health:825, Ammo:140, Ration:90, DMG:95, EVA:29, ACC:31, ROF:127, Move:44, Armor:0, CritRate:5, CritDamage:50, AP:15, Clip:15},
-    {ID:174, Name:'Type 81R', Type:'RF', Star:3, Health:375, Ammo:55, Ration:90, DMG:123, EVA:41, ACC:79, ROF:32, Move:7, Armor:0, CritRate:40, CritDamage:50, AP:15},
+    {ID:174, Name:'Type81R', Type:'RF', Star:3, Health:375, Ammo:55, Ration:90, DMG:123, EVA:41, ACC:79, ROF:32, Move:7, Armor:0, CritRate:40, CritDamage:50, AP:15},
     {ID:175, Name:'ART556', Type:'AR', Star:5, Health:580, Ammo:60, Ration:60, DMG:53, EVA:49, ACC:53, ROF:69, Move:10, Armor:0, CritRate:20, CritDamage:50, AP:15},
     {ID:176, Name:'TMP', Type:'SMG', Star:3, Health:750, Ammo:85, Ration:60, DMG:28, EVA:77, ACC:14, ROF:93, Move:12, Armor:0, CritRate:5, CritDamage:50, AP:15},
     {ID:177, Name:'KLIN', Type:'SMG', Star:4, Health:950, Ammo:85, Ration:60, DMG:25, EVA:74, ACC:11, ROF:95, Move:12, Armor:0, CritRate:5, CritDamage:50, AP:15},
@@ -406,7 +406,6 @@ window.onload = function(){
 
 //Function to find doll based on currently selected parameters
 function searchDolls(elmDollSearch, elmRareSearch, dollCase){
-    //Re-init
     //Get selection from drop-downs
     var typeSearch = document.getElementById(elmDollSearch);
     var rareSearch = document.getElementById(elmRareSearch);

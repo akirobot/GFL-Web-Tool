@@ -2,6 +2,7 @@
 function populateSelect(getElement, dollCase){
     //Clear current dropdown
     clearSelect(getElement);
+    //Double check other arrays
     //Find dropdown
     var select = document.getElementById(getElement);
     switch (dollCase){

@@ -21,10 +21,12 @@
     <script src="js/warning.js"></script>
     <script src="js/styles.js"></script> 
     <script src="js/shotgun2StarCheck.js"></script>
+    <script src="js/mutuallyExclusive.js"></script>
     <script>
         function searchDoll1(){
             searchDolls('dollSearch1', 'raritySearch1', '1');
             populateSelect('dollPick1', '1');
+            checkArray();
             findDoll('dollPick1', '1');
             changeLabelColor(1);
             SG2Star('1');
@@ -32,6 +34,7 @@
         function searchDoll2(){
             searchDolls('dollSearch2', 'raritySearch2', '2');
             populateSelect('dollPick2', '2');
+            checkArray();
             findDoll('dollPick2', '2');
             changeLabelColor(2);
             SG2Star('2');
@@ -39,6 +42,7 @@
         function searchDoll3(){
             searchDolls('dollSearch3', 'raritySearch3', '3');
             populateSelect('dollPick3', '3');
+            checkArray();
             findDoll('dollPick3', '3');
             changeLabelColor(3);
             SG2Star('3');
@@ -46,6 +50,7 @@
         function searchDoll4(){
             searchDolls('dollSearch4', 'raritySearch4', '4');
             populateSelect('dollPick4', '4');
+            checkArray();
             findDoll('dollPick4', '4');
             changeLabelColor(4);
             SG2Star('4');
@@ -53,6 +58,7 @@
         function searchDoll5(){
             searchDolls('dollSearch5', 'raritySearch5', '5');
             populateSelect('dollPick5', '5');
+            checkArray();
             findDoll('dollPick5', '5');
             changeLabelColor(5);
             SG2Star('5');

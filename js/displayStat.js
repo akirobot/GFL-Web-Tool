@@ -9,7 +9,6 @@ var _FOUNDDOLL5;
 //AppendID - Where to attach doll data to
 //CaseID - Condition for determining where loaded data will be stored
 function findDoll(appendID, caseID){
-    //Sanity clear
     console.clear();
 
     //Get the currently selected doll from select dropdown

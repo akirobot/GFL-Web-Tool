@@ -1,169 +1,115 @@
-var _FOUNDDOLL1;
-var _FOUNDDOLL2;
-var _FOUNDDOLL3;
-var _FOUNDDOLL4;
-var _FOUNDDOLL5;
-
-//Find specified doll from selection with given variables
-//EditID - Where to display final doll data
-//AppendID - Where to attach doll data to
-//CaseID - Condition for determining where loaded data will be stored
-function findDoll(appendID, caseID){
-    console.clear();
-
-    //Get the currently selected doll from select dropdown
-    var idSearch = document.getElementById(appendID);
-
-    //Temp variable
-    var dollToFill;
-
-    //console.log(idSearch.value);
-
-    //Iterate through list of T-Dolls, if ID of selection matches, store, break loop
-    //  Note: I couldn't get .find() to work for some reason, otherwise I would have used that
-    for(var i = 0; i < _DOLLS.length; i++){
-        if (_DOLLS[i].ID == idSearch.value){
-            dollToFill = _DOLLS[i];
-            break;
-        }
-    }
-
-    //Switch case to attach data to global variable for use later
+function displayStats(caseID){
     switch (caseID){
-        case '1':
-            _FOUNDDOLL1 = dollToFill;
-            editHTML("Health1", _FOUNDDOLL1.Health);
-            editHTML("ID1", _FOUNDDOLL1.ID);
-            editHTML("Cost1", "Ammo: " +_FOUNDDOLL1.Ammo +"<br> Ration: " +_FOUNDDOLL1.Ration);
-            editHTML("DMG1", _FOUNDDOLL1.DMG);
-            editHTML("EVA1", _FOUNDDOLL1.EVA);
-            editHTML("ACC1", _FOUNDDOLL1.ACC);
-            editHTML("ROF1", _FOUNDDOLL1.ROF);
-            editHTML("Move1", _FOUNDDOLL1.Move);
-            editHTML("Armor1", _FOUNDDOLL1.Armor);
-            editHTML("critRate1", _FOUNDDOLL1.CritRate);
-            editHTML("critDMG1", _FOUNDDOLL1.CritDamage);
-            editHTML("AP1", _FOUNDDOLL1.AP);
-            if (_FOUNDDOLL1.Clip != null){
-                editHTML("Clip1", _FOUNDDOLL1.Clip);
+        case 1:
+            document.getElementById("ID1").innerHTML = _SELECTDOLL1.ID;
+            document.getElementById("HP1").innerHTML = "HP: " +_SELECTDOLL1.Health;
+            document.getElementById("Ammo1").innerHTML = "Ammo: " +_SELECTDOLL1.Ammo;
+            document.getElementById("Ration1").innerHTML = "Ration: " +_SELECTDOLL1.Ration;
+            document.getElementById("DMG1").innerHTML = _SELECTDOLL1.DMG;
+            document.getElementById("EVA1").innerHTML = _SELECTDOLL1.EVA;
+            document.getElementById("ACC1").innerHTML = _SELECTDOLL1.ACC;
+            document.getElementById("ROF1").innerHTML = _SELECTDOLL1.ROF;
+            document.getElementById("MOV1").innerHTML = _SELECTDOLL1.Move;
+            document.getElementById("ARM1").innerHTML = _SELECTDOLL1.Armor;
+            document.getElementById("CRT1").innerHTML = _SELECTDOLL1.CritRate;
+            document.getElementById("CDM1").innerHTML = _SELECTDOLL1.CritDamage;
+            document.getElementById("ARP1").innerHTML = _SELECTDOLL1.AP;
+            document.getElementById("ROF1").innerHTML = _SELECTDOLL1.ROF;
+            if (_SELECTDOLL1.Clip != null) {
+                document.getElementById("CLP1").innerHTML = _SELECTDOLL1.Clip;
             }
-            else{
-                editHTML("Clip1", "∞");
+            else {
+                document.getElementById("CLP1").innerHTML = '∞';
             }
-            console.log("Updated doll 1: "+_FOUNDDOLL1.Name);
             break;
-        case '2':
-            _FOUNDDOLL2 = dollToFill;
-            editHTML("Health2", _FOUNDDOLL2.Health);
-            editHTML("Cost2", "Ammo: " +_FOUNDDOLL2.Ammo +"<br> Ration: " +_FOUNDDOLL2.Ration);
-            editHTML("ID2", _FOUNDDOLL2.ID);
-            editHTML("DMG2", _FOUNDDOLL2.DMG);
-            editHTML("EVA2", _FOUNDDOLL2.EVA);
-            editHTML("ACC2", _FOUNDDOLL2.ACC);
-            editHTML("ROF2", _FOUNDDOLL2.ROF);
-            editHTML("Move2", _FOUNDDOLL2.Move);
-            editHTML("Armor2", _FOUNDDOLL2.Armor);
-            editHTML("critRate2", _FOUNDDOLL2.CritRate);
-            editHTML("critDMG2", _FOUNDDOLL2.CritDamage);
-            editHTML("AP2", _FOUNDDOLL2.AP);
-            if (_FOUNDDOLL2.Clip != null){
-                editHTML("Clip2", _FOUNDDOLL2.Clip);
+        case 2:
+            document.getElementById("ID2").innerHTML = _SELECTDOLL2.ID;
+            document.getElementById("HP2").innerHTML = "HP: " +_SELECTDOLL2.Health;
+            document.getElementById("Ammo2").innerHTML = "Ammo: " +_SELECTDOLL2.Ammo;
+            document.getElementById("Ration2").innerHTML = "Ration: " +_SELECTDOLL2.Ration;
+            document.getElementById("DMG2").innerHTML = _SELECTDOLL2.DMG;
+            document.getElementById("EVA2").innerHTML = _SELECTDOLL2.EVA;
+            document.getElementById("ACC2").innerHTML = _SELECTDOLL2.ACC;
+            document.getElementById("ROF2").innerHTML = _SELECTDOLL2.ROF;
+            document.getElementById("MOV2").innerHTML = _SELECTDOLL2.Move;
+            document.getElementById("ARM2").innerHTML = _SELECTDOLL2.Armor;
+            document.getElementById("CRT2").innerHTML = _SELECTDOLL2.CritRate;
+            document.getElementById("CDM2").innerHTML = _SELECTDOLL2.CritDamage;
+            document.getElementById("ARP2").innerHTML = _SELECTDOLL2.AP;
+            document.getElementById("ROF2").innerHTML = _SELECTDOLL2.ROF;
+            if (_SELECTDOLL2.Clip != null) {
+                document.getElementById("CLP2").innerHTML = _SELECTDOLL2.Clip;
             }
-            else{
-                editHTML("Clip2", "∞");
+            else {
+                document.getElementById("CLP2").innerHTML = '∞';
             }
-            console.log("Updated doll 1: "+_FOUNDDOLL2.Name);
             break;
-        case '3':
-            _FOUNDDOLL3 = dollToFill;
-            editHTML("Health3", _FOUNDDOLL3.Health);
-            editHTML("Cost3", "Ammo: " +_FOUNDDOLL3.Ammo +"<br> Ration: " +_FOUNDDOLL3.Ration);
-            editHTML("ID3", _FOUNDDOLL3.ID);
-            editHTML("DMG3", _FOUNDDOLL3.DMG);
-            editHTML("EVA3", _FOUNDDOLL3.EVA);
-            editHTML("ACC3", _FOUNDDOLL3.ACC);
-            editHTML("ROF3", _FOUNDDOLL3.ROF);
-            editHTML("Move3", _FOUNDDOLL3.Move);
-            editHTML("Armor3", _FOUNDDOLL3.Armor);
-            editHTML("critRate3", _FOUNDDOLL3.CritRate);
-            editHTML("critDMG3", _FOUNDDOLL3.CritDamage);
-            editHTML("AP3", _FOUNDDOLL3.AP);
-            if (_FOUNDDOLL3.Clip != null){
-                editHTML("Clip3", _FOUNDDOLL3.Clip);
+        case 3:
+            document.getElementById("ID3").innerHTML = _SELECTDOLL3.ID;
+            document.getElementById("HP3").innerHTML = "HP: " +_SELECTDOLL3.Health;
+            document.getElementById("Ammo3").innerHTML = "Ammo: " +_SELECTDOLL3.Ammo;
+            document.getElementById("Ration3").innerHTML = "Ration: " +_SELECTDOLL3.Ration;
+            document.getElementById("DMG3").innerHTML = _SELECTDOLL3.DMG;
+            document.getElementById("EVA3").innerHTML = _SELECTDOLL3.EVA;
+            document.getElementById("ACC3").innerHTML = _SELECTDOLL3.ACC;
+            document.getElementById("ROF3").innerHTML = _SELECTDOLL3.ROF;
+            document.getElementById("MOV3").innerHTML = _SELECTDOLL3.Move;
+            document.getElementById("ARM3").innerHTML = _SELECTDOLL3.Armor;
+            document.getElementById("CRT3").innerHTML = _SELECTDOLL3.CritRate;
+            document.getElementById("CDM3").innerHTML = _SELECTDOLL3.CritDamage;
+            document.getElementById("ARP3").innerHTML = _SELECTDOLL3.AP;
+            document.getElementById("ROF3").innerHTML = _SELECTDOLL3.ROF;
+            if (_SELECTDOLL3.Clip != null) {
+                document.getElementById("CLP3").innerHTML = _SELECTDOLL3.Clip;
             }
-            else{
-                editHTML("Clip3", "∞");
+            else {
+                document.getElementById("CLP3").innerHTML = '∞';
             }
-            console.log("Updated doll 3: "+_FOUNDDOLL3.Name);
             break;
-        case '4':
-            _FOUNDDOLL4 = dollToFill;
-            editHTML("Health4", _FOUNDDOLL4.Health);
-            editHTML("Cost4", "Ammo: " +_FOUNDDOLL4.Ammo +"<br> Ration: " +_FOUNDDOLL4.Ration);
-            editHTML("ID4", _FOUNDDOLL4.ID);
-            editHTML("DMG4", _FOUNDDOLL4.DMG);
-            editHTML("EVA4", _FOUNDDOLL4.EVA);
-            editHTML("ACC4", _FOUNDDOLL4.ACC);
-            editHTML("ROF4", _FOUNDDOLL4.ROF);
-            editHTML("Move4", _FOUNDDOLL4.Move);
-            editHTML("Armor4", _FOUNDDOLL4.Armor);
-            editHTML("critRate4", _FOUNDDOLL4.CritRate);
-            editHTML("critDMG4", _FOUNDDOLL4.CritDamage);
-            editHTML("AP4", _FOUNDDOLL4.AP);
-            if (_FOUNDDOLL4.Clip != null){
-                editHTML("Clip4", _FOUNDDOLL4.Clip);
+        case 4:
+            document.getElementById("ID4").innerHTML = _SELECTDOLL4.ID;
+            document.getElementById("HP4").innerHTML = "HP: " +_SELECTDOLL4.Health;
+            document.getElementById("Ammo4").innerHTML = "Ammo: " +_SELECTDOLL4.Ammo;
+            document.getElementById("Ration4").innerHTML = "Ration: " +_SELECTDOLL4.Ration;
+            document.getElementById("DMG4").innerHTML = _SELECTDOLL4.DMG;
+            document.getElementById("EVA4").innerHTML = _SELECTDOLL4.EVA;
+            document.getElementById("ACC4").innerHTML = _SELECTDOLL4.ACC;
+            document.getElementById("ROF4").innerHTML = _SELECTDOLL4.ROF;
+            document.getElementById("MOV4").innerHTML = _SELECTDOLL4.Move;
+            document.getElementById("ARM4").innerHTML = _SELECTDOLL4.Armor;
+            document.getElementById("CRT4").innerHTML = _SELECTDOLL4.CritRate;
+            document.getElementById("CDM4").innerHTML = _SELECTDOLL4.CritDamage;
+            document.getElementById("ARP4").innerHTML = _SELECTDOLL4.AP;
+            document.getElementById("ROF4").innerHTML = _SELECTDOLL4.ROF;
+            if (_SELECTDOLL4.Clip != null) {
+                document.getElementById("CLP4").innerHTML = _SELECTDOLL4.Clip;
             }
-            else{
-                editHTML("Clip4", "∞");
+            else {
+                document.getElementById("CLP4").innerHTML = '∞';
             }
-            console.log("Updated doll 4: "+_FOUNDDOLL4.Name);
             break;
-        case '5':
-            _FOUNDDOLL5 = dollToFill;
-            editHTML("Health5", _FOUNDDOLL5.Health);
-            editHTML("Cost5", "Ammo: " +_FOUNDDOLL5.Ammo +"<br> Ration: " +_FOUNDDOLL5.Ration);
-            editHTML("ID5", _FOUNDDOLL5.ID);
-            editHTML("DMG5", _FOUNDDOLL5.DMG);
-            editHTML("EVA5", _FOUNDDOLL5.EVA);
-            editHTML("ACC5", _FOUNDDOLL5.ACC);
-            editHTML("ROF5", _FOUNDDOLL5.ROF);
-            editHTML("Move5", _FOUNDDOLL5.Move);
-            editHTML("Armor5", _FOUNDDOLL5.Armor);
-            editHTML("critRate5", _FOUNDDOLL5.CritRate);
-            editHTML("critDMG5", _FOUNDDOLL5.CritDamage);
-            editHTML("AP5", _FOUNDDOLL5.AP);
-            if (_FOUNDDOLL5.Clip != null){
-                editHTML("Clip5", _FOUNDDOLL5.Clip);
+        case 5:
+            document.getElementById("ID5").innerHTML = _SELECTDOLL5.ID;
+            document.getElementById("HP5").innerHTML = "HP: " +_SELECTDOLL5.Health;
+            document.getElementById("Ammo5").innerHTML = "Ammo: " +_SELECTDOLL5.Ammo;
+            document.getElementById("Ration5").innerHTML = "Ration: " +_SELECTDOLL5.Ration;
+            document.getElementById("DMG5").innerHTML = _SELECTDOLL5.DMG;
+            document.getElementById("EVA5").innerHTML = _SELECTDOLL5.EVA;
+            document.getElementById("ACC5").innerHTML = _SELECTDOLL5.ACC;
+            document.getElementById("ROF5").innerHTML = _SELECTDOLL5.ROF;
+            document.getElementById("MOV5").innerHTML = _SELECTDOLL5.Move;
+            document.getElementById("ARM5").innerHTML = _SELECTDOLL5.Armor;
+            document.getElementById("CRT5").innerHTML = _SELECTDOLL5.CritRate;
+            document.getElementById("CDM5").innerHTML = _SELECTDOLL5.CritDamage;
+            document.getElementById("ARP5").innerHTML = _SELECTDOLL5.AP;
+            document.getElementById("ROF5").innerHTML = _SELECTDOLL5.ROF;
+            if (_SELECTDOLL5.Clip != null) {
+                document.getElementById("CLP5").innerHTML = _SELECTDOLL5.Clip;
             }
-            else{
-                editHTML("Clip5", "∞");
+            else {
+                document.getElementById("CLP5").innerHTML = '∞';
             }
-            console.log("Updated doll 5: "+_FOUNDDOLL5.Name);
             break;
-    }
-    
-    //Check added because of error on first load, waits until all dolls have been added
-    if (_FOUNDDOLL1 != null && _FOUNDDOLL2 != null && _FOUNDDOLL3 != null && _FOUNDDOLL4 != null && _FOUNDDOLL5 != null){
-        console.log("Doll 1: " +_FOUNDDOLL1.Name);
-        console.log("Doll 2: " +_FOUNDDOLL2.Name);
-        console.log("Doll 3: " +_FOUNDDOLL3.Name);
-        console.log("Doll 4: " +_FOUNDDOLL4.Name);
-        console.log("Doll 5: " +_FOUNDDOLL5.Name);
-        //Check added because of error on first load, waits until fairy has been added
-        if (_FOUNDFAIRY != null){
-            console.log("Fairy: "+_FOUNDFAIRY.Name);
-        }
     }
 }
 
-function appendNode(className, editId, infoToFill){
-    let Node = document.createElement('div');
-    Node.className = className;
-    Node.id = editId;
-    Node.innerHTML = className +": " +infoToFill +"<br>";
-    document.getElementById(editId).append(Node);
-}
-
-function editHTML(editId, infoToFill){
-    document.getElementById(editId).innerHTML = infoToFill;
-}

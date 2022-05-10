@@ -387,74 +387,161 @@ var _DOLLS = [
     {ID:1034, Name:'Minos', Type:'SG', Star:1, Health:1430, Ammo:90, Ration:140, DMG:39, EVA:11, ACC:12, ROF:24, Move:6, Armor:22, CritRate:40, CritDamage:50, AP:15, Clip:4}
 ];
 
-var _FOUNDDOLLS1;
-var _FOUNDDOLLS2;
-var _FOUNDDOLLS3;
-var _FOUNDDOLLS4;
-var _FOUNDDOLLS5;
+var _FOUNDDOLLS1, _FOUNDDOLLS2, _FOUNDDOLLS3, _FOUNDDOLLS4, _FOUNDDOLLS5;
+var _SELECTDOLL1, _SELECTDOLL2, _SELECTDOLL3, _SELECTDOLL4, _SELECTDOLL5;
 
+var _1SHG, _2SHG, _3SHG, _4SHG, _5SHG;
+var _1SSMG, _2SSMG, _3SSMG, _4SSMG, _5SSMG;
+var _1SAR, _2SAR, _3SAR, _4SAR, _5SAR;
+var _1SRF, _2SRF, _3SRF, _4SRF, _5SRF;
+var _1SMG, _2SMG, _3SMG, _4SMG, _5SMG;
+var _1SSG, _3SSG, _4SSG, _5SSG;
 
-//Initial load for displaying stats, uses default values
-window.onload = function(){
-    searchDoll1();    
-    searchDoll2();  
-    searchDoll3();  
-    searchDoll4();  
-    searchDoll5();
-    populateFairy();
-}
+function populateArrays(){
+    _1SHG = new Array();
+    _2SHG = new Array();
+    _3SHG = new Array();
+    _4SHG = new Array();
+    _5SHG = new Array();
 
-//Function to find doll based on currently selected parameters
-function searchDolls(elmDollSearch, elmRareSearch, dollCase){
-    //Get selection from drop-downs
-    var typeSearch = document.getElementById(elmDollSearch);
-    var rareSearch = document.getElementById(elmRareSearch);
+    _1SSMG = new Array();
+    _2SSMG = new Array();
+    _3SSMG = new Array();
+    _4SSMG = new Array();
+    _5SSMG = new Array();
 
-    switch (dollCase){
-        case '1':
-            _FOUNDDOLLS1 = new Array();
-            for(var i = 0; i < _DOLLS.length; i++){
-                //If doll matches values, put into array for display
-                if (_DOLLS[i].Type == typeSearch.value && _DOLLS[i].Star == rareSearch.value && _FOUNDDOLL2 != _DOLLS[i] && _FOUNDDOLL3 != _DOLLS[i] && _FOUNDDOLL4 != _DOLLS[i] && _FOUNDDOLL5 != _DOLLS[i]){
-                    _FOUNDDOLLS1.push(_DOLLS[i]);
+    _1SAR = new Array();
+    _2SAR = new Array();
+    _3SAR = new Array();
+    _4SAR = new Array();
+    _5SAR = new Array();
+
+    _1SRF = new Array();
+    _2SRF = new Array();
+    _3SRF = new Array();
+    _4SRF = new Array();
+    _5SRF = new Array();
+
+    _1SMG = new Array();
+    _2SMG = new Array();
+    _3SMG = new Array();
+    _4SMG = new Array();
+    _5SMG = new Array();
+
+    _1SSG = new Array();
+    _3SSG = new Array();
+    _4SSG = new Array();
+    _5SSG = new Array();
+
+    for (var i = 0; i < _DOLLS.length; i++){
+        switch (_DOLLS[i].Star){
+            case 1:
+                switch (_DOLLS[i].Type){
+                    case 'HG':
+                        _1SHG.push(_DOLLS[i]);
+                        break;
+                    case 'SMG':
+                        _1SSMG.push(_DOLLS[i]);
+                        break;
+                    case 'AR':
+                        _1SAR.push(_DOLLS[i]);
+                        break;
+                    case 'RF':
+                        _1SRF.push(_DOLLS[i]);
+                        break;
+                    case 'MG':
+                        _1SMG.push(_DOLLS[i]);
+                        break;
+                    case 'SG':
+                        _1SSG.push(_DOLLS[i]);
+                        break;
                 }
-            }
-            break;
-        case '2':
-            _FOUNDDOLLS2 = new Array();
-            for(var i = 0; i < _DOLLS.length; i++){
-                //If doll matches values, put into array for display
-                if (_DOLLS[i].Type == typeSearch.value && _DOLLS[i].Star == rareSearch.value && _FOUNDDOLL1 != _DOLLS[i] && _FOUNDDOLL3 != _DOLLS[i] && _FOUNDDOLL4 != _DOLLS[i] && _FOUNDDOLL5 != _DOLLS[i]){
-                    _FOUNDDOLLS2.push(_DOLLS[i]);
+                break;
+            case 2:
+                switch (_DOLLS[i].Type){
+                    case 'HG':
+                        _2SHG.push(_DOLLS[i]);
+                        break;
+                    case 'SMG':
+                        _2SSMG.push(_DOLLS[i]);
+                        break;
+                    case 'AR':
+                        _2SAR.push(_DOLLS[i]);
+                        break;
+                    case 'RF':
+                        _2SRF.push(_DOLLS[i]);
+                        break;
+                    case 'MG':
+                        _2SMG.push(_DOLLS[i]);
+                        break;
                 }
-            }
-            break;
-        case '3':
-            _FOUNDDOLLS3 = new Array();
-            for(var i = 0; i < _DOLLS.length; i++){
-                //If doll matches values, put into array for display
-                if (_DOLLS[i].Type == typeSearch.value && _DOLLS[i].Star == rareSearch.value  && _FOUNDDOLL1 != _DOLLS[i] && _FOUNDDOLL2 != _DOLLS[i] && _FOUNDDOLL4 != _DOLLS[i] && _FOUNDDOLL5 != _DOLLS[i]){
-                    _FOUNDDOLLS3.push(_DOLLS[i]);
+                break;
+            case 3:
+                switch (_DOLLS[i].Type){
+                    case 'HG':
+                        _3SHG.push(_DOLLS[i]);
+                        break;
+                    case 'SMG':
+                        _3SSMG.push(_DOLLS[i]);
+                        break;
+                    case 'AR':
+                        _3SAR.push(_DOLLS[i]);
+                        break;
+                    case 'RF':
+                        _3SRF.push(_DOLLS[i]);
+                        break;
+                    case 'MG':
+                        _3SMG.push(_DOLLS[i]);
+                        break;
+                    case 'SG':
+                        _3SSG.push(_DOLLS[i]);
+                        break;
                 }
-            }
-            break;
-        case '4':
-            _FOUNDDOLLS4 = new Array();
-            for(var i = 0; i < _DOLLS.length; i++){
-                //If doll matches values, put into array for display
-                if (_DOLLS[i].Type == typeSearch.value && _DOLLS[i].Star == rareSearch.value && _FOUNDDOLL1 != _DOLLS[i] && _FOUNDDOLL2 != _DOLLS[i] && _FOUNDDOLL3 != _DOLLS[i] && _FOUNDDOLL5 != _DOLLS[i]){
-                    _FOUNDDOLLS4.push(_DOLLS[i]);
+                break;
+            case 4:
+                switch (_DOLLS[i].Type){
+                    case 'HG':
+                        _4SHG.push(_DOLLS[i]);
+                        break;
+                    case 'SMG':
+                        _4SSMG.push(_DOLLS[i]);
+                        break;
+                    case 'AR':
+                        _4SAR.push(_DOLLS[i]);
+                        break;
+                    case 'RF':
+                        _4SRF.push(_DOLLS[i]);
+                        break;
+                    case 'MG':
+                        _4SMG.push(_DOLLS[i]);
+                        break;
+                    case 'SG':
+                        _4SSG.push(_DOLLS[i]);
+                        break;
                 }
-            }
-            break;
-        case '5':
-            _FOUNDDOLLS5 = new Array();
-            for(var i = 0; i < _DOLLS.length; i++){
-                //If doll matches values, put into array for display
-                if (_DOLLS[i].Type == typeSearch.value && _DOLLS[i].Star == rareSearch.value  && _FOUNDDOLL1 != _DOLLS[i] && _FOUNDDOLL2 != _DOLLS[i] && _FOUNDDOLL3 != _DOLLS[i] && _FOUNDDOLL4 != _DOLLS[i]){
-                    _FOUNDDOLLS5.push(_DOLLS[i]);
+                break;
+            case 5:
+                switch (_DOLLS[i].Type){
+                    case 'HG':
+                        _5SHG.push(_DOLLS[i]);
+                        break;
+                    case 'SMG':
+                        _5SSMG.push(_DOLLS[i]);
+                        break;
+                    case 'AR':
+                        _5SAR.push(_DOLLS[i]);
+                        break;
+                    case 'RF':
+                        _5SRF.push(_DOLLS[i]);
+                        break;
+                    case 'MG':
+                        _5SMG.push(_DOLLS[i]);
+                        break;
+                    case 'SG':
+                        _5SSG.push(_DOLLS[i]);
+                        break;
                 }
-            }
-            break;
+                break;
+        }
     }
 }

@@ -1,0 +1,92 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: auto;
+    background-color: #404040;
+}
+
+.name-container {
+    display: grid;
+    grid-template-columns: 75% 15%;
+    font-family: 'Shippori Mincho B1', serif;
+    font-size: 23px;
+    padding: 5px;
+    margin: 5px;
+    text-align: right;
+}
+
+select {  
+    background-color:#f0b000;
+    background-position: right 10px center;
+    background-repeat: no-repeat;
+    background-size: auto 50%;
+    border-radius:2px;
+    border:none;
+    color: #ffffff;
+    padding: 5px;
+    margin: 5px;
+    outline: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    color: black;
+    width: 90%;
+    font-size: 15px;
+}
+
+#dollStats{
+    font-family: 'Yantramanav', sans-serif;
+}
+
+.dropdown-container{
+    display:grid;
+    grid-auto-flow: column;
+}
+
+.col-container {
+    display:grid;
+    background-color: gray;
+    margin: 2px;
+    padding: 2px;
+}
+
+
+.statGrid {
+    padding: 5px;
+    display: grid;
+    grid-template-columns: 75px 25px 20px 25px;
+    gap: 10px;
+}
+
+.stat {
+    text-align: center;
+}
+
+.modstat {
+    text-align: center;
+}
+
+.grid-container {
+    display: grid;
+    grid-auto-flow:column;
+}
+  
+.grid-container > div {
+    background-color: #404040;
+    margin: 5px;
+    padding: 5px;
+}
+
+.displayStats {
+    color: white;
+}
+
+#fairySearch{
+    margin-bottom: 10px;
+}
+
+.error {
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
+}

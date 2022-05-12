@@ -1,12 +1,12 @@
 //Fill populate array with data
-function populateSelect(getElement, dollCase){
+function populateSelect(dollCase){
     //Clear current dropdown
-    clearSelect(getElement);
+    clearSelect('dollPick' +dollCase);
     //Double check other arrays
     //Find dropdown
-    var select = document.getElementById(getElement);
+    var select = document.getElementById('dollPick' +dollCase);
     switch (dollCase){
-        case '1':
+        case 1:
             for (var i = 0; i < _FOUNDDOLLS1.length; i++){
                 var opt = _FOUNDDOLLS1[i];
                 var el = document.createElement("option");
@@ -16,7 +16,7 @@ function populateSelect(getElement, dollCase){
                 select.appendChild(el);
             }
             break;
-        case '2':
+        case 2:
             for (var i = 0; i < _FOUNDDOLLS2.length; i++){
                 var opt = _FOUNDDOLLS2[i];
                 var el = document.createElement("option");
@@ -26,7 +26,7 @@ function populateSelect(getElement, dollCase){
                 select.appendChild(el);
             }
             break;
-        case '3':
+        case 3:
             for (var i = 0; i < _FOUNDDOLLS3.length; i++){
                 var opt = _FOUNDDOLLS3[i];
                 var el = document.createElement("option");
@@ -36,7 +36,7 @@ function populateSelect(getElement, dollCase){
                 select.appendChild(el);
             }
             break;
-        case '4':
+        case 4:
             for (var i = 0; i < _FOUNDDOLLS4.length; i++){
                 var opt = _FOUNDDOLLS4[i];
                 var el = document.createElement("option");
@@ -46,7 +46,7 @@ function populateSelect(getElement, dollCase){
                 select.appendChild(el);
             }
             break;
-        case '5':
+        case 5:
             for (var i = 0; i < _FOUNDDOLLS5.length; i++){
                 var opt = _FOUNDDOLLS5[i];
                 var el = document.createElement("option");

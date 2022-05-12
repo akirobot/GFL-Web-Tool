@@ -1,6 +1,6 @@
 function SG2Star(dollCase){
     switch (dollCase){
-        case '1':
+        case 1:
             if (dollSearch1.value != 'SG'){
                 document.getElementById("2star1").removeAttribute("hidden");
             }
@@ -15,7 +15,7 @@ function SG2Star(dollCase){
             }
         break;
         
-        case '2':
+        case 2:
             if (dollSearch2.value != 'SG'){
                 document.getElementById("2star2").removeAttribute("hidden");
             }
@@ -30,7 +30,7 @@ function SG2Star(dollCase){
             }
         break;
         
-        case '3':
+        case 3:
             if (dollSearch3.value != 'SG'){
                 document.getElementById("2star3").removeAttribute("hidden");
             }
@@ -45,7 +45,7 @@ function SG2Star(dollCase){
             }
         break;
         
-        case '4':
+        case 4:
             if (dollSearch4.value != 'SG'){
                 document.getElementById("2star4").removeAttribute("hidden");
             }
@@ -60,7 +60,7 @@ function SG2Star(dollCase){
             }
         break;
         
-        case '5':
+        case 5:
             if (dollSearch5.value != 'SG'){
                 document.getElementById("2star5").removeAttribute("hidden");
             }

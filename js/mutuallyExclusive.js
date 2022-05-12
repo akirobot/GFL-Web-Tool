@@ -1,4 +1,4 @@
-function checkArray(){
+/*function checkArray(){
     if (_FOUNDDOLLS1.length != null && _FOUNDDOLLS2 != null && _FOUNDDOLLS3 != null && _FOUNDDOLLS4 != null && _FOUNDDOLLS5 != null){
         for (var i = 0; i < _FOUNDDOLLS1.length; i++){
             if (_FOUNDDOLLS1[i] === _FOUNDDOLL2){
@@ -60,4 +60,4 @@ function checkArray(){
         populateSelect('dollPick4', '4');
         populateSelect('dollPick5', '5');
     }    
-}
+}*/

@@ -8,11 +8,11 @@ var _FOUNDDOLL5;
 //EditID - Where to display final doll data
 //AppendID - Where to attach doll data to
 //CaseID - Condition for determining where loaded data will be stored
-function findDoll(appendID, caseID){
+function findDoll(caseID){
     console.clear();
 
     //Get the currently selected doll from select dropdown
-    var idSearch = document.getElementById(appendID);
+    var idSearch = document.getElementById('dollPick' +caseID);
 
     //Temp variable
     var dollToFill;
@@ -30,7 +30,7 @@ function findDoll(appendID, caseID){
 
     //Switch case to attach data to global variable for use later
     switch (caseID){
-        case '1':
+        case 1:
             _FOUNDDOLL1 = dollToFill;
             editHTML("Health1", _FOUNDDOLL1.Health);
             editHTML("ID1", _FOUNDDOLL1.ID);
@@ -52,7 +52,7 @@ function findDoll(appendID, caseID){
             }
             console.log("Updated doll 1: "+_FOUNDDOLL1.Name);
             break;
-        case '2':
+        case 2:
             _FOUNDDOLL2 = dollToFill;
             editHTML("Health2", _FOUNDDOLL2.Health);
             editHTML("Cost2", "Ammo: " +_FOUNDDOLL2.Ammo +"<br> Ration: " +_FOUNDDOLL2.Ration);
@@ -74,7 +74,7 @@ function findDoll(appendID, caseID){
             }
             console.log("Updated doll 1: "+_FOUNDDOLL2.Name);
             break;
-        case '3':
+        case 3:
             _FOUNDDOLL3 = dollToFill;
             editHTML("Health3", _FOUNDDOLL3.Health);
             editHTML("Cost3", "Ammo: " +_FOUNDDOLL3.Ammo +"<br> Ration: " +_FOUNDDOLL3.Ration);
@@ -96,7 +96,7 @@ function findDoll(appendID, caseID){
             }
             console.log("Updated doll 3: "+_FOUNDDOLL3.Name);
             break;
-        case '4':
+        case 4:
             _FOUNDDOLL4 = dollToFill;
             editHTML("Health4", _FOUNDDOLL4.Health);
             editHTML("Cost4", "Ammo: " +_FOUNDDOLL4.Ammo +"<br> Ration: " +_FOUNDDOLL4.Ration);
@@ -118,7 +118,7 @@ function findDoll(appendID, caseID){
             }
             console.log("Updated doll 4: "+_FOUNDDOLL4.Name);
             break;
-        case '5':
+        case 5:
             _FOUNDDOLL5 = dollToFill;
             editHTML("Health5", _FOUNDDOLL5.Health);
             editHTML("Cost5", "Ammo: " +_FOUNDDOLL5.Ammo +"<br> Ration: " +_FOUNDDOLL5.Ration);

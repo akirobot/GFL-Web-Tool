@@ -395,63 +395,54 @@ var _FOUNDDOLLS5;
 
 
 //Initial load for displaying stats, uses default values
-window.onload = function(){
-    searchDoll1();    
-    searchDoll2();  
-    searchDoll3();  
-    searchDoll4();  
-    searchDoll5();
-    populateFairy();
-}
 
 //Function to find doll based on currently selected parameters
-function searchDolls(elmDollSearch, elmRareSearch, dollCase){
+function searchDolls(dollCase){
     //Get selection from drop-downs
-    var typeSearch = document.getElementById(elmDollSearch);
-    var rareSearch = document.getElementById(elmRareSearch);
-
+    var typeSearch = document.getElementById('dollSearch' +dollCase);
+    var rareSearch = document.getElementById('raritySearch' +dollCase);
     switch (dollCase){
-        case '1':
+        case 1:
             _FOUNDDOLLS1 = new Array();
             for(var i = 0; i < _DOLLS.length; i++){
                 //If doll matches values, put into array for display
-                if (_DOLLS[i].Type == typeSearch.value && _DOLLS[i].Star == rareSearch.value && _FOUNDDOLL2 != _DOLLS[i] && _FOUNDDOLL3 != _DOLLS[i] && _FOUNDDOLL4 != _DOLLS[i] && _FOUNDDOLL5 != _DOLLS[i]){
+                if (_DOLLS[i].Type == typeSearch.value && _DOLLS[i].Star == rareSearch.value){
                     _FOUNDDOLLS1.push(_DOLLS[i]);
                 }
             }
             break;
-        case '2':
+        case 2:
             _FOUNDDOLLS2 = new Array();
             for(var i = 0; i < _DOLLS.length; i++){
                 //If doll matches values, put into array for display
-                if (_DOLLS[i].Type == typeSearch.value && _DOLLS[i].Star == rareSearch.value && _FOUNDDOLL1 != _DOLLS[i] && _FOUNDDOLL3 != _DOLLS[i] && _FOUNDDOLL4 != _DOLLS[i] && _FOUNDDOLL5 != _DOLLS[i]){
+                if (_DOLLS[i].Type == typeSearch.value && _DOLLS[i].Star == rareSearch.value){
                     _FOUNDDOLLS2.push(_DOLLS[i]);
                 }
             }
             break;
-        case '3':
+        case 3:
             _FOUNDDOLLS3 = new Array();
             for(var i = 0; i < _DOLLS.length; i++){
                 //If doll matches values, put into array for display
-                if (_DOLLS[i].Type == typeSearch.value && _DOLLS[i].Star == rareSearch.value  && _FOUNDDOLL1 != _DOLLS[i] && _FOUNDDOLL2 != _DOLLS[i] && _FOUNDDOLL4 != _DOLLS[i] && _FOUNDDOLL5 != _DOLLS[i]){
+                if (_DOLLS[i].Type == typeSearch.value && _DOLLS[i].Star == rareSearch.value){
                     _FOUNDDOLLS3.push(_DOLLS[i]);
                 }
             }
             break;
-        case '4':
+        case 4:
             _FOUNDDOLLS4 = new Array();
             for(var i = 0; i < _DOLLS.length; i++){
                 //If doll matches values, put into array for display
-                if (_DOLLS[i].Type == typeSearch.value && _DOLLS[i].Star == rareSearch.value && _FOUNDDOLL1 != _DOLLS[i] && _FOUNDDOLL2 != _DOLLS[i] && _FOUNDDOLL3 != _DOLLS[i] && _FOUNDDOLL5 != _DOLLS[i]){
+                if (_DOLLS[i].Type == typeSearch.value && _DOLLS[i].Star == rareSearch.value){
                     _FOUNDDOLLS4.push(_DOLLS[i]);
                 }
             }
             break;
-        case '5':
+        case 5:
             _FOUNDDOLLS5 = new Array();
             for(var i = 0; i < _DOLLS.length; i++){
                 //If doll matches values, put into array for display
-                if (_DOLLS[i].Type == typeSearch.value && _DOLLS[i].Star == rareSearch.value  && _FOUNDDOLL1 != _DOLLS[i] && _FOUNDDOLL2 != _DOLLS[i] && _FOUNDDOLL3 != _DOLLS[i] && _FOUNDDOLL4 != _DOLLS[i]){
+                if (_DOLLS[i].Type == typeSearch.value && _DOLLS[i].Star == rareSearch.value){
                     _FOUNDDOLLS5.push(_DOLLS[i]);
                 }
             }

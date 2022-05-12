@@ -23,45 +23,20 @@
     <script src="js/shotgun2StarCheck.js"></script>
     <script src="js/mutuallyExclusive.js"></script>
     <script>
-        function searchDoll1(){
-            searchDolls('dollSearch1', 'raritySearch1', '1');
-            populateSelect('dollPick1', '1');
-            checkArray();
-            findDoll('dollPick1', '1');
-            changeLabelColor(1);
-            SG2Star('1');
+        window.onload = function(){
+            searchDoll(1);    
+            searchDoll(2);  
+            searchDoll(3);  
+            searchDoll(4);  
+            searchDoll(5);
+            populateFairy();
         }
-        function searchDoll2(){
-            searchDolls('dollSearch2', 'raritySearch2', '2');
-            populateSelect('dollPick2', '2');
-            checkArray();
-            findDoll('dollPick2', '2');
-            changeLabelColor(2);
-            SG2Star('2');
-        }
-        function searchDoll3(){
-            searchDolls('dollSearch3', 'raritySearch3', '3');
-            populateSelect('dollPick3', '3');
-            checkArray();
-            findDoll('dollPick3', '3');
-            changeLabelColor(3);
-            SG2Star('3');
-        }
-        function searchDoll4(){
-            searchDolls('dollSearch4', 'raritySearch4', '4');
-            populateSelect('dollPick4', '4');
-            checkArray();
-            findDoll('dollPick4', '4');
-            changeLabelColor(4);
-            SG2Star('4');
-        }
-        function searchDoll5(){
-            searchDolls('dollSearch5', 'raritySearch5', '5');
-            populateSelect('dollPick5', '5');
-            checkArray();
-            findDoll('dollPick5', '5');
-            changeLabelColor(5);
-            SG2Star('5');
+        function searchDoll(caseID){
+            searchDolls(caseID);
+            populateSelect(caseID);
+            findDoll(caseID);
+            changeLabelColor(caseID);
+            SG2Star(caseID);
         }
     </script>
 
@@ -75,7 +50,7 @@
                     <div class="col-container">
                         <div class="name-container" id="Leader">
                             <div id="sD">
-                                <select name="selectDoll" id="dollPick1" onclick="findDoll('dollPick1', '1')"></select>
+                                <select name="selectDoll" id="dollPick1" onclick="findDoll(1)"></select>
                             </div>
                             <div id="ID1">test</div>
                         </div>
@@ -83,7 +58,7 @@
                     <div class="col-container">
                         <div class="dropdown-container">
                             <div id="rS">
-                                <select name="rarity" id="raritySearch1" onchange="searchDoll1()">
+                                <select name="rarity" id="raritySearch1" onchange="searchDoll(1)">
                                     <option value=1>☆</option>
                                     <option id="2star1" value=2>☆☆</option>
                                     <option value=3>☆☆☆</option>
@@ -92,7 +67,7 @@
                                 </select>
                             </div>
                             <div id="dS">
-                                <select name="dolls" id="dollSearch1" onchange="searchDoll1()">
+                                <select name="dolls" id="dollSearch1" onchange="searchDoll(1)">
                                     <option value="HG">HG</option>
                                     <option value="SMG">SMG</option>
                                     <option value="AR">AR</option>
@@ -165,7 +140,7 @@
                     <div class="col-container">
                         <div class="name-container" id="1stMember">
                             <div id="sD">
-                                <select name="selectDoll" id="dollPick2" onclick="findDoll('dollPick2', '2')"></select>
+                                <select name="selectDoll" id="dollPick2" onclick="findDoll(2)"></select>
                             </div>
                             <div id="ID2">test</div>
                         </div>
@@ -173,7 +148,7 @@
                     <div class="col-container">
                         <div class="dropdown-container">
                             <div id="rS">
-                                <select name="rarity" id="raritySearch2" onchange="searchDoll2()">
+                                <select name="rarity" id="raritySearch2" onchange="searchDoll(2)">
                                     <option value=1>☆</option>
                                     <option id="2star2" value=2>☆☆</option>
                                     <option value=3>☆☆☆</option>
@@ -182,7 +157,7 @@
                                 </select>
                             </div>
                             <div id="dS">
-                                <select name="dolls" id="dollSearch2" onchange="searchDoll2()">
+                                <select name="dolls" id="dollSearch2" onchange="searchDoll(2)">
                                     <option value="HG">HG</option>
                                     <option value="SMG">SMG</option>
                                     <option value="AR">AR</option>
@@ -255,7 +230,7 @@
                     <div class="col-container">
                         <div class="name-container" id="2ndMember">
                             <div id="sD">
-                                <select name="selectDoll" id="dollPick3" onclick="findDoll('dollPick3', '3')"></select>
+                                <select name="selectDoll" id="dollPick3" onclick="findDoll(3)"></select>
                             </div>
                             <div id="ID3">test</div>
                         </div>
@@ -263,7 +238,7 @@
                     <div class="col-container">
                         <div class="dropdown-container">
                             <div id="rS">
-                                <select name="rarity" id="raritySearch3" onchange="searchDoll3()">
+                                <select name="rarity" id="raritySearch3" onchange="searchDoll(3)">
                                     <option value=1>☆</option>
                                     <option id="2star3" value=2>☆☆</option>
                                     <option value=3>☆☆☆</option>
@@ -272,7 +247,7 @@
                                 </select>
                             </div>
                             <div id="dS">
-                                <select name="dolls" id="dollSearch3" onchange="searchDoll3()">
+                                <select name="dolls" id="dollSearch3" onchange="searchDoll(3)">
                                     <option value="HG">HG</option>
                                     <option value="SMG">SMG</option>
                                     <option value="AR">AR</option>
@@ -345,7 +320,7 @@
                     <div class="col-container">
                         <div class="name-container" id="3rdMember">
                             <div id="sD">
-                                <select name="selectDoll" id="dollPick4" onclick="findDoll('dollPick4', '4')"></select>
+                                <select name="selectDoll" id="dollPick4" onclick="findDoll(4)"></select>
                             </div>
                             <div id="ID4">test</div>
                         </div>
@@ -353,7 +328,7 @@
                     <div class="col-container">
                         <div class="dropdown-container">
                             <div id="rS">
-                                <select name="rarity" id="raritySearch4" onchange="searchDoll4()">
+                                <select name="rarity" id="raritySearch4" onchange="searchDoll(4)">
                                     <option value=1>☆</option>
                                     <option id="2star4" value=2>☆☆</option>
                                     <option value=3>☆☆☆</option>
@@ -362,7 +337,7 @@
                                 </select>
                             </div>
                             <div id="dS">
-                                <select name="dolls" id="dollSearch4" onchange="searchDoll4()">
+                                <select name="dolls" id="dollSearch4" onchange="searchDoll(4)">
                                     <option value="HG">HG</option>
                                     <option value="SMG">SMG</option>
                                     <option value="AR">AR</option>
@@ -435,7 +410,7 @@
                     <div class="col-container">
                         <div class="name-container" id="4thMember">
                             <div id="sD">
-                                <select name="selectDoll" id="dollPick5" onclick="findDoll('dollPick5', '5')"></select>
+                                <select name="selectDoll" id="dollPick5" onclick="findDoll(5)"></select>
                             </div>
                             <div id="ID5">test</div>
                         </div>
@@ -443,7 +418,7 @@
                     <div class="col-container">
                         <div class="dropdown-container">
                             <div id="rS">
-                                <select name="rarity" id="raritySearch5" onchange="searchDoll5()">
+                                <select name="rarity" id="raritySearch5" onchange="searchDoll(5)">
                                     <option value=1>☆</option>
                                     <option id="2star5" value=2>☆☆</option>
                                     <option value=3>☆☆☆</option>
@@ -452,7 +427,7 @@
                                 </select>
                             </div>
                             <div id="dS">
-                                <select name="dolls" id="dollSearch5" onchange="searchDoll5()">
+                                <select name="dolls" id="dollSearch5" onchange="searchDoll(5)">
                                     <option value="HG">HG</option>
                                     <option value="SMG">SMG</option>
                                     <option value="AR">AR</option>

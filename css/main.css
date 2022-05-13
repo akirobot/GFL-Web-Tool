@@ -1,18 +1,41 @@
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    background-color:black;
+    color: white;
+    text-align: center;
+    width: min(100% - 2rem, 1100px);
     margin: auto;
-    width: min(100% - 2rem, 1250px);
-    background-color: #404040;
 }
 
-.name-container {
+.columnGrid {
     display: grid;
-    grid-template-columns: 75% 15%;
-    font-family: 'Shippori Mincho B1', serif;
-    font-size: 23px;
-    padding: 5px;
+    grid-auto-flow: column;
+}
+
+.dollDisplay {
+    outline: auto;
     margin: 5px;
-    text-align: right;
+    padding: 5px;
+}
+
+.rowGrid {
+    display:grid;
+    grid-auto-flow: row;
+}
+
+.selectName {
+    display: grid;
+    font-family: Shippori Mincho B1, serif;
+    font-size: 25px;
+    grid-auto-flow: column;
+}
+
+.selectName > div {
+    margin: 5px;
+}
+
+.nameSelect {
+    grid-column-start: 1;
+    grid-column-end: 10;
 }
 
 select {  
@@ -21,73 +44,33 @@ select {
     background-repeat: no-repeat;
     background-size: auto 50%;
     border-radius:2px;
-    border:none;
-    color: #ffffff;
     padding: 5px;
-    margin: 5px;
-    outline: none;
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    appearance: none;
     color: black;
-    width: 90%;
-    font-size: 15px;
+    width: 100%;
+    font-size: 17px;
 }
 
-#dollStats{
-    font-family: 'Yantramanav', sans-serif;
-}
-
-.dropdown-container{
-    display:grid;
+.selectParam {
+    display: grid;
     grid-auto-flow: column;
 }
 
-.col-container {
-    display:grid;
-    background-color: gray;
-    margin: 2px;
-    padding: 2px;
-}
-
-
-.statGrid {
-    padding: 5px;
-    display: grid;
-    grid-template-columns: 75px 25px 20px 25px;
-    gap: 10px;
-}
-
-.stat {
-    text-align: center;
-}
-
-.modstat {
-    text-align: center;
-}
-
-.grid-container {
-    display: grid;
-    grid-auto-flow:column;
-}
-  
-.grid-container > div {
-    background-color: #404040;
+.selectParam > div {
     margin: 5px;
+}
+
+#tiles {
     padding: 5px;
 }
 
-.displayStats {
-    color: white;
+.dataDisplay {
+    display: grid;
+    grid-auto-flow: column;
+    font-family: 'Yantramanav', sans-serif;
+    padding: 5px;
 }
 
-#fairySearch{
-    margin-bottom: 10px;
-}
-
-.error {
-    width: 100%;
-    background-color: red;
-    color: white;
-    text-align: center;
+.numDisplay {
+    display: grid;
+    grid-auto-flow: row;
 }

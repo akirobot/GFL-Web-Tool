@@ -1,10 +1,10 @@
 //Fill populate array with data
 function populateSelect(dollCase){
     //Clear current dropdown
-    clearSelect('dollPick' +dollCase);
+    clearSelect('nameSelect' +dollCase);
     //Double check other arrays
     //Find dropdown
-    var select = document.getElementById('dollPick' +dollCase);
+    var select = document.getElementById('nameSelect' +dollCase);
     switch (dollCase){
         case 1:
             for (var i = 0; i < _FOUNDDOLLS1.length; i++){

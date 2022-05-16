@@ -399,8 +399,8 @@ var _FOUNDDOLLS5;
 //Function to find doll based on currently selected parameters
 function searchDolls(dollCase){
     //Get selection from drop-downs
-    var typeSearch = document.getElementById('dollSearch' +dollCase);
-    var rareSearch = document.getElementById('raritySearch' +dollCase);
+    var typeSearch = document.getElementById('typeSelect' +dollCase);
+    var rareSearch = document.getElementById('raritySelect' +dollCase);
     switch (dollCase){
         case 1:
             _FOUNDDOLLS1 = new Array();

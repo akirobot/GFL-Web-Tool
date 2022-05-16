@@ -21,7 +21,6 @@
     <script src="js/warning.js"></script>
     <script src="js/styles.js"></script> 
     <script src="js/shotgun2StarCheck.js"></script>
-    <script src="js/mutuallyExclusive.js"></script>
     <script>
         window.onload = function(){
             searchDoll(1);    
@@ -29,7 +28,7 @@
             searchDoll(3);  
             searchDoll(4);  
             searchDoll(5);
-            populateFairy();
+            //populateFairy();
         }
         function searchDoll(caseID){
             searchDolls(caseID);
@@ -41,24 +40,20 @@
     </script>
 
     <body>
-        <div class="col-container">
-            <div class="grid-container">
-                <div>test</div>
-            </div>
-            <div class="grid-container">
-                <div class="col-container" id="doll1">
-                    <div class="col-container">
-                        <div class="name-container" id="Leader">
-                            <div id="sD">
-                                <select name="selectDoll" id="dollPick1" onclick="findDoll(1)"></select>
+        <div>
+            <div class="dollDisplay">Data Section</div>
+            <div class="columnGrid">
+                <div id="echSlot1" class="dollDisplay">
+                    <div class="rowGrid">
+                        <div class="selectName">
+                            <div class="nameSelect">
+                                <select id="nameSelect1" onchange="findDoll(1)"></select>
                             </div>
-                            <div id="ID1">test</div>
+                            <div id="ID1"></div>
                         </div>
-                    </div>
-                    <div class="col-container">
-                        <div class="dropdown-container">
-                            <div id="rS">
-                                <select name="rarity" id="raritySearch1" onchange="searchDoll(1)">
+                        <div class="selectParam">
+                            <div>
+                                <select id="raritySelect1" onchange="searchDoll(1)">
                                     <option value=1>☆</option>
                                     <option id="2star1" value=2>☆☆</option>
                                     <option value=3>☆☆☆</option>
@@ -66,89 +61,156 @@
                                     <option value=5>☆☆☆☆☆</option>
                                 </select>
                             </div>
-                            <div id="dS">
-                                <select name="dolls" id="dollSearch1" onchange="searchDoll(1)">
+                            <div>
+                                <select id="typeSelect1" onchange="searchDoll(1)">
                                     <option value="HG">HG</option>
                                     <option value="SMG">SMG</option>
                                     <option value="AR">AR</option>
                                     <option value="RF">RF</option>
                                     <option value="MG">MG</option>
-                                    <option id="shotgun1" value="SG">SG</option>
+                                    <option id="SG1" value="SG">SG</option>
                                 </select>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-container">
-                        <div class="grid-container">
-                            <div class="health-container" id="Health1">test</div>
-                            <div id="Cost1">test</div>
-                        </div>
-                        <div class="statGrid" id="dollStats1">
-                            <div>DMG</div>
-                            <div class="stat" id="DMG1">test</div>
-                            <div class="arrow">➔</div>
-                            <div class="modstat" id="modDMG1">test</div>
-                            
-                            <div>EVA</div>
-                            <div class="stat" id="EVA1">test</div>
-                            <div class="arrow">➔</div>
-                            <div class="modstat" id="modEVA1">test</div>
-
-                            <div>ACC</div>
-                            <div class="stat" id="ACC1">test</div>
-                            <div class="arrow">➔</div>
-                            <div class="modstat" id="modACC1">test</div>
-                            
-                            <div>ROF</div>
-                            <div class="stat" id="ROF1">test</div>
-                            <div class="arrow">➔</div>
-                            <div class="modstat" id="modROF1">test</div>
-
-                            <div>Move</div>
-                            <div class="stat" id="Move1">test</div>
-                            <div class="arrow">➔</div>
-                            <div class="modstat" id="modMove1">test</div>
-                            
-                            <div>Armor</div>
-                            <div class="stat" id="Armor1">test</div>
-                            <div class="arrow">➔</div>
-                            <div id="modArmor1">test</div>
-
-                            <div>Crit Rate</div>
-                            <div id="critRate1">test</div>
-                            <div class="arrow">➔</div>
-                            <div id="modCritRate1">test</div>
-
-                            <div>Crit DMG</div>
-                            <div id="critDMG1">test</div>
-                            <div class="arrow">➔</div>
-                            <div id="modCritDMG1">test</div>
-
-                            <div>AP</div>
-                            <div id="AP1">test</div>
-                            <div class="arrow">➔</div>
-                            <div id="modAP1">test</div>
-
-                            <div>Clip</div>
-                            <div id="Clip1">test</div>
-                            <div class="arrow">➔</div>
-                            <div id="modClip1">test</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-container" id="doll2">
-                    <div class="col-container">
-                        <div class="name-container" id="1stMember">
-                            <div id="sD">
-                                <select name="selectDoll" id="dollPick2" onclick="findDoll(2)"></select>
+                        <div><br></div>
+                        <div class="dataDisplay">
+                            <div>
+                                <div id="HP1"></div>
+                                <div id="Mod1">
+                                    <button type="button">Click Me!</button>
+                                </div>
                             </div>
-                            <div id="ID2">test</div>
+                            <div>
+                                <div id="Cost1"></div>
+                            </div>
+                        </div>
+                        <div class="dataDisplay">
+                            <div class="numDisplay" style="text-align:right;">
+                                <div>Damage</div>
+                                <div>Evasion</div>
+                                <div>Accuracy</div>
+                                <div>Rate of Fire</div>
+                                <div>Move</div>
+                                <div>Armor</div>
+                                <div>Crit Rate</div>
+                                <div>Crit Damage</div>
+                                <div>Armor Pen.</div>
+                                <div>Clip</div>
+                            </div>
+                            <div class="numDisplay">
+                                <div id="DMG1"></div>
+                                <div id="EVA1"></div>
+                                <div id="ACC1"></div>
+                                <div id="ROF1"></div>
+                                <div id="MOV1"></div>
+                                <div id="ARM1"></div>
+                                <div id="CRT1"></div>
+                                <div id="CDM1"></div>
+                                <div id="ARP1"></div>
+                                <div id="CLP1"></div>
+                            </div>
+                            <div class="numDisplay">
+                                <div id="1dmgMod" value=24>➞</div>
+                                <div id="1evaMod" value=14>➞</div>
+                                <div id="1accMod" value=65>➞</div>
+                                <div id="1rofMod" value=40>➞</div>
+                                <div id="1movMod" value=12>➞</div>
+                                <div id="1armMod" value=15>➞</div>
+                                <div id="1crtMod" value=123>➞</div>
+                                <div id="1cdmMod" value=12>➞</div>
+                                <div id="1arpMod" value=4>➞</div>
+                                <div id="1clpMod" value=5>➞</div>
+                            </div>
+                            <div class="numDisplay">
+                                <div id="modDMG1"></div>
+                                <div id="modEVA1"></div>
+                                <div id="modACC1"></div>
+                                <div id="modROF1"></div>
+                                <div id="modMOV1"></div>
+                                <div id="modARM1"></div>
+                                <div id="modCRT1"></div>
+                                <div id="modCDM1"></div>
+                                <div id="modARP1"></div>
+                                <div id="modCLP1"></div>
+                            </div>
+                            <div class="numDisplay">
+                                <div>-</div>
+                                <div>-</div>
+                                <div>-</div>
+                                <div class="warning" id="rofWarning1">-</div>
+                                <div>-</div>
+                                <div>-</div>
+                                <div class="warning" id="crtWarning1">-</div>
+                                <div>-</div>
+                                <div>-</div>
+                                <div>-</div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-container">
-                        <div class="dropdown-container">
-                            <div id="rS">
-                                <select name="rarity" id="raritySearch2" onchange="searchDoll(2)">
+                    <div class="columnGrid" id="DPS1">
+                        <div>DPS:</div>
+                        <div id="unmoddedDPS1"></div>
+                        <div>➞</div>
+                        <div id="moddedDPS1"></div>
+                    </div>
+                    <div class="columnGrid" id="tiles">
+                        <div class="tileGrid">
+                            <div class="rowGrid">
+                                <div class="columnGrid">
+                                    <div id="1-7">7</div>
+                                    <div id="1-8">8</div>
+                                    <div id="1-9">9</div>
+                                </div>
+                            </div>
+                            <div class="rowGrid">
+                                <div class="columnGrid">
+                                    <div id="1-4">4</div>
+                                    <div id="1-5">5</div>
+                                    <div id="1-6">6</div>
+                                </div>
+                            </div>
+                            <div class="rowGrid">
+                                <div class="columnGrid">
+                                    <div id="1-1">1</div>
+                                    <div id="1-2">2</div>
+                                    <div id="1-3">3</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rowGrid">
+                            <div id="1type">test</div>
+                            <div id="1buffs1">
+                                <div id="1buff1"></div>
+                                <div id="1buff2"></div>
+                                <div id="1buff3"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="1skill1">
+                        <div>Skill 1</div>
+                        <div class="skillInfo" id="1skill1Name"></div>
+                        <div class="columnGrid">
+                            <div id="1ICD1">ICD: test</div>
+                            <div id="1CD1">CD: test</div>
+                        </div>
+                    </div>
+                    <div id="1skill2"></div>
+                    <div class="dollDisplay">Equip1</div>
+                    <div class="dollDisplay">Equip2</div>
+                    <div class="dollDisplay">Equip3</div>
+                </div>
+
+                <div id="echSlot2" class="dollDisplay">
+                    <div class="rowGrid">
+                        <div class="selectName">
+                            <div class="nameSelect">
+                                <select id="nameSelect2" onclick="findDoll(2)"></select>
+                            </div>
+                            <div id="ID2">2</div>
+                        </div>
+                        <div class="selectParam">
+                            <div>
+                                <select id="raritySelect2" onchange="searchDoll(2)">
                                     <option value=1>☆</option>
                                     <option id="2star2" value=2>☆☆</option>
                                     <option value=3>☆☆☆</option>
@@ -156,89 +218,156 @@
                                     <option value=5>☆☆☆☆☆</option>
                                 </select>
                             </div>
-                            <div id="dS">
-                                <select name="dolls" id="dollSearch2" onchange="searchDoll(2)">
+                            <div>
+                                <select id="typeSelect2" onchange="searchDoll(2)">
                                     <option value="HG">HG</option>
                                     <option value="SMG">SMG</option>
                                     <option value="AR">AR</option>
                                     <option value="RF">RF</option>
                                     <option value="MG">MG</option>
-                                    <option id="shotgun2" value="SG">SG</option>
+                                    <option id="SG2" value="SG">SG</option>
                                 </select>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-container">
-                        <div class="grid-container">
-                            <div id="Health2">test</div>
-                            <div id="Cost2">test</div>
-                        </div>
-                        <div class="statGrid" id="dollStats2">
-                            <div>DMG</div>
-                            <div class="stat" id="DMG2">test</div>
-                            <div class="arrow">➔</div>
-                            <div class="stat" id="modDMG2">test</div>
-                            
-                            <div>EVA</div>
-                            <div class="stat" id="EVA2">test</div>
-                            <div class="arrow">➔</div>
-                            <div class="stat" id="modEVA2">test</div>
-
-                            <div>ACC</div>
-                            <div class="stat" id="ACC2">test</div>
-                            <div class="arrow">➔</div>
-                            <div class="stat" id="modACC2">test</div>
-                            
-                            <div>ROF</div>
-                            <div class="stat" id="ROF2">test</div>
-                            <div class="arrow">➔</div>
-                            <div class="modstat" id="modROF2">test</div>
-
-                            <div>Move</div>
-                            <div class="stat" id="Move2">test</div>
-                            <div class="arrow">➔</div>
-                            <div class="modstat" id="modMove2">test</div>
-                            
-                            <div>Armor</div>
-                            <div class="stat" id="Armor2">test</div>
-                            <div class="arrow">➔</div>
-                            <div class="modstat" id="modArmor2">test</div>
-
-                            <div>Crit Rate</div>
-                            <div class="stat" id="critRate2">test</div>
-                            <div class="arrow">➔</div>
-                            <div class="modstat" id="modCritRate2">test</div>
-
-                            <div>Crit DMG</div>
-                            <div class="stat" id="critDMG2">test</div>
-                            <div class="arrow">➔</div>
-                            <div class="modstat" id="modCritDMG2">test</div>
-
-                            <div>AP</div>
-                            <div class="stat" id="AP2">test</div>
-                            <div class="arrow">➔</div>
-                            <div class="modstat" id="modAP2">test</div>
-
-                            <div>Clip</div>
-                            <div class="stat" id="Clip2">test</div>
-                            <div class="arrow">➔</div>
-                            <div class="modstat" id="modClip2">test</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-container" id="doll3">
-                    <div class="col-container">
-                        <div class="name-container" id="2ndMember">
-                            <div id="sD">
-                                <select name="selectDoll" id="dollPick3" onclick="findDoll(3)"></select>
+                        <div><br></div>
+                        <div class="dataDisplay">
+                            <div>
+                                <div id="HP2"></div>
+                                <div id="Mod2">
+                                    Mod<input id="modCheckbox" type="checkbox">
+                                </div>
                             </div>
-                            <div id="ID3">test</div>
+                            <div>
+                                <div id="Cost2"></div>
+                            </div>
+                        </div>
+                        <div class="dataDisplay">
+                            <div class="numDisplay" style="text-align:right;">
+                                <div>Damage</div>
+                                <div>Evasion</div>
+                                <div>Accuracy</div>
+                                <div>Rate of Fire</div>
+                                <div>Move</div>
+                                <div>Armor</div>
+                                <div>Crit Rate</div>
+                                <div>Crit Damage</div>
+                                <div>Armor Pen.</div>
+                                <div>Clip</div>
+                            </div>
+                            <div class="numDisplay">
+                                <div id="DMG2"></div>
+                                <div id="EVA2"></div>
+                                <div id="ACC2"></div>
+                                <div id="ROF2"></div>
+                                <div id="MOV2"></div>
+                                <div id="ARM2"></div>
+                                <div id="CRT2"></div>
+                                <div id="CDM2"></div>
+                                <div id="ARP2"></div>
+                                <div id="CLP2"></div>
+                            </div>
+                            <div class="numDisplay">
+                                <div id="2dmgMod" value=24>➞</div>
+                                <div id="2evaMod" value=14>➞</div>
+                                <div id="2accMod" value=65>➞</div>
+                                <div id="2rofMod" value=23>➞</div>
+                                <div id="2movMod" value=12>➞</div>
+                                <div id="2armMod" value=78>➞</div>
+                                <div id="2crtMod" value=23>➞</div>
+                                <div id="2cdmMod" value=12>➞</div>
+                                <div id="2arpMod" value=4>➞</div>
+                                <div id="2clpMod" value=5>➞</div>
+                            </div>
+                            <div class="numDisplay">
+                                <div id="modDMG2"></div>
+                                <div id="modEVA2"></div>
+                                <div id="modACC2"></div>
+                                <div id="modROF2"></div>
+                                <div id="modMOV2"></div>
+                                <div id="modARM2"></div>
+                                <div id="modCRT2"></div>
+                                <div id="modCDM2"></div>
+                                <div id="modARP2"></div>
+                                <div id="modCLP2"></div>
+                            </div>
+                            <div class="numDisplay">
+                                <div>-</div>
+                                <div>-</div>
+                                <div>-</div>
+                                <div class="warning" id="rofWarning2">-</div>
+                                <div>-</div>
+                                <div>-</div>
+                                <div class="warning" id="crtWarning2">-</div>
+                                <div>-</div>
+                                <div>-</div>
+                                <div>-</div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-container">
-                        <div class="dropdown-container">
-                            <div id="rS">
-                                <select name="rarity" id="raritySearch3" onchange="searchDoll(3)">
+                    <div class="columnGrid" id="DPS2">
+                        <div>DPS:</div>
+                        <div id="unmoddedDPS2"></div>
+                        <div>➞</div>
+                        <div id="moddedDPS2"></div>
+                    </div>
+                    <div class="columnGrid" id="tiles">
+                        <div class="tileGrid">
+                            <div class="rowGrid">
+                                <div class="columnGrid">
+                                    <div id="2-7">7</div>
+                                    <div id="2-8">8</div>
+                                    <div id="2-9">9</div>
+                                </div>
+                            </div>
+                            <div class="rowGrid">
+                                <div class="columnGrid">
+                                    <div id="2-4">4</div>
+                                    <div id="2-5">5</div>
+                                    <div id="2-6">6</div>
+                                </div>
+                            </div>
+                            <div class="rowGrid">
+                                <div class="columnGrid">
+                                    <div id="2-1">1</div>
+                                    <div id="2-2">2</div>
+                                    <div id="2-3">3</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rowGrid">
+                            <div id="2type">test</div>
+                            <div id="2buffs1">
+                                <div id="2buff1"></div>
+                                <div id="2buff2"></div>
+                                <div id="2buff3"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="2skill1">
+                        <div>Skill 1</div>
+                        <div class="skillInfo" id="2skill1Name"></div>
+                        <div class="columnGrid">
+                            <div id="2ICD1">ICD: test</div>
+                            <div id="2CD1">CD: test</div>
+                        </div>
+                    </div>
+                    <div id="2skill2"></div>
+                    <div class="dollDisplay">Equip1</div>
+                    <div class="dollDisplay">Equip2</div>
+                    <div class="dollDisplay">Equip3</div>
+                </div>
+
+                <div id="echSlot3" class="dollDisplay">
+                    <div class="rowGrid">
+                        <div class="selectName">
+                            <div class="nameSelect">
+                                <select id="nameSelect3" onclick="findDoll(3)"></select>
+                            </div>
+                            <div id="ID3">2</div>
+                        </div>
+                        <div class="selectParam">
+                            <div>
+                                <select id="raritySelect3" onchange="searchDoll(3)">
                                     <option value=1>☆</option>
                                     <option id="2star3" value=2>☆☆</option>
                                     <option value=3>☆☆☆</option>
@@ -246,89 +375,156 @@
                                     <option value=5>☆☆☆☆☆</option>
                                 </select>
                             </div>
-                            <div id="dS">
-                                <select name="dolls" id="dollSearch3" onchange="searchDoll(3)">
+                            <div>
+                                <select id="typeSelect3" onchange="searchDoll(3)">
                                     <option value="HG">HG</option>
                                     <option value="SMG">SMG</option>
                                     <option value="AR">AR</option>
                                     <option value="RF">RF</option>
                                     <option value="MG">MG</option>
-                                    <option id="shotgun3" value="SG">SG</option>
+                                    <option id="SG3" value="SG">SG</option>
                                 </select>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-container">
-                        <div class="grid-container">
-                            <div id="Health3">test</div>
-                            <div id="Cost3">test</div>
-                        </div>
-                        <div class="statGrid" id="dollStats3">
-                            <div>DMG</div>
-                            <div class="stat" id="DMG3">test</div>
-                            <div class="arrow">➔</div>
-                            <div class="stat" id="modDMG3">test</div>
-                            
-                            <div>EVA</div>
-                            <div class="stat" id="EVA3">test</div>
-                            <div class="arrow">➔</div>
-                            <div class="stat" id="modEVA3">test</div>
-
-                            <div>ACC</div>
-                            <div class="stat" id="ACC3">test</div>
-                            <div class="arrow">➔</div>
-                            <div class="stat" id="modACC3">test</div>
-                            
-                            <div>ROF</div>
-                            <div class="stat" id="ROF3">test</div>
-                            <div class="arrow">➔</div>
-                            <div class="modstat" id="modROF3">test</div>
-
-                            <div>Move</div>
-                            <div class="stat" id="Move3">test</div>
-                            <div class="arrow">➔</div>
-                            <div class="modstat" id="modMove3">test</div>
-                            
-                            <div>Armor</div>
-                            <div class="stat" id="Armor3">test</div>
-                            <div class="arrow">➔</div>
-                            <div class="modstat" id="modArmor3">test</div>
-
-                            <div>Crit Rate</div>
-                            <div class="stat" id="critRate3">test</div>
-                            <div class="arrow">➔</div>
-                            <div class="modstat" id="modCritRate3">test</div>
-
-                            <div>Crit DMG</div>
-                            <div class="stat" id="critDMG3">test</div>
-                            <div class="arrow">➔</div>
-                            <div class="modstat" id="modCritDMG3">test</div>
-
-                            <div>AP</div>
-                            <div class="stat" id="AP3">test</div>
-                            <div class="arrow">➔</div>
-                            <div class="modstat" id="modAP3">test</div>
-
-                            <div>Clip</div>
-                            <div class="stat" id="Clip3">test</div>
-                            <div class="arrow">➔</div>
-                            <div class="modstat" id="modClip3">test</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-container" id="doll4">
-                    <div class="col-container">
-                        <div class="name-container" id="3rdMember">
-                            <div id="sD">
-                                <select name="selectDoll" id="dollPick4" onclick="findDoll(4)"></select>
+                        <div><br></div>
+                        <div class="dataDisplay">
+                            <div>
+                                <div id="HP3"></div>
+                                <div id="Mod3">
+                                    Mod<input id="modCheckbox" type="checkbox">
+                                </div>
                             </div>
-                            <div id="ID4">test</div>
+                            <div>
+                                <div id="Cost3"></div>
+                            </div>
+                        </div>
+                        <div class="dataDisplay">
+                            <div class="numDisplay" style="text-align:right;">
+                                <div>Damage</div>
+                                <div>Evasion</div>
+                                <div>Accuracy</div>
+                                <div>Rate of Fire</div>
+                                <div>Move</div>
+                                <div>Armor</div>
+                                <div>Crit Rate</div>
+                                <div>Crit Damage</div>
+                                <div>Armor Pen.</div>
+                                <div>Clip</div>
+                            </div>
+                            <div class="numDisplay">
+                                <div id="DMG3"></div>
+                                <div id="EVA3"></div>
+                                <div id="ACC3"></div>
+                                <div id="ROF3"></div>
+                                <div id="MOV3"></div>
+                                <div id="ARM3"></div>
+                                <div id="CRT3"></div>
+                                <div id="CDM3"></div>
+                                <div id="ARP3"></div>
+                                <div id="CLP3"></div>
+                            </div>
+                            <div class="numDisplay">
+                                <div id="3dmgMod" value=24>➞</div>
+                                <div id="3evaMod" value=14>➞</div>
+                                <div id="3accMod" value=65>➞</div>
+                                <div id="3rofMod" value=23>➞</div>
+                                <div id="3movMod" value=12>➞</div>
+                                <div id="3armMod" value=78>➞</div>
+                                <div id="3crtMod" value=23>➞</div>
+                                <div id="3cdmMod" value=12>➞</div>
+                                <div id="3arpMod" value=4>➞</div>
+                                <div id="3clpMod" value=5>➞</div>
+                            </div>
+                            <div class="numDisplay">
+                                <div id="modDMG3"></div>
+                                <div id="modEVA3"></div>
+                                <div id="modACC3"></div>
+                                <div id="modROF3"></div>
+                                <div id="modMOV3"></div>
+                                <div id="modARM3"></div>
+                                <div id="modCRT3"></div>
+                                <div id="modCDM3"></div>
+                                <div id="modARP3"></div>
+                                <div id="modCLP3"></div>
+                            </div>
+                            <div class="numDisplay">
+                                <div>-</div>
+                                <div>-</div>
+                                <div>-</div>
+                                <div class="warning" id="rofWarning3">-</div>
+                                <div>-</div>
+                                <div>-</div>
+                                <div class="warning" id="crtWarning3">-</div>
+                                <div>-</div>
+                                <div>-</div>
+                                <div>-</div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-container">
-                        <div class="dropdown-container">
-                            <div id="rS">
-                                <select name="rarity" id="raritySearch4" onchange="searchDoll(4)">
+                    <div class="columnGrid" id="DPS">
+                        <div>DPS:</div>
+                        <div id="unmoddedDPS3"></div>
+                        <div>➞</div>
+                        <div id="moddedDPS3"></div>
+                    </div>
+                    <div class="columnGrid" id="tiles">
+                        <div class="tileGrid">
+                            <div class="rowGrid">
+                                <div class="columnGrid">
+                                    <div id="3-7">7</div>
+                                    <div id="3-8">8</div>
+                                    <div id="3-9">9</div>
+                                </div>
+                            </div>
+                            <div class="rowGrid">
+                                <div class="columnGrid">
+                                    <div id="3-4">4</div>
+                                    <div id="3-5">5</div>
+                                    <div id="3-6">6</div>
+                                </div>
+                            </div>
+                            <div class="rowGrid">
+                                <div class="columnGrid">
+                                    <div id="3-1">1</div>
+                                    <div id="3-2">2</div>
+                                    <div id="3-3">3</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rowGrid">
+                            <div id="3type">test</div>
+                            <div id="3buffs1">
+                                <div id="3buff1"></div>
+                                <div id="3buff2"></div>
+                                <div id="3buff3"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="3skill1">
+                        <div>Skill 1</div>
+                        <div class="skillInfo" id="3skill1Name"></div>
+                        <div class="columnGrid">
+                            <div id="3ICD1">ICD: test</div>
+                            <div id="3CD1">CD: test</div>
+                        </div>
+                    </div>
+                    <div id="3skill2"></div>
+                    <div class="dollDisplay">Equip1</div>
+                    <div class="dollDisplay">Equip2</div>
+                    <div class="dollDisplay">Equip3</div>
+                </div>
+
+                <div id="echSlot4" class="dollDisplay">
+                    <div class="rowGrid">
+                        <div class="selectName">
+                            <div class="nameSelect">
+                                <select id="nameSelect4" onclick="findDoll(4)"></select>
+                            </div>
+                            <div id="ID4">2</div>
+                        </div>
+                        <div class="selectParam">
+                            <div>
+                                <select id="raritySelect4" onchange="searchDoll(4)">
                                     <option value=1>☆</option>
                                     <option id="2star4" value=2>☆☆</option>
                                     <option value=3>☆☆☆</option>
@@ -336,89 +532,156 @@
                                     <option value=5>☆☆☆☆☆</option>
                                 </select>
                             </div>
-                            <div id="dS">
-                                <select name="dolls" id="dollSearch4" onchange="searchDoll(4)">
+                            <div>
+                                <select id="typeSelect4" onchange="searchDoll(4)">
                                     <option value="HG">HG</option>
                                     <option value="SMG">SMG</option>
                                     <option value="AR">AR</option>
                                     <option value="RF">RF</option>
                                     <option value="MG">MG</option>
-                                    <option id="shotgun4" value="SG">SG</option>
+                                    <option id="SG4" value="SG">SG</option>
                                 </select>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-container">
-                        <div class="grid-container">
-                            <div id="Health4">test</div>
-                            <div id="Cost4">test</div>
-                        </div>
-                        <div class="statGrid" id="dollStats4">
-                            <div>DMG</div>
-                            <div class="stat" id="DMG4">test</div>
-                            <div class="arrow">➔</div>
-                            <div class="stat" id="modDMG4">test</div>
-                            
-                            <div>EVA</div>
-                            <div class="stat" id="EVA4">test</div>
-                            <div class="arrow">➔</div>
-                            <div class="stat" id="modEVA4">test</div>
-
-                            <div>ACC</div>
-                            <div class="stat" id="ACC4">test</div>
-                            <div class="arrow">➔</div>
-                            <div class="stat" id="modACC4">test</div>
-                            
-                            <div>ROF</div>
-                            <div class="stat" id="ROF4">test</div>
-                            <div class="arrow">➔</div>
-                            <div class="modstat" id="modROF4">test</div>
-
-                            <div>Move</div>
-                            <div class="stat" id="Move4">test</div>
-                            <div class="arrow">➔</div>
-                            <div class="modstat" id="modMove4">test</div>
-                            
-                            <div>Armor</div>
-                            <div class="stat" id="Armor4">test</div>
-                            <div class="arrow">➔</div>
-                            <div class="modstat" id="modArmor4">test</div>
-
-                            <div>Crit Rate</div>
-                            <div class="stat" id="critRate4">test</div>
-                            <div class="arrow">➔</div>
-                            <div class="modstat" id="modCritRate4">test</div>
-
-                            <div>Crit DMG</div>
-                            <div class="stat" id="critDMG4">test</div>
-                            <div class="arrow">➔</div>
-                            <div class="modstat" id="modCritDMG4">test</div>
-
-                            <div>AP</div>
-                            <div class="stat" id="AP4">test</div>
-                            <div class="arrow">➔</div>
-                            <div class="modstat" id="modAP4">test</div>
-
-                            <div>Clip</div>
-                            <div class="stat" id="Clip4">test</div>
-                            <div class="arrow">➔</div>
-                            <div class="modstat" id="modClip4">test</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-container" id="doll5">
-                    <div class="col-container">
-                        <div class="name-container" id="4thMember">
-                            <div id="sD">
-                                <select name="selectDoll" id="dollPick5" onclick="findDoll(5)"></select>
+                        <div><br></div>
+                        <div class="dataDisplay">
+                            <div>
+                                <div id="HP4"></div>
+                                <div id="Mod4">
+                                    Mod<input id="modCheckbox" type="checkbox">
+                                </div>
                             </div>
-                            <div id="ID5">test</div>
+                            <div>
+                                <div id="Cost4"></div>
+                            </div>
+                        </div>
+                        <div class="dataDisplay">
+                            <div class="numDisplay" style="text-align:right;">
+                                <div>Damage</div>
+                                <div>Evasion</div>
+                                <div>Accuracy</div>
+                                <div>Rate of Fire</div>
+                                <div>Move</div>
+                                <div>Armor</div>
+                                <div>Crit Rate</div>
+                                <div>Crit Damage</div>
+                                <div>Armor Pen.</div>
+                                <div>Clip</div>
+                            </div>
+                            <div class="numDisplay">
+                                <div id="DMG4"></div>
+                                <div id="EVA4"></div>
+                                <div id="ACC4"></div>
+                                <div id="ROF4"></div>
+                                <div id="MOV4"></div>
+                                <div id="ARM4"></div>
+                                <div id="CRT4"></div>
+                                <div id="CDM4"></div>
+                                <div id="ARP4"></div>
+                                <div id="CLP4"></div>
+                            </div>
+                            <div class="numDisplay">
+                                <div id="4dmgMod" value=24>➞</div>
+                                <div id="4evaMod" value=14>➞</div>
+                                <div id="4accMod" value=65>➞</div>
+                                <div id="4rofMod" value=23>➞</div>
+                                <div id="4movMod" value=12>➞</div>
+                                <div id="4armMod" value=78>➞</div>
+                                <div id="4crtMod" value=23>➞</div>
+                                <div id="4cdmMod" value=12>➞</div>
+                                <div id="4arpMod" value=4>➞</div>
+                                <div id="4clpMod" value=5>➞</div>
+                            </div>
+                            <div class="numDisplay">
+                                <div id="modDMG4"></div>
+                                <div id="modEVA4"></div>
+                                <div id="modACC4"></div>
+                                <div id="modROF4"></div>
+                                <div id="modMOV4"></div>
+                                <div id="modARM4"></div>
+                                <div id="modCRT4"></div>
+                                <div id="modCDM4"></div>
+                                <div id="modARP4"></div>
+                                <div id="modCLP4"></div>
+                            </div>
+                            <div class="numDisplay">
+                                <div>-</div>
+                                <div>-</div>
+                                <div>-</div>
+                                <div class="warning" id="rofWarning4">-</div>
+                                <div>-</div>
+                                <div>-</div>
+                                <div class="warning" id="crtWarning4">-</div>
+                                <div>-</div>
+                                <div>-</div>
+                                <div>-</div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-container">
-                        <div class="dropdown-container">
-                            <div id="rS">
-                                <select name="rarity" id="raritySearch5" onchange="searchDoll(5)">
+                    <div class="columnGrid" id="DPS">
+                        <div>DPS:</div>
+                        <div id="unmoddedDPS4"></div>
+                        <div>➞</div>
+                        <div id="moddedDPS4"></div>
+                    </div>
+                    <div class="columnGrid" id="tiles">
+                        <div class="tileGrid">
+                            <div class="rowGrid">
+                                <div class="columnGrid">
+                                    <div id="4-7">7</div>
+                                    <div id="4-8">8</div>
+                                    <div id="4-9">9</div>
+                                </div>
+                            </div>
+                            <div class="rowGrid">
+                                <div class="columnGrid">
+                                    <div id="4-4">4</div>
+                                    <div id="4-5">5</div>
+                                    <div id="4-6">6</div>
+                                </div>
+                            </div>
+                            <div class="rowGrid">
+                                <div class="columnGrid">
+                                    <div id="4-1">1</div>
+                                    <div id="4-2">2</div>
+                                    <div id="4-3">3</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rowGrid">
+                            <div id="4type">test</div>
+                            <div id="4buffs1">
+                                <div id="4buff1"></div>
+                                <div id="4buff2"></div>
+                                <div id="4buff3"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="4skill1">
+                        <div>Skill 1</div>
+                        <div class="skillInfo" id="4skill1Name"></div>
+                        <div class="columnGrid">
+                            <div id="4ICD1">ICD: test</div>
+                            <div id="4CD1">CD: test</div>
+                        </div>
+                    </div>
+                    <div id="4skill2"></div>
+                    <div class="dollDisplay">Equip1</div>
+                    <div class="dollDisplay">Equip2</div>
+                    <div class="dollDisplay">Equip3</div>
+                </div>
+
+                <div id="echSlot5" class="dollDisplay">
+                    <div class="rowGrid">
+                        <div class="selectName">
+                            <div class="nameSelect">
+                                <select id="nameSelect5" onclick="findDoll(5)"></select>
+                            </div>
+                            <div id="ID5">2</div>
+                        </div>
+                        <div class="selectParam">
+                            <div>
+                                <select id="raritySelect5" onchange="searchDoll(5)">
                                     <option value=1>☆</option>
                                     <option id="2star5" value=2>☆☆</option>
                                     <option value=3>☆☆☆</option>
@@ -426,85 +689,149 @@
                                     <option value=5>☆☆☆☆☆</option>
                                 </select>
                             </div>
-                            <div id="dS">
-                                <select name="dolls" id="dollSearch5" onchange="searchDoll(5)">
+                            <div>
+                                <select id="typeSelect5" onchange="searchDoll(5)">
                                     <option value="HG">HG</option>
                                     <option value="SMG">SMG</option>
                                     <option value="AR">AR</option>
                                     <option value="RF">RF</option>
                                     <option value="MG">MG</option>
-                                    <option id="shotgun5" value="SG">SG</option>
+                                    <option id="SG5" value="SG">SG</option>
                                 </select>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-container">
-                        <div class="grid-container">
-                            <div id="Health5">test</div>
-                            <div id="Cost5">test</div>
+                        <div><br></div>
+                        <div class="dataDisplay">
+                            <div>
+                                <div id="HP5"></div>
+                                <div id="Mod5">
+                                    Mod<input id="modCheckbox" type="checkbox">
+                                </div>
+                            </div>
+                            <div>
+                                <div id="Cost5"></div>
+                            </div>
                         </div>
-                        <div class="statGrid" id="dollStats5">
-                            <div>DMG</div>
-                            <div class="stat" id="DMG5">test</div>
-                            <div class="arrow">➔</div>
-                            <div class="stat" id="modDMG5">test</div>
-                            
-                            <div>EVA</div>
-                            <div class="stat" id="EVA5">test</div>
-                            <div class="arrow">➔</div>
-                            <div class="stat" id="modEVA5">test</div>
-
-                            <div>ACC</div>
-                            <div class="stat" id="ACC5">test</div>
-                            <div class="arrow">➔</div>
-                            <div class="stat" id="modACC5">test</div>
-                            
-                            <div>ROF</div>
-                            <div class="stat" id="ROF5">test</div>
-                            <div class="arrow">➔</div>
-                            <div class="modstat" id="modROF5">test</div>
-
-                            <div>Move</div>
-                            <div class="stat" id="Move5">test</div>
-                            <div class="arrow">➔</div>
-                            <div class="modstat" id="modMove5">test</div>
-                            
-                            <div>Armor</div>
-                            <div class="stat" id="Armor5">test</div>
-                            <div class="arrow">➔</div>
-                            <div class="modstat" id="modArmor5">test</div>
-
-                            <div>Crit Rate</div>
-                            <div class="stat" id="critRate5">test</div>
-                            <div class="arrow">➔</div>
-                            <div class="modstat" id="modCritRate5">test</div>
-
-                            <div>Crit DMG</div>
-                            <div class="stat" id="critDMG5">test</div>
-                            <div class="arrow">➔</div>
-                            <div class="modstat" id="modCritDMG5">test</div>
-
-                            <div>AP</div>
-                            <div class="stat" id="AP5">test</div>
-                            <div class="arrow">➔</div>
-                            <div class="modstat" id="modAP5">test</div>
-
-                            <div>Clip</div>
-                            <div class="stat" id="Clip5">test</div>
-                            <div class="arrow">➔</div>
-                            <div class="modstat" id="modClip5">test</div>
+                        <div class="dataDisplay">
+                            <div class="numDisplay" style="text-align:right;">
+                                <div>Damage</div>
+                                <div>Evasion</div>
+                                <div>Accuracy</div>
+                                <div>Rate of Fire</div>
+                                <div>Move</div>
+                                <div>Armor</div>
+                                <div>Crit Rate</div>
+                                <div>Crit Damage</div>
+                                <div>Armor Pen.</div>
+                                <div>Clip</div>
+                            </div>
+                            <div class="numDisplay">
+                                <div id="DMG5"></div>
+                                <div id="EVA5"></div>
+                                <div id="ACC5"></div>
+                                <div id="ROF5"></div>
+                                <div id="MOV5"></div>
+                                <div id="ARM5"></div>
+                                <div id="CRT5"></div>
+                                <div id="CDM5"></div>
+                                <div id="ARP5"></div>
+                                <div id="CLP5"></div>
+                            </div>
+                            <div class="numDisplay">
+                                <div id="5dmgMod" value=24>➞</div>
+                                <div id="5evaMod" value=14>➞</div>
+                                <div id="5accMod" value=65>➞</div>
+                                <div id="5rofMod" value=23>➞</div>
+                                <div id="5movMod" value=12>➞</div>
+                                <div id="5armMod" value=78>➞</div>
+                                <div id="5crtMod" value=23>➞</div>
+                                <div id="5cdmMod" value=12>➞</div>
+                                <div id="5arpMod" value=4>➞</div>
+                                <div id="5clpMod" value=5>➞</div>
+                            </div>
+                            <div class="numDisplay">
+                                <div id="modDMG5"></div>
+                                <div id="modEVA5"></div>
+                                <div id="modACC5"></div>
+                                <div id="modROF5"></div>
+                                <div id="modMOV5"></div>
+                                <div id="modARM5"></div>
+                                <div id="modCRT5"></div>
+                                <div id="modCDM5"></div>
+                                <div id="modARP5"></div>
+                                <div id="modCLP5"></div>
+                            </div>
+                            <div class="numDisplay">
+                                <div>-</div>
+                                <div>-</div>
+                                <div>-</div>
+                                <div class="warning" id="rofWarning5">-</div>
+                                <div>-</div>
+                                <div>-</div>
+                                <div class="warning" id="crtWarning5">-</div>
+                                <div>-</div>
+                                <div>-</div>
+                                <div>-</div>
+                            </div>
                         </div>
                     </div>
+                    <div class="columnGrid" id="DPS">
+                        <div>DPS:</div>
+                        <div id="unmoddedDPS5"></div>
+                        <div>➞</div>
+                        <div id="moddedDPS5"></div>
+                    </div>
+                    <div class="columnGrid" id="tiles">
+                        <div class="tileGrid">
+                            <div class="rowGrid">
+                                <div class="columnGrid">
+                                    <div id="5-7">7</div>
+                                    <div id="5-8">8</div>
+                                    <div id="5-9">9</div>
+                                </div>
+                            </div>
+                            <div class="rowGrid">
+                                <div class="columnGrid">
+                                    <div id="5-4">4</div>
+                                    <div id="5-5">5</div>
+                                    <div id="5-6">6</div>
+                                </div>
+                            </div>
+                            <div class="rowGrid">
+                                <div class="columnGrid">
+                                    <div id="5-1">1</div>
+                                    <div id="5-2">2</div>
+                                    <div id="5-3">3</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rowGrid">
+                            <div id="5type">test</div>
+                            <div id="5buffs1">
+                                <div id="5buff1"></div>
+                                <div id="5buff2"></div>
+                                <div id="5buff3"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="5skill1">
+                        <div>Skill 1</div>
+                        <div class="skillInfo" id="5skill1Name"></div>
+                        <div class="columnGrid">
+                            <div id="5ICD1">ICD: test</div>
+                            <div id="5CD1">CD: test</div>
+                        </div>
+                    </div>
+                    <div id="5skill2"></div>
+                    <div class="dollDisplay">Equip1</div>
+                    <div class="dollDisplay">Equip2</div>
+                    <div class="dollDisplay">Equip3</div>
                 </div>
             </div>
-            <div class="grid-container">
-                <div id="fairies">
-                    <select name="fairySelect" id="fairySearch" onchange="findFairy()">
-                    </select>
-                    <div class="displayStats" id="displayFairy"></div>
-                </div>
+            <div class="rowGrid">
+                <div class="dollDisplay">Fairy Section</div>
             </div>
         </div>
-        
-    </body>
+    </body>    
+
 </html>

@@ -281,7 +281,7 @@ function displayModdedStats(caseID){
     var rofCheck = Math.floor(found.ROF * ((100 + parseInt(document.getElementById(caseID +"rofMod").getAttribute("value")))/100));
     document.getElementById("modROF" +caseID).innerHTML = rofCheck;
     document.getElementById("modROF" +caseID).setAttribute("Value", rofCheck);
-    if (rofCheck >= 116){
+    if (rofCheck >= 116 && found.Type != "MG"){
         document.getElementById("rofWarning" +caseID).innerHTML = "<img src='img/warning.png' width='12px'><span class='warningText'>Over ROF breakpoint (116) <br> Further ROF buffs will not matter</span>";
     }
     else if (found.Type == "SG" && rofCheck >= 50){
@@ -293,12 +293,15 @@ function displayModdedStats(caseID){
 
     var modMOV = found.Move + parseInt(document.getElementById(caseID +"movMod").getAttribute("value"));
     document.getElementById("modMOV" +caseID).innerHTML = modMOV;
-    document.getElementById("modROF" +caseID).setAttribute("Value", rofCheck);
+    document.getElementById("modROF" +caseID).setAttribute("Value", modMOV);
     
-    document.getElementById("modARM" +caseID).innerHTML = found.Armor + parseInt(document.getElementById(caseID +"armMod").getAttribute("value"));
+    var modARM = found.Armor + parseInt(document.getElementById(caseID +"armMod").getAttribute("value"));
+    document.getElementById("modARM" +caseID).innerHTML = modARM;
+    document.getElementById("modARM" +caseID).setAttribute("Value", modARM);
 
     var crtCheck = Math.round(found.CritRate * ((100 + parseInt(document.getElementById(caseID +"crtMod").getAttribute("value")))/100));
     document.getElementById("modCRT" +caseID).innerHTML = crtCheck;
+    document.getElementById("modCRT" +caseID).setAttribute("Value", crtCheck);
     if (crtCheck >= 100){
         document.getElementById("crtWarning" +caseID).innerHTML = "<img src='img/warning.png' width='12px'><span class='warningText'>Over Crit breakpoint (100) <br> Further Crit buffs will not matter</span>";
     }
@@ -317,21 +320,47 @@ function displayModdedStats(caseID){
         document.getElementById("modCLP" +caseID).innerHTML = "∞";
     }
     
-    calculateDPS(caseID, found);
+    //calculateDPS(caseID, found);
 }
 
 function calculateDPS(caseID, found){
-    var fperAtk = Math.floor(1500/found.ROF);
+    var fperAtk;
+    if (found.Type != "MG" && found.Type !="SG" && found.ROF > 116){
+        fperAtk = Math.floor (1500/116);
+    }
+    else if (found.Type == "MG"){
+        fperAtk = 10;
+    }
+    else if (found.Type == "SG" && found.ROF > 50){
+        fperAtk = Math.floor (1500/50);
+    }
+    else {
+        fperAtk = Math.floor(1500/found.ROF);
+    }
     var attperSec = 30/fperAtk;
-    var hitRate = 1;
+    var hitRate = found.ACC;
     var critRate = (100 + found.CritRate)/100;
     var dps = Math.round((found.DMG * (1-critRate) + found.CritDamage * critRate) * attperSec * hitRate * 5);
     document.getElementById("unmoddedDPS" +caseID).innerHTML = dps;
 
+    var moddedROF = parseInt(document.getElementById("modROF" +caseID).getAttribute("value"));
     var modFperAtk;
-    var modAttperSec;
-    var modHitRate = 1;
-    var modCritRate;
-    var modDps;
-
+    if (found.Type != "MG" && found.Type !="SG" && moddedROF > 116){
+        modFperAtk = Math.floor (1500/116);
+    }
+    else if (found.Type == "MG"){
+        modFperAtk = 10;
+    }
+    else if (found.Type == "SG" && moddedROF > 50){
+        modFperAtk = Math.floor (1500/50);
+    }
+    else {
+        modFperAtk = Math.floor(1500/moddedROF);
+    }
+    var modAttperSec = 30/modFperAtk;
+    var modHitRate = parseInt(document.getElementById("modACC" +caseID).getAttribute("value"));
+    console.log (parseInt(document.getElementById("modCRT" +caseID).getAttribute("value")));
+    var modCritRate = (100 + parseInt(document.getElementById("modCRT" +caseID).getAttribute("value"))/100);
+    var modDps = Math.round((parseInt(document.getElementById("modDMG" +caseID).getAttribute("value")) * (1-modCritRate) + parseInt(document.getElementById("modCDM" +caseID).getAttribute("value")) * modCritRate) * modAttperSec * modHitRate * 5);
+    document.getElementById("moddedDPS" +caseID).innerHTML = modDps;
 }

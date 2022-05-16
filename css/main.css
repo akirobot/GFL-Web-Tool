@@ -111,8 +111,8 @@ select {
     top: 100%;
     left: 50%;
     margin-left: -99px;
-    background-color: dimgray;
-    color: #fff;
+    background-color: lightgray;
+    color: black;
     text-align: center;
     padding: 5px 0;
     border-radius: 6px;

@@ -27,3 +27,25 @@ function changeLabelColor(idNum){
             break;
     }
 }
+
+function changeStatColor (caseID){
+    var found;
+    switch (caseID){
+        case 1:
+            found = _FOUNDDOLL1;
+            break;
+        case 2:
+            found = _FOUNDDOLL2;
+            break;
+        case 3:
+            found = _FOUNDDOLL3;
+            break;
+        case 4:
+            found = _FOUNDDOLL4;
+            break;
+        case 5:
+            found = _FOUNDDOLL5;
+            break;
+    }
+    
+}

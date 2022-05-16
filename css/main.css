@@ -74,3 +74,52 @@ select {
     display: grid;
     grid-auto-flow: row;
 }
+
+.warning {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+  
+.warning .warningText {
+    visibility: hidden;
+    width: 120px;
+    top: 100%;
+    left: 50%;
+    margin-left: -60px;
+    background-color: grey;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+}
+
+.warning:hover .warningText {
+    visibility: visible;
+}
+
+.skillInfo {
+    position: relative;
+    display: inline-block;
+}
+
+.skillInfo .skillInfoText {
+    visibility: hidden;
+    width: 200px;
+    top: 100%;
+    left: 50%;
+    margin-left: -99px;
+    background-color: dimgray;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+}
+
+.skillInfo:hover .skillInfoText {
+    visibility: visible;
+}

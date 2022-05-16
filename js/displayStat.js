@@ -242,7 +242,7 @@ function displaySkills(caseID){
             found = _SKILLS.find(e => e.ID === _FOUNDDOLL5.ID);
             break;
     }
-    document.getElementById(caseID +'skill1Name').innerHTML = found.Name;
+    document.getElementById(caseID +'skill1Name').innerHTML = found.Name +" <img src='img/info.png' width='12px'><span class='skillInfoText'>" +found.Description +"</span>";
     document.getElementById(caseID +'ICD1').innerHTML = "ICD: " +found.ICooldown +"s";
     document.getElementById(caseID +'CD1').innerHTML = "CD: " +found.Cooldown +"s";
 }
@@ -266,24 +266,72 @@ function displayModdedStats(caseID){
             found = _FOUNDDOLL5;
             break;
     }
-    document.getElementById("modDMG" +caseID).innerHTML = Math.round(found.DMG * ((100 + parseInt(document.getElementById(caseID +"dmgMod").getAttribute("value")))/100));
-    document.getElementById("modEVA" +caseID).innerHTML = Math.round(found.EVA * ((100 + parseInt(document.getElementById(caseID +"evaMod").getAttribute("value")))/100));
-    document.getElementById("modACC" +caseID).innerHTML = Math.round(found.ACC * ((100 + parseInt(document.getElementById(caseID +"accMod").getAttribute("value")))/100));
-    document.getElementById("modROF" +caseID).innerHTML = Math.round(found.ROF * ((100 + parseInt(document.getElementById(caseID +"rofMod").getAttribute("value")))/100));
-    document.getElementById("modMOV" +caseID).innerHTML = Math.round(found.Move * ((100 + parseInt(document.getElementById(caseID +"movMod").getAttribute("value")))/100));
-    if (found.Armor != 0){
-        document.getElementById("modARM" +caseID).innerHTML = Math.round(found.ACC * ((100 + parseInt(document.getElementById(caseID +"armMod").getAttribute("value")))/100));
+    var modDMG = Math.round(found.DMG * ((100 + parseInt(document.getElementById(caseID +"dmgMod").getAttribute("value")))/100));
+    document.getElementById("modDMG" +caseID).innerHTML = modDMG;
+    document.getElementById("modDMG" +caseID).setAttribute("Value", modDMG);
+
+    var modEVA = Math.floor(found.EVA * ((100 + parseInt(document.getElementById(caseID +"evaMod").getAttribute("value")))/100));
+    document.getElementById("modEVA" +caseID).innerHTML = modEVA;
+    document.getElementById("modEVA" +caseID).setAttribute("Value", modEVA);
+
+    var modACC = Math.floor(found.ACC * ((100 + parseInt(document.getElementById(caseID +"accMod").getAttribute("value")))/100));
+    document.getElementById("modACC" +caseID).innerHTML = modACC;
+    document.getElementById("modACC" +caseID).setAttribute("Value", modACC);
+
+    var rofCheck = Math.floor(found.ROF * ((100 + parseInt(document.getElementById(caseID +"rofMod").getAttribute("value")))/100));
+    document.getElementById("modROF" +caseID).innerHTML = rofCheck;
+    document.getElementById("modROF" +caseID).setAttribute("Value", rofCheck);
+    if (rofCheck >= 116){
+        document.getElementById("rofWarning" +caseID).innerHTML = "<img src='img/warning.png' width='12px'><span class='warningText'>Over ROF breakpoint (116) <br> Further ROF buffs will not matter</span>";
     }
-    else {
-        document.getElementById("modARM" +caseID).innerHTML = 0;
+    else if (found.Type == "SG" && rofCheck >= 50){
+        document.getElementById("rofWarning" +caseID).innerHTML = "<img src='img/warning.png' width='12px'><span class='warningText'>Over ROF breakpoint (50) <br> Further ROF buffs will not matter</span>";
     }
-    document.getElementById("modCRT" +caseID).innerHTML = Math.round(found.CritRate * ((100 + parseInt(document.getElementById(caseID +"crtMod").getAttribute("value")))/100));
+    else{
+        document.getElementById("rofWarning" +caseID).innerHTML = "-";
+    }
+
+    var modMOV = found.Move + parseInt(document.getElementById(caseID +"movMod").getAttribute("value"));
+    document.getElementById("modMOV" +caseID).innerHTML = modMOV;
+    document.getElementById("modROF" +caseID).setAttribute("Value", rofCheck);
+    
+    document.getElementById("modARM" +caseID).innerHTML = found.Armor + parseInt(document.getElementById(caseID +"armMod").getAttribute("value"));
+
+    var crtCheck = Math.round(found.CritRate * ((100 + parseInt(document.getElementById(caseID +"crtMod").getAttribute("value")))/100));
+    document.getElementById("modCRT" +caseID).innerHTML = crtCheck;
+    if (crtCheck >= 100){
+        document.getElementById("crtWarning" +caseID).innerHTML = "<img src='img/warning.png' width='12px'><span class='warningText'>Over Crit breakpoint (100) <br> Further Crit buffs will not matter</span>";
+    }
+    else{
+        document.getElementById("crtWarning" +caseID).innerHTML = "-";
+    }
+
     document.getElementById("modCDM" +caseID).innerHTML = Math.round(found.CritDamage * ((100 + parseInt(document.getElementById(caseID +"cdmMod").getAttribute("value")))/100));
+
     document.getElementById("modARP" +caseID).innerHTML = Math.round(found.AP * ((100 + parseInt(document.getElementById(caseID +"arpMod").getAttribute("value")))/100));
+
     if (found.Clip != null){
         document.getElementById("modCLP" +caseID).innerHTML = Math.round(found.Clip * ((100 + parseInt(document.getElementById(caseID +"clpMod").getAttribute("value")))/100));
     }
     else {
         document.getElementById("modCLP" +caseID).innerHTML = "∞";
     }
+    
+    calculateDPS(caseID, found);
+}
+
+function calculateDPS(caseID, found){
+    var fperAtk = Math.floor(1500/found.ROF);
+    var attperSec = 30/fperAtk;
+    var hitRate = 1;
+    var critRate = (100 + found.CritRate)/100;
+    var dps = Math.round((found.DMG * (1-critRate) + found.CritDamage * critRate) * attperSec * hitRate * 5);
+    document.getElementById("unmoddedDPS" +caseID).innerHTML = dps;
+
+    var modFperAtk;
+    var modAttperSec;
+    var modHitRate = 1;
+    var modCritRate;
+    var modDps;
+
 }

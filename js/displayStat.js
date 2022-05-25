@@ -5,11 +5,9 @@ var _FOUNDDOLL4;
 var _FOUNDDOLL5;
 
 //Find specified doll from selection with given variables
-//EditID - Where to display final doll data
-//AppendID - Where to attach doll data to
-//CaseID - Condition for determining where loaded data will be stored
 function findDoll(caseID){
     console.clear();
+
 
     //Get the currently selected doll from select dropdown
     var idSearch = document.getElementById('nameSelect' +caseID);
@@ -33,115 +31,39 @@ function findDoll(caseID){
     switch (caseID){
         case 1:
             _FOUNDDOLL1 = dollToFill;
-            editHTML("HP1", "HP: " +_FOUNDDOLL1.Health);
-            editHTML("Cost1", "Ammo: " +_FOUNDDOLL1.Ammo +"<br> Ration: " +_FOUNDDOLL1.Ration);
-            editHTML("ID1", _FOUNDDOLL1.ID);
-            editHTML("DMG1", _FOUNDDOLL1.DMG);
-            editHTML("EVA1", _FOUNDDOLL1.EVA);
-            editHTML("ACC1", _FOUNDDOLL1.ACC);
-            editHTML("ROF1", _FOUNDDOLL1.ROF);
-            editHTML("MOV1", _FOUNDDOLL1.Move);
-            editHTML("ARM1", _FOUNDDOLL1.Armor);
-            editHTML("CRT1", _FOUNDDOLL1.CritRate);
-            editHTML("CDM1", _FOUNDDOLL1.CritDamage);
-            editHTML("ARP1", _FOUNDDOLL1.AP);
-            if (_FOUNDDOLL1.Clip != null){
-                editHTML("CLP1", _FOUNDDOLL1.Clip);
-            }
-            else{
-                editHTML("CLP1", "∞");
-            }
-            console.log("Updated doll 1: "+_FOUNDDOLL1.Name);
             break;
         case 2:
             _FOUNDDOLL2 = dollToFill;
-            editHTML("HP2", "HP: " +_FOUNDDOLL2.Health);
-            editHTML("Cost2", "Ammo: " +_FOUNDDOLL2.Ammo +"<br> Ration: " +_FOUNDDOLL2.Ration);
-            editHTML("ID2", _FOUNDDOLL2.ID);
-            editHTML("DMG2", _FOUNDDOLL2.DMG);
-            editHTML("EVA2", _FOUNDDOLL2.EVA);
-            editHTML("ACC2", _FOUNDDOLL2.ACC);
-            editHTML("ROF2", _FOUNDDOLL2.ROF);
-            editHTML("MOV2", _FOUNDDOLL2.Move);
-            editHTML("ARM2", _FOUNDDOLL2.Armor);
-            editHTML("CRT2", _FOUNDDOLL2.CritRate);
-            editHTML("CDM2", _FOUNDDOLL2.CritDamage);
-            editHTML("ARP2", _FOUNDDOLL2.AP);
-            if (_FOUNDDOLL2.Clip != null){
-                editHTML("CLP2", _FOUNDDOLL2.Clip);
-            }
-            else{
-                editHTML("CLP2", "∞");
-            }
-            console.log("Updated doll 1: "+_FOUNDDOLL2.Name);
             break;
         case 3:
             _FOUNDDOLL3 = dollToFill;
-            editHTML("HP3", "HP: " +_FOUNDDOLL3.Health);
-            editHTML("Cost3", "Ammo: " +_FOUNDDOLL3.Ammo +"<br> Ration: " +_FOUNDDOLL3.Ration);
-            editHTML("ID3", _FOUNDDOLL3.ID);
-            editHTML("DMG3", _FOUNDDOLL3.DMG);
-            editHTML("EVA3", _FOUNDDOLL3.EVA);
-            editHTML("ACC3", _FOUNDDOLL3.ACC);
-            editHTML("ROF3", _FOUNDDOLL3.ROF);
-            editHTML("MOV3", _FOUNDDOLL3.Move);
-            editHTML("ARM3", _FOUNDDOLL3.Armor);
-            editHTML("CRT3", _FOUNDDOLL3.CritRate);
-            editHTML("CDM3", _FOUNDDOLL3.CritDamage);
-            editHTML("ARP3", _FOUNDDOLL3.AP);
-            if (_FOUNDDOLL3.Clip != null){
-                editHTML("CLP3", _FOUNDDOLL3.Clip);
-            }
-            else{
-                editHTML("CLP3", "∞");
-            }
-            console.log("Updated doll 3: "+_FOUNDDOLL3.Name);
             break;
         case 4:
             _FOUNDDOLL4 = dollToFill;
-            editHTML("HP4", "HP: " +_FOUNDDOLL4.Health);
-            editHTML("Cost4", "Ammo: " +_FOUNDDOLL4.Ammo +"<br> Ration: " +_FOUNDDOLL4.Ration);
-            editHTML("ID4", _FOUNDDOLL4.ID);
-            editHTML("DMG4", _FOUNDDOLL4.DMG);
-            editHTML("EVA4", _FOUNDDOLL4.EVA);
-            editHTML("ACC4", _FOUNDDOLL4.ACC);
-            editHTML("ROF4", _FOUNDDOLL4.ROF);
-            editHTML("MOV4", _FOUNDDOLL4.Move);
-            editHTML("ARM4", _FOUNDDOLL4.Armor);
-            editHTML("CRT4", _FOUNDDOLL4.CritRate);
-            editHTML("CDM4", _FOUNDDOLL4.CritDamage);
-            editHTML("ARP4", _FOUNDDOLL4.AP);
-            if (_FOUNDDOLL4.Clip != null){
-                editHTML("CLP4", _FOUNDDOLL4.Clip);
-            }
-            else{
-                editHTML("CLP4", "∞");
-            }
-            console.log("Updated doll 4: "+_FOUNDDOLL4.Name);
             break;
         case 5:
             _FOUNDDOLL5 = dollToFill;
-            editHTML("HP5", "HP: " +_FOUNDDOLL5.Health);
-            editHTML("Cost5", "Ammo: " +_FOUNDDOLL5.Ammo +"<br> Ration: " +_FOUNDDOLL5.Ration);
-            editHTML("ID5", _FOUNDDOLL5.ID);
-            editHTML("DMG5", _FOUNDDOLL5.DMG);
-            editHTML("EVA5", _FOUNDDOLL5.EVA);
-            editHTML("ACC5", _FOUNDDOLL5.ACC);
-            editHTML("ROF5", _FOUNDDOLL5.ROF);
-            editHTML("MOV5", _FOUNDDOLL5.Move);
-            editHTML("ARM5", _FOUNDDOLL5.Armor);
-            editHTML("CRT5", _FOUNDDOLL5.CritRate);
-            editHTML("CDM5", _FOUNDDOLL5.CritDamage);
-            editHTML("ARP5", _FOUNDDOLL5.AP);
-            if (_FOUNDDOLL5.Clip != null){
-                editHTML("CLP5", _FOUNDDOLL5.Clip);
-            }
-            else{
-                editHTML("CLP5", "∞");
-            }
-            console.log("Updated doll 5: "+_FOUNDDOLL5.Name);
             break;
     }
+    editHTML("HP" +caseID, "HP: " +dollToFill.Health);
+    editHTML("Cost" +caseID, "Ammo: " +dollToFill.Ammo +"<br> Ration: " +dollToFill.Ration);
+    editHTML("ID" +caseID, dollToFill.ID);
+    editHTML("DMG" +caseID, dollToFill.DMG);
+    editHTML("EVA" +caseID, dollToFill.EVA);
+    editHTML("ACC" +caseID, dollToFill.ACC);
+    editHTML("ROF" +caseID, dollToFill.ROF);
+    editHTML("MOV" +caseID, dollToFill.Move);
+    editHTML("ARM" +caseID, dollToFill.Armor);
+    editHTML("CRT" +caseID, dollToFill.CritRate);
+    editHTML("CDM" +caseID, dollToFill.CritDamage);
+    editHTML("ARP" +caseID, dollToFill.AP);
+    if (dollToFill.Clip != null){
+        editHTML("CLP" +caseID, dollToFill.Clip);
+    }
+    else{
+        editHTML("CLP" +caseID, "∞");
+    }
+    console.log("Updated doll " +caseID +": "+dollToFill.Name);
     
     //Check added because of error on first load, waits until all dolls have been added
     if (_FOUNDDOLL1 != null && _FOUNDDOLL2 != null && _FOUNDDOLL3 != null && _FOUNDDOLL4 != null && _FOUNDDOLL5 != null){
@@ -156,10 +78,9 @@ function findDoll(caseID){
         }
     }
     displayTiles(caseID);
-
     displaySkills(caseID);
-
     displayModdedStats(caseID);
+    modCheck(caseID);
 }
 
 function appendNode(className, editId, infoToFill){
@@ -242,7 +163,7 @@ function displaySkills(caseID){
             found = _SKILLS.find(e => e.ID === _FOUNDDOLL5.ID);
             break;
     }
-    document.getElementById(caseID +'skill1Name').innerHTML = found.Name +" <img src='img/info.png' width='12px'><span class='skillInfoText'>" +found.Description +"</span>";
+    document.getElementById(caseID +'skill1Name').innerHTML = found.Name +" 🛈<span class='skillInfoText'>" +found.Description +"</span>";
     document.getElementById(caseID +'ICD1').innerHTML = "ICD: " +found.ICooldown +"s";
     document.getElementById(caseID +'CD1').innerHTML = "CD: " +found.Cooldown +"s";
 }
@@ -282,10 +203,10 @@ function displayModdedStats(caseID){
     document.getElementById("modROF" +caseID).innerHTML = rofCheck;
     document.getElementById("modROF" +caseID).setAttribute("Value", rofCheck);
     if (rofCheck >= 116 && found.Type != "MG"){
-        document.getElementById("rofWarning" +caseID).innerHTML = "<img src='img/warning.png' width='12px'><span class='warningText'>Over ROF breakpoint (116) <br> Further ROF buffs will not matter</span>";
+        document.getElementById("rofWarning" +caseID).innerHTML = "⚠<span class='warningText'>Over ROF breakpoint (116) <br> Further ROF buffs will not matter</span>";
     }
     else if (found.Type == "SG" && rofCheck >= 50){
-        document.getElementById("rofWarning" +caseID).innerHTML = "<img src='img/warning.png' width='12px'><span class='warningText'>Over ROF breakpoint (50) <br> Further ROF buffs will not matter</span>";
+        document.getElementById("rofWarning" +caseID).innerHTML = "⚠<span class='warningText'>Over ROF breakpoint (50) <br> Further ROF buffs will not matter</span>";
     }
     else{
         document.getElementById("rofWarning" +caseID).innerHTML = "-";
@@ -293,7 +214,7 @@ function displayModdedStats(caseID){
 
     var modMOV = found.Move + parseInt(document.getElementById(caseID +"movMod").getAttribute("value"));
     document.getElementById("modMOV" +caseID).innerHTML = modMOV;
-    document.getElementById("modROF" +caseID).setAttribute("Value", modMOV);
+    document.getElementById("modMOV" +caseID).setAttribute("Value", modMOV);
     
     var modARM = found.Armor + parseInt(document.getElementById(caseID +"armMod").getAttribute("value"));
     document.getElementById("modARM" +caseID).innerHTML = modARM;
@@ -303,23 +224,31 @@ function displayModdedStats(caseID){
     document.getElementById("modCRT" +caseID).innerHTML = crtCheck;
     document.getElementById("modCRT" +caseID).setAttribute("Value", crtCheck);
     if (crtCheck >= 100){
-        document.getElementById("crtWarning" +caseID).innerHTML = "<img src='img/warning.png' width='12px'><span class='warningText'>Over Crit breakpoint (100) <br> Further Crit buffs will not matter</span>";
+        document.getElementById("crtWarning" +caseID).innerHTML = "⚠<span class='warningText'>Over Crit breakpoint (100) <br> Further Crit buffs will not matter</span>";
     }
     else{
         document.getElementById("crtWarning" +caseID).innerHTML = "-";
     }
 
-    document.getElementById("modCDM" +caseID).innerHTML = Math.round(found.CritDamage * ((100 + parseInt(document.getElementById(caseID +"cdmMod").getAttribute("value")))/100));
+    var modCDM = Math.round(found.CritDamage * ((100 + parseInt(document.getElementById(caseID +"cdmMod").getAttribute("value")))/100));
+    document.getElementById("modCDM" +caseID).innerHTML = modCDM;
+    document.getElementById("modCDM" +caseID).setAttribute("Value", modCDM);
 
-    document.getElementById("modARP" +caseID).innerHTML = Math.round(found.AP * ((100 + parseInt(document.getElementById(caseID +"arpMod").getAttribute("value")))/100));
+    var modARP = Math.round(found.AP * ((100 + parseInt(document.getElementById(caseID +"arpMod").getAttribute("value")))/100));
+    document.getElementById("modARP" +caseID).innerHTML = modARP;
+    document.getElementById("modARP" +caseID).setAttribute("Value", modARP);
 
+    var modCLP = Math.round(found.Clip * ((100 + parseInt(document.getElementById(caseID +"clpMod").getAttribute("value")))/100));;
     if (found.Clip != null){
-        document.getElementById("modCLP" +caseID).innerHTML = Math.round(found.Clip * ((100 + parseInt(document.getElementById(caseID +"clpMod").getAttribute("value")))/100));
+        document.getElementById("modCLP" +caseID).innerHTML = modCLP;
+        document.getElementById("modCLP" +caseID).setAttribute("Value", modCLP);
     }
     else {
         document.getElementById("modCLP" +caseID).innerHTML = "∞";
+        document.getElementById("modCLP" +caseID).setAttribute("Value", 0);
     }
     
+    //checkStatChange(caseID);
     //calculateDPS(caseID, found);
 }
 

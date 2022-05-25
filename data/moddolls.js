@@ -54,3 +54,209 @@ var _MODDOLLS = [
     {ID:221, Name:'GSh-18', Type:'HG', Star:4, Health:370, Ammo:30, Ration:30, DMG:34, EVA:90, ACC:53, ROF:58, Move:15, Armor:0, CritRate:20, CritDamage:50, AP:15},
     {ID:252, Name:'KSVK', Type:'RF', Star:5, Health:455, Ammo:55, Ration:90, DMG:165, EVA:31, ACC:87, ROF:32, Move:7, Armor:0, CritRate:40, CritDamage:50, AP:15}
 ]
+
+var _MODDOLLFOUND;
+
+function modCheck(caseID){
+    var found;
+    switch (caseID){
+        case 1:
+            found = _FOUNDDOLL1;
+            break;
+        case 2:
+            found = _FOUNDDOLL2;
+            break;
+        case 3:
+            found = _FOUNDDOLL3;
+            break;
+        case 4:
+            found = _FOUNDDOLL4;
+            break;
+        case 5:
+            found = _FOUNDDOLL5;
+            break;
+    }
+    if (_MODDOLLS.find(e => e.ID === found.ID)){
+        document.getElementById("Mod" +caseID).hidden = false;
+        _MODDOLLFOUND = _MODDOLLS.find(e => e.ID === found.ID);
+    }
+    else {
+        document.getElementById("Mod" +caseID).hidden = true;
+    }
+}
+
+function test(caseID){
+    var checkBox = document.getElementById("myCheck");
+    modCheck(caseID);
+    if (checkBox.checked == true){
+        document.getElementById(caseID +"skill2").hidden = false;
+        document.getElementById("Mod" +caseID).hidden = false;
+        modDisplay(caseID);
+    }
+    else {
+        console.log('changed');
+        document.getElementById(caseID +"skill2").hidden = true;
+        console.log('unchecked');
+        findDoll(caseID);
+    }
+}
+
+function modDisplay(caseID){
+    editHTML("HP" +caseID, "HP: " +_MODDOLLFOUND.Health);
+    editHTML("Cost" +caseID, "Ammo: " +_MODDOLLFOUND.Ammo +"<br> Ration: " +_MODDOLLFOUND.Ration);
+    editHTML("ID" +caseID, _MODDOLLFOUND.ID);
+    editHTML("DMG" +caseID, _MODDOLLFOUND.DMG);
+    editHTML("EVA" +caseID, _MODDOLLFOUND.EVA);
+    editHTML("ACC" +caseID, _MODDOLLFOUND.ACC);
+    editHTML("ROF" +caseID, _MODDOLLFOUND.ROF);
+    editHTML("MOV" +caseID, _MODDOLLFOUND.Move);
+    editHTML("ARM" +caseID, _MODDOLLFOUND.Armor);
+    editHTML("CRT" +caseID, _MODDOLLFOUND.CritRate);
+    editHTML("CDM" +caseID, _MODDOLLFOUND.CritDamage);
+    editHTML("ARP" +caseID, _MODDOLLFOUND.AP);
+    if (_MODDOLLFOUND.Clip != null){
+        editHTML("CLP" +caseID, _MODDOLLFOUND.Clip);
+    }
+    else{
+        editHTML("CLP" +caseID, "∞");
+    }
+    console.log("Updated doll " +caseID +": "+_FOUNDDOLL1.Name);
+    displayModTiles(caseID);
+    displayModSkills(caseID);
+    displayModdedStats(caseID);
+    displayModdedModStats(caseID);
+}
+
+function displayModTiles(caseID){
+    clearModTiles(caseID);
+    var found;
+    switch (caseID){
+        case 1:
+            found = _MODTILES.find(e => e.ID === _FOUNDDOLL1.ID);
+            break;
+        case 2:
+            found = _MODTILES.find(e => e.ID === _FOUNDDOLL2.ID);
+            break;
+        case 3:
+            found = _MODTILES.find(e => e.ID === _FOUNDDOLL3.ID);
+            break;
+        case 4:
+            found = _MODTILES.find(e => e.ID === _FOUNDDOLL4.ID);
+            break;
+        case 5:
+            found = _MODTILES.find(e => e.ID === _FOUNDDOLL5.ID);
+            break;
+    }
+    var tiles = Array.from(String(found.Tiles));
+    document.getElementById(caseID +"-" +tiles[0]).style = "background-color:white; color: black";
+    for (var i = 1; i < tiles.length; i++){
+        document.getElementById(caseID +"-" +tiles[i]).style = "background-color:#00ffde; color:black";
+    }
+    displayModBuffs(found, caseID);
+}
+
+function displayModBuffs(found, caseID){
+    document.getElementById(caseID +'type').innerHTML = "For: " +found.Type;
+    document.getElementById(caseID +'buff1').innerHTML = found.Buff1 +" " +found.B1 +"%";
+    if (found.Buff2 != null){
+        document.getElementById(caseID +'buff2').innerHTML = found.Buff2 +" " +found.B2 +"%";
+    }
+    if (found.Buff3 != null){
+        document.getElementById(caseID +'buff3').innerHTML = found.Buff3 +" " +found.B3 +"%";
+    }
+}
+
+function clearModTiles(caseID){
+    for (var i = 1; i <= 9; i++){
+        document.getElementById(caseID +"-" +i).style = "";
+    }
+}
+
+function displayModSkills(caseID){
+    var found;
+    switch (caseID){
+        case 1:
+            found = _MODSKILLS.find(e => e.ID === _FOUNDDOLL1.ID);
+            document.getElementById(caseID +'skill1Name').innerHTML = found.Skill1 +" 🛈<span class='skillInfoText'>" +found.Description1 +"</span>";
+            document.getElementById(caseID +'ICD1').innerHTML = "ICD: " +found.ICooldown +"s";
+            document.getElementById(caseID +'CD1').innerHTML = "CD: " +found.Cooldown +"s";
+            document.getElementById(caseID +'skill2').hidden = false;
+            document.getElementById(caseID +'skill2Name').innerHTML = found.Skill2 +" 🛈<span class='skillInfoText'>" +found.Description2 +"</span>";
+            break;
+        case 2:
+            found = _MODSKILLS.find(e => e.ID === _FOUNDDOLL2.ID);
+            break;
+        case 3:
+            found = _MODSKILLS.find(e => e.ID === _FOUNDDOLL3.ID);
+            break;
+        case 4:
+            found = _MODSKILLS.find(e => e.ID === _FOUNDDOLL4.ID);
+            break;
+        case 5:
+            found = _MODSKILLS.find(e => e.ID === _FOUNDDOLL5.ID);
+            break;
+    }
+}
+
+function displayModdedModStats(caseID){
+    var modDMG = Math.round(_MODDOLLFOUND.DMG * ((100 + parseInt(document.getElementById(caseID +"dmgMod").getAttribute("value")))/100));
+    document.getElementById("modDMG" +caseID).innerHTML = modDMG;
+    document.getElementById("modDMG" +caseID).setAttribute("Value", modDMG);
+
+    var modEVA = Math.floor(_MODDOLLFOUND.EVA * ((100 + parseInt(document.getElementById(caseID +"evaMod").getAttribute("value")))/100));
+    document.getElementById("modEVA" +caseID).innerHTML = modEVA;
+    document.getElementById("modEVA" +caseID).setAttribute("Value", modEVA);
+
+    var modACC = Math.floor(_MODDOLLFOUND.ACC * ((100 + parseInt(document.getElementById(caseID +"accMod").getAttribute("value")))/100));
+    document.getElementById("modACC" +caseID).innerHTML = modACC;
+    document.getElementById("modACC" +caseID).setAttribute("Value", modACC);
+
+    var rofCheck = Math.floor(_MODDOLLFOUND.ROF * ((100 + parseInt(document.getElementById(caseID +"rofMod").getAttribute("value")))/100));
+    document.getElementById("modROF" +caseID).innerHTML = rofCheck;
+    document.getElementById("modROF" +caseID).setAttribute("Value", rofCheck);
+    if (rofCheck >= 116 && _MODDOLLFOUND.Type != "MG"){
+        document.getElementById("rofWarning" +caseID).innerHTML = "⚠<span class='warningText'>Over ROF breakpoint (116) <br> Further ROF buffs will not matter</span>";
+    }
+    else if (_MODDOLLFOUND.Type == "SG" && rofCheck >= 50){
+        document.getElementById("rofWarning" +caseID).innerHTML = "⚠<span class='warningText'>Over ROF breakpoint (50) <br> Further ROF buffs will not matter</span>";
+    }
+    else{
+        document.getElementById("rofWarning" +caseID).innerHTML = "-";
+    }
+
+    var modMOV = _MODDOLLFOUND.Move + parseInt(document.getElementById(caseID +"movMod").getAttribute("value"));
+    document.getElementById("modMOV" +caseID).innerHTML = modMOV;
+    document.getElementById("modMOV" +caseID).setAttribute("Value", modMOV);
+    
+    var modARM = _MODDOLLFOUND.Armor + parseInt(document.getElementById(caseID +"armMod").getAttribute("value"));
+    document.getElementById("modARM" +caseID).innerHTML = modARM;
+    document.getElementById("modARM" +caseID).setAttribute("Value", modARM);
+
+    var crtCheck = Math.round(_MODDOLLFOUND.CritRate * ((100 + parseInt(document.getElementById(caseID +"crtMod").getAttribute("value")))/100));
+    document.getElementById("modCRT" +caseID).innerHTML = crtCheck;
+    document.getElementById("modCRT" +caseID).setAttribute("Value", crtCheck);
+    if (crtCheck >= 100){
+        document.getElementById("crtWarning" +caseID).innerHTML = "⚠<span class='warningText'>Over Crit breakpoint (100) <br> Further Crit buffs will not matter</span>";
+    }
+    else{
+        document.getElementById("crtWarning" +caseID).innerHTML = "-";
+    }
+
+    var modCDM = Math.round(_MODDOLLFOUND.CritDamage * ((100 + parseInt(document.getElementById(caseID +"cdmMod").getAttribute("value")))/100));
+    document.getElementById("modCDM" +caseID).innerHTML = modCDM;
+    document.getElementById("modCDM" +caseID).setAttribute("Value", modCDM);
+
+    var modARP = Math.round(_MODDOLLFOUND.AP * ((100 + parseInt(document.getElementById(caseID +"arpMod").getAttribute("value")))/100));
+    document.getElementById("modARP" +caseID).innerHTML = modARP;
+    document.getElementById("modARP" +caseID).setAttribute("Value", modARP);
+
+    var modCLP = Math.round(_MODDOLLFOUND.Clip * ((100 + parseInt(document.getElementById(caseID +"clpMod").getAttribute("value")))/100));;
+    if (_MODDOLLFOUND.Clip != null){
+        document.getElementById("modCLP" +caseID).innerHTML = modCLP;
+        document.getElementById("modCLP" +caseID).setAttribute("Value", modCLP);
+    }
+    else {
+        document.getElementById("modCLP" +caseID).innerHTML = "∞";
+        document.getElementById("modCLP" +caseID).setAttribute("Value", 0);
+    }
+}

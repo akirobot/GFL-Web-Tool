@@ -15,6 +15,9 @@
     <script src="data/dolls.js"></script>
     <script src="data/tiles.js"></script>
     <script src="data/skills.js"></script>
+    <script src="data/moddolls.js"></script>
+    <script src="data/modskills.js"></script>
+    <script src="data/modtiles.js"></script>
     <script src="data/fairy.js"></script>
     <script src="js/populateSelect.js"></script>
     <script src="js/displayStat.js"></script>
@@ -76,8 +79,11 @@
                         <div class="dataDisplay">
                             <div>
                                 <div id="HP1"></div>
-                                <div id="Mod1">
-                                    <button type="button">Click Me!</button>
+                                <div id="Mod1" hidden>
+                                    <label class="switch">
+                                        <input type="checkbox" id="myCheck" onchange="test(1)">
+                                        <span class="slider"></span>
+                                    </label>
                                 </div>
                             </div>
                             <div>
@@ -134,16 +140,16 @@
                                 <div id="modCLP1"></div>
                             </div>
                             <div class="numDisplay">
-                                <div>-</div>
-                                <div>-</div>
-                                <div>-</div>
+                                <div class="warning" id="dmgWarning1">-</div>
+                                <div class="warning" id="evaWarning1">-</div>
+                                <div class="warning" id="accWarning1">-</div>
                                 <div class="warning" id="rofWarning1">-</div>
-                                <div>-</div>
-                                <div>-</div>
+                                <div class="warning" id="movWarning1">-</div>
+                                <div class="warning" id="armWarning1">-</div>
                                 <div class="warning" id="crtWarning1">-</div>
-                                <div>-</div>
-                                <div>-</div>
-                                <div>-</div>
+                                <div class="warning" id="cdmWarning1">-</div>
+                                <div class="warning" id="arpWarning1">-</div>
+                                <div class="warning" id="clpWarning1">-</div>
                             </div>
                         </div>
                     </div>
@@ -188,10 +194,13 @@
                             <div id="1CD1">CD: test</div>
                         </div>
                     </div>
-                    <div id="1skill2"></div>
-                    <div class="dollDisplay">Equip1</div>
-                    <div class="dollDisplay">Equip2</div>
-                    <div class="dollDisplay">Equip3</div>
+                    <div id="1skill2" hidden>
+                        <div>Skill 2</div>
+                        <div class="skillInfo" id="1skill2Name"></div>
+                    </div>
+                    <div class="dollDisplay" id="1eq1">Equip1</div>
+                    <div class="dollDisplay" id="1eq2">Equip2</div>
+                    <div class="dollDisplay" id="1eq3">Equip3</div>
                 </div>
 
                 <div id="echSlot2" class="dollDisplay">
@@ -285,16 +294,16 @@
                                 <div id="modCLP2"></div>
                             </div>
                             <div class="numDisplay">
-                                <div>-</div>
-                                <div>-</div>
-                                <div>-</div>
+                                <div class="warning" id="dmgWarning2">-</div>
+                                <div class="warning" id="evaWarning2">-</div>
+                                <div class="warning" id="accWarning2">-</div>
                                 <div class="warning" id="rofWarning2">-</div>
-                                <div>-</div>
-                                <div>-</div>
+                                <div class="warning" id="movWarning2">-</div>
+                                <div class="warning" id="armWarning2">-</div>
                                 <div class="warning" id="crtWarning2">-</div>
-                                <div>-</div>
-                                <div>-</div>
-                                <div>-</div>
+                                <div class="warning" id="cdmWarning2">-</div>
+                                <div class="warning" id="arpWarning2">-</div>
+                                <div class="warning" id="clpWarning2">-</div>
                             </div>
                         </div>
                     </div>
@@ -436,16 +445,16 @@
                                 <div id="modCLP3"></div>
                             </div>
                             <div class="numDisplay">
-                                <div>-</div>
-                                <div>-</div>
-                                <div>-</div>
+                                <div class="warning" id="dmgWarning3">-</div>
+                                <div class="warning" id="evaWarning3">-</div>
+                                <div class="warning" id="accWarning3">-</div>
                                 <div class="warning" id="rofWarning3">-</div>
-                                <div>-</div>
-                                <div>-</div>
+                                <div class="warning" id="movWarning3">-</div>
+                                <div class="warning" id="armWarning3">-</div>
                                 <div class="warning" id="crtWarning3">-</div>
-                                <div>-</div>
-                                <div>-</div>
-                                <div>-</div>
+                                <div class="warning" id="cdmWarning3">-</div>
+                                <div class="warning" id="arpWarning3">-</div>
+                                <div class="warning" id="clpWarning3">-</div>
                             </div>
                         </div>
                     </div>
@@ -587,16 +596,16 @@
                                 <div id="modCLP4"></div>
                             </div>
                             <div class="numDisplay">
-                                <div>-</div>
-                                <div>-</div>
-                                <div>-</div>
+                                <div class="warning" id="dmgWarning4">-</div>
+                                <div class="warning" id="evaWarning4">-</div>
+                                <div class="warning" id="accWarning4">-</div>
                                 <div class="warning" id="rofWarning4">-</div>
-                                <div>-</div>
-                                <div>-</div>
+                                <div class="warning" id="movWarning4">-</div>
+                                <div class="warning" id="armWarning4">-</div>
                                 <div class="warning" id="crtWarning4">-</div>
-                                <div>-</div>
-                                <div>-</div>
-                                <div>-</div>
+                                <div class="warning" id="cdmWarning4">-</div>
+                                <div class="warning" id="arpWarning4">-</div>
+                                <div class="warning" id="clpWarning4">-</div>
                             </div>
                         </div>
                     </div>
@@ -738,16 +747,16 @@
                                 <div id="modCLP5"></div>
                             </div>
                             <div class="numDisplay">
-                                <div>-</div>
-                                <div>-</div>
-                                <div>-</div>
+                                <div class="warning" id="dmgWarning5">-</div>
+                                <div class="warning" id="evaWarning5">-</div>
+                                <div class="warning" id="accWarning5">-</div>
                                 <div class="warning" id="rofWarning5">-</div>
-                                <div>-</div>
-                                <div>-</div>
+                                <div class="warning" id="movWarning5">-</div>
+                                <div class="warning" id="armWarning5">-</div>
                                 <div class="warning" id="crtWarning5">-</div>
-                                <div>-</div>
-                                <div>-</div>
-                                <div>-</div>
+                                <div class="warning" id="cdmWarning5">-</div>
+                                <div class="warning" id="arpWarning5">-</div>
+                                <div class="warning" id="clpWarning5">-</div>
                             </div>
                         </div>
                     </div>

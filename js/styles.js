@@ -28,7 +28,7 @@ function changeLabelColor(idNum){
     }
 }
 
-function changeStatColor (caseID){
+function checkStatChange (caseID){
     var found;
     switch (caseID){
         case 1:
@@ -47,5 +47,67 @@ function changeStatColor (caseID){
             found = _FOUNDDOLL5;
             break;
     }
-    
+
+    if (found.DMG < parseInt(document.getElementById("modDMG" +caseID).getAttribute("value"))){
+        document.getElementById("dmgWarning" +caseID).innerHTML = "+";
+    }
+    else {
+        document.getElementById("dmgWarning" +caseID).innerHTML = "-";
+    }
+
+    if (found.EVA < parseInt(document.getElementById("modEVA" +caseID).getAttribute("value"))){
+        document.getElementById("evaWarning" +caseID).innerHTML = "+";
+    }
+    else {
+        document.getElementById("evaWarning" +caseID).innerHTML = "-";
+    }
+
+    if (found.ACC < parseInt(document.getElementById("modACC" +caseID).getAttribute("value"))){
+        document.getElementById("accWarning" +caseID).innerHTML = "+";
+    }
+    else {
+        document.getElementById("accWarning" +caseID).innerHTML = "-";
+    }
+
+    if (found.ROF < parseInt(document.getElementById("modROF" +caseID).getAttribute("value"))){
+        document.getElementById("rofWarning" +caseID).innerHTML = "+";
+    }
+    else {
+        document.getElementById("rofWarning" +caseID).innerHTML = "-";
+    }
+
+    if (found.Move < parseInt(document.getElementById("modMOV" +caseID).getAttribute("value"))){
+        document.getElementById("movWarning" +caseID).innerHTML = "+";
+    }
+    else {
+        document.getElementById("movWarning" +caseID).innerHTML = "-";
+    }
+
+    if (found.Armor < parseInt(document.getElementById("modARM" +caseID).getAttribute("value"))){
+        document.getElementById("armWarning" +caseID).innerHTML = "+";
+    }
+    else {
+        document.getElementById("armWarning" +caseID).innerHTML = "-";
+    }
+
+    if (found.CritRate < parseInt(document.getElementById("modCRT" +caseID).getAttribute("value"))){
+        document.getElementById("crtWarning" +caseID).innerHTML = "+";
+    }
+    else {
+        document.getElementById("crtWarning" +caseID).innerHTML = "-";
+    }
+
+    if (found.CritDamage < parseInt(document.getElementById("modCDM" +caseID).getAttribute("value"))){
+        document.getElementById("cdmWarning" +caseID).innerHTML = "+";
+    }
+    else {
+        document.getElementById("cdmWarning" +caseID).innerHTML = "-";
+    }
+
+    if (found.AP < parseInt(document.getElementById("modARP" +caseID).getAttribute("value"))){
+        document.getElementById("arpWarning" +caseID).innerHTML = "+";
+    }
+    else {
+        document.getElementById("arpWarning" +caseID).innerHTML = "-";
+    }
 }
